@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+
+.settings {}
+
+    .settings__section {
+        margin-top: $spacing-unit * 4;
+        padding-top: $spacing-unit * 4;
+        border-top: 1px solid $gray-300;
+
+        &:first-of-type {
+            margin: 0;
+            padding-top: 0;
+            border-top: 0;
+        }
+    }
+
+        .settings__title {
+            font-size: $font-size-x-large;
+            font-weight: $font-weight-bold;
+            letter-spacing: $letter-spacing-x-small;
+        }
+
+        .settings__description {
+            margin: $spacing-unit 0;
+            font-size: $font-size;
+            font-weight: $font-weight-light;
+        }
+
+    .settings__footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $spacing-unit * 8;
+        padding-top: $spacing-unit * 4;
+        border-top: 1px solid $gray-300;
+    }

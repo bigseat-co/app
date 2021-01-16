@@ -1,0 +1,78 @@
+<div class="rooms">
+  {{#if this.showRecords}}
+    <div class="rooms__wrapper">
+      <div class="rooms__content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Images</th>
+              <th>Name</th>
+              <th>Total Seats</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul class="table__thumbnails">
+                  <li class="table__thumbnail">
+                    <img class="table__thumbnail-picture" src="/empty_office.jpg" />
+                  </li>
+                  <li class="table__thumbnail">
+                    <img class="table__thumbnail-picture" src="/empty_office.jpg" />
+                  </li>
+                  <li class="table__thumbnail">
+                    <img class="table__thumbnail-picture" src="/empty_office.jpg" />
+                  </li>
+                  <li class="table__thumbnail-label">
+                    +2
+                  </li>
+                </ul>
+              </td>
+              <td>Yellow Room</td>
+              <td>10</td>
+              <td>
+                <a href="#" class="button button--primary button--small">Edit room</a>
+                <a href="#" class="button button--danger button--small">Remove room</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <ul class="table__thumbnails">
+                  <li class="table__thumbnail">
+                    <img class="table__thumbnail-picture" src="/empty_office.jpg" />
+                  </li>
+                </ul>
+              </td>
+              <td>Blue Room</td>
+              <td>23</td>
+              <td>
+                <a href="#" class="button button--primary button--small">Edit room</a>
+                <a href="#" class="button button--danger button--small">Remove room</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rooms__footer">
+        <button type="button" class="button button--primary button--large">Add a new room</button>
+      </div>
+    </div>
+  {{else}}
+    <div class="rooms__no-results">
+      <div class="empty-state">
+        <div class="empty-state__asset empty-state__asset--rooms">
+          {{inline-svg "illustrations/table" class="svg"}}
+        </div>
+
+        <h1 class="empty-state__title">{{t "admin.rooms.no_results.title"}}</h1>
+        <p class="empty-state__description">{{t "admin.rooms.no_results.description"}}</p>
+
+        <div class="empty-state__button">
+          <LinkTo @route="admin.rooms.new" class="button button--large button--primary">{{t "admin.rooms.new_room"}}</LinkTo>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</div>

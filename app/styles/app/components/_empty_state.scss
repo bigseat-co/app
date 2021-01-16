@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    #EMPTY-STATE
+\*------------------------------------*/
+
+.empty-state {
+    margin-top: $spacing-unit * 5;
+    text-align: center;
+}
+
+    .empty-state__asset {
+        display: block;
+        margin: 0 auto;
+        max-width: 700px;
+    }
+
+    .empty-state__asset--rooms {}
+
+    .empty-state__asset--not-found {
+        max-width: 600px;
+    }
+
+    .empty-state__asset--analytics {
+        margin-top: $spacing-unit * 5;
+        max-width: 500px;
+    }
+
+    .empty-state__asset--add-pictures {
+        max-width: 600px;
+    }
+
+    .empty-state__asset--people {
+        margin-top: $spacing-unit * 15;
+    }
+
+        .empty-state__svg {}
+
+    .empty-state__title {
+        margin-top: $spacing-unit * 4;
+        font-size: $font-size-2x-large;
+        font-weight: $font-weight-semi-bold;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .empty-state__description {
+        margin: 0 auto;
+        margin-top: $spacing-unit;
+        max-width: 550px;
+        line-height: $line-height-large;
+    }
+
+    .empty-state__button {
+        margin-top: $spacing-unit * 2;
+    }
+

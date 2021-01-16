@@ -1,0 +1,50 @@
+<div class="room-editor">
+  <div class="room-editor__wrapper">
+    <div class="room-editor__content">
+      <div class="room-editor__thumbnails">
+        <ul class="room-editor__thumbnails-list">
+          <li class="room-editor__thumbnails-item">
+            <img src="/empty_office.jpg" class="room-editor__thumbnails-picture" />
+          </li>
+          <li class="room-editor__thumbnails-item">
+            <img src="/empty_office.jpg" class="room-editor__thumbnails-picture" />
+          </li>
+          <li class="room-editor__thumbnails-item">
+            <div class="room-editor__thumbnails-add">
+              {{inline-svg "icons/upload" class="svg"}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="room-editor__cover">
+        <img src="/empty_office.jpg" class="room-editor__cover-picture" />
+      </div>
+    </div>
+
+    <div class="room-editor__footer">
+      <div class="room-editor__footer-container">
+        <div class="form">
+          <div class="grid grid--large">
+            <div class="grid__cell grid__cell--33">
+              <div class="form-group">
+                <label class="form__label">Name</label>
+                <input type="text" class="form__input" placeholder="Room #1" />
+              </div>
+            </div>
+            <div class="grid__cell grid__cell--33">
+              <div class="form-group">
+                <label class="form__label">Total Seats</label>
+                <span class="room-editor__total-seats">66</span>
+              </div>
+            </div>
+            <div class="grid__cell grid__cell--33 grid__cell--bottom">
+              <LinkTo @route="admin.rooms" @query={{hash withRecords="true"}} class="button button--primary button--full">
+                Save
+              </LinkTo>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

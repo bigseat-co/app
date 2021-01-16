@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #SIGNIN
+\*------------------------------------*/
+
+.signin {
+    position: relative;
+    height: 100vh;
+}
+
+    .signin__wrapper {
+        @include center;
+        width: 420px;
+    }
+
+        .signin__logo {
+            font-size: $font-size-2x-large;
+            font-weight: $font-weight-extra-bold;
+            letter-spacing: $letter-spacing-x-small;
+        }
+
+        .signin__card {
+            margin-top: $spacing-unit;
+            padding: $spacing-unit * 4;
+            background: $white;
+            border-radius: 5px;
+            box-shadow: $box-shadow;
+        }
+
+          .signin__title {
+              font-size: $font-size-x-large;
+              font-weight: $font-weight-semi-bold;
+              letter-spacing: $letter-spacing-x-small;
+              text-align: center;
+          }
+
+          .signin__description {
+              text-align: center;
+          }
+
+        .signin__footer {
+            margin: 0 auto;
+            margin-top: $spacing-unit * 3;
+            width: 70%;
+            text-align: center;
+        }

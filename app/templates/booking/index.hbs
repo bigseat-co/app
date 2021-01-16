@@ -1,0 +1,32 @@
+<div class="grid">
+  <div class="grid__cell grid__cell--50">
+    <div class="booking-rooms">
+      <div class="booking-rooms__items">
+        <!-- One day I'll found out how to do #times x -->
+        {{#each (array 1 2 3 4 5 6 7 8 9 10) as |number| }}
+          <div class="booking-rooms__item">
+            <div class="booking-rooms__thumbnail">
+              <img class="booking-rooms__thumbnail-picture" src="/empty_office.jpg" />
+            </div>
+            <div class="booking-rooms__content">
+              <div class="booking-rooms__title">
+                Room #{{number}}
+              </div>
+              <div class="booking-rooms__availability">
+                10/10 seats available
+              </div>
+              <div class="booking-rooms__description">
+                Laurent, Pierre and Roger have permanent seats there. Schaffner will be there in a few days.
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="grid__cell grid__cell--50">
+    <div class="booking-calendar">
+      <div class="booking-calendar__title">Select a date range</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="empty-state">
+  <div class="empty-state__asset empty-state__asset--add-pictures">
+    {{inline-svg "illustrations/camera" class="svg"}}
+  </div>
+
+  <h1 class="empty-state__title">{{t "admin.rooms.add_pictures.title"}}</h1>
+  <p class="empty-state__description">{{t "admin.rooms.add_pictures.description"}}</p>
+
+  <div class="upload-zone" {{on "click" (fn this.attemptUpload this.model)}}>
+    <div class="upload-zone__title">{{t "admin.rooms.add_pictures.drop_files_here"}}</div>
+  </div>
+</div>

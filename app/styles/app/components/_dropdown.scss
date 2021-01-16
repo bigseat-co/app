@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    #DROPDOWN
+\*------------------------------------*/
+
+.dropdown {
+    width: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+}
+
+.dropdown--navigation {}
+
+    .dropdown__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .dropdown__item {
+            display: block;
+        }
+
+            .dropdown__item-link {
+                display: block;
+                padding: $spacing-unit * 2;
+
+                &:hover {
+                    color: $indigo-500;
+                    background-color: $indigo-100;
+                }
+            }

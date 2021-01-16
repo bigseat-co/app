@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #TEXT-BUTTON
+\*------------------------------------*/
+
+.text-button {
+    @include button-reset;
+    outline: 0;
+    cursor: pointer;
+}
+
+.text-button--primary {
+    color: $indigo-500;
+}

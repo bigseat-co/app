@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #ROOMS
+\*------------------------------------*/
+
+.rooms {
+    height: 100%;
+}
+
+    .rooms__no-results {}
+
+    .rooms__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+      .rooms__content {}
+
+      .rooms__footer {
+          text-align: center;
+      }

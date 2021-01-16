@@ -1,0 +1,101 @@
+/*------------------------------------*\
+    #STYLE-GUIDE
+\*------------------------------------*/
+
+.style-guide {}
+
+    .style-guide__wrapper {
+        margin: 0 auto;
+        margin-top: $spacing-unit * 2;
+        max-width: $breakpoint-large;
+    }
+
+        .style-guide__section {
+            margin: ($spacing-unit * 10) 0;
+        }
+
+            .style-guide__heading {
+                margin: $spacing-unit 0;
+                font-size: $font-size-2x-large;
+                font-weight: $font-weight-bold;
+                letter-spacing: $letter-spacing-small;
+            }
+
+            .style-guide__heading--2 {
+                font-size: $font-size-x-large;
+            }
+
+            .style-guide__heading--3 {
+                font-size: $font-size-large;
+            }
+
+            .style-guide__section-child {
+                margin: ($spacing-unit * 5) 0;
+                margin-left: $spacing-unit * 2;
+                padding-left: $spacing-unit * 2;
+                border-left: 3px solid $gray-300;
+            }
+
+                .style-guide__description {
+                    margin: ($spacing-unit * 2) 0;
+                }
+
+                .style-guide__example {}
+
+                  .style-guide__swatches {
+                      display: flex;
+                  }
+
+                    .style-guide__swatch {
+                        margin-right: $spacing-unit;
+                        width: 100px;
+                        height: 100px;
+                        background: $black;
+                        border: 1px solid black;
+                    }
+
+                    .style-guide__swatch--gray-100 { background-color: $gray-100; }
+                    .style-guide__swatch--gray-200 { background-color: $gray-200; }
+                    .style-guide__swatch--gray-300 { background-color: $gray-300; }
+                    .style-guide__swatch--gray-400 { background-color: $gray-400; }
+                    .style-guide__swatch--gray-500 { background-color: $gray-500; }
+
+                    .style-guide__swatch--indigo-100 { background-color: $indigo-100; }
+                    .style-guide__swatch--indigo-200 { background-color: $indigo-200; }
+                    .style-guide__swatch--indigo-300 { background-color: $indigo-300; }
+                    .style-guide__swatch--indigo-400 { background-color: $indigo-400; }
+                    .style-guide__swatch--indigo-500 { background-color: $indigo-500; }
+
+                    .style-guide__swatch--green-500 { background-color: $green-500; }
+
+                    .style-guide__swatch--red-500 { background-color: $red-500; }
+
+
+                        .style-guide__swatch-value {
+                            padding: $spacing-unit;
+                        }
+
+                .style-guide__font-size-x-small { font-size: $font-size-x-small; }
+                .style-guide__font-size-small { font-size: $font-size-small; }
+                .style-guide__font-size { font-size: $font-size; }
+                .style-guide__font-size-large { font-size: $font-size-large; }
+                .style-guide__font-size-x-large { font-size: $font-size-x-large; }
+                .style-guide__font-size-2x-large { font-size: $font-size-2x-large; }
+                .style-guide__font-size-3x-large { font-size: $font-size-3x-large; }
+                .style-guide__font-size-4x-large { font-size: $font-size-4x-large; }
+
+                .style-guide__line-height-none { line-height: $line-height-none; }
+                .style-guide__line-height-x-small { line-height: $line-height-x-small; }
+                .style-guide__line-height-small { line-height: $line-height-small; }
+                .style-guide__line-height { line-height: $line-height; }
+                .style-guide__line-height-large { line-height: $line-height-large; }
+                .style-guide__line-height-x-large { line-height: $line-height-x-large; }
+
+                .style-guide__letter-spacing-x-small { letter-spacing: $letter-spacing-x-small; }
+                .style-guide__letter-spacing-small { letter-spacing: $letter-spacing-small; }
+                .style-guide__letter-spacing { letter-spacing: $letter-spacing; }
+                .style-guide__letter-spacing-large { letter-spacing-large: $letter-spacing-large; }
+                .style-guide__letter-spacing-x-large { letter-spacing: $letter-spacing-x-large; }
+                .style-guide__letter-spacing-2x-large { letter-spacing: $letter-spacing-2x-large; }
+
+

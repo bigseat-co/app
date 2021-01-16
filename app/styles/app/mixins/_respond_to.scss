@@ -1,0 +1,30 @@
+/*------------------------------------*\
+   #RESPOND-TO
+\*------------------------------------*/
+
+/**
+ * Used to create a media query within a Sass selector.
+ * The breakpoints are based on settings/_breakpoints.scss
+ */
+
+$breakpoints: (
+    'small':  #{$breakpoint-small},
+    'medium': #{$breakpoint-medium},
+    'large':   #{$breakpoint-large},
+    'x-large': #{$breakpoint-x-large},
+    '2x-large': #{$breakpoint-2x-large}
+);
+
+@mixin respond-to($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)), print {
+            @content;
+        }
+
+    } @else {
+        @warn 'The breakpoint #{$breakpoint} is not registered in mixins/_respond_to.scss';
+    }
+
+}

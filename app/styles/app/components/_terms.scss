@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #TERMS
+\*------------------------------------*/
+
+.terms {}
+
+    .terms__title {
+        font-size: $font-size-2x-large;
+        font-weight: $font-weight-extra-bold;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .terms__content {
+        p {
+          margin: ($spacing-unit * 2) 0;
+        }
+    }

@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #UPLOAD-ZONE
+\*------------------------------------*/
+
+.upload-zone {
+    margin: 0 auto;
+    margin-top: $spacing-unit * 4;
+    padding: ($spacing-unit * 6) ($spacing-unit * 4);
+    max-width: 90%;
+    border: 1px dashed $gray-500;
+
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+    .upload-zone__title {
+        color: $gray-500;
+        font-size: $font-size-x-large;
+        font-weight: $font-weight-semi-bold;
+        letter-spacing: $letter-spacing-small;
+    }

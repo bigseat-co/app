@@ -1,0 +1,47 @@
+<div class="people">
+  {{#if this.showRecords}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Person</th>
+          <th>Last visit</th>
+          <th>Visits</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each (array 1 2 3 4 5 6 7 8 9 10)}}
+          <tr>
+            <td>
+              <p class="table__group">
+                <span class="table__group-key"><strong>Jeremie Ges</strong></span>
+                <span class="table__group-value">jeremie@syatt.io</span>
+              </p>
+            </td>
+            <td>
+              <p class="table__group">
+                <span class="table__group-key">October 3, 2020</span>
+                <span class="table__group-value">a week ago</span>
+              </p>
+            </td>
+            <td>
+              10
+            </td>
+            <td>
+              <a href="#" class="button button--primary button--small">Edit member</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div class="empty-state">
+      <div class="empty-state__asset empty-state__asset--people">
+        {{inline-svg "illustrations/work" class="svg"}}
+      </div>
+
+      <h1 class="empty-state__title">{{t "admin.people.no_results.title"}}</h1>
+      <p class="empty-state__description">{{t "admin.people.no_results.description"}}</p>
+   </div>
+  {{/if}}
+</div>

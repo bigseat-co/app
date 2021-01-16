@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    #LAYOUT-ADMIN
+\*------------------------------------*/
+
+.layout-admin {
+    margin: 0 auto;
+    max-width: $breakpoint-2x-large;
+}
+
+    .layout-admin__wrapper {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 350px 1fr;
+    }
+
+        .layout-admin__sidebar {
+            align-self: start;
+        }
+
+        .layout-admin__main {
+            position: relative;
+            margin: $spacing-unit * 5;
+            margin-left: 0;
+            padding: $spacing-unit * 5;
+            background: $white;
+            border-radius: 6px;
+            box-shadow: $box-shadow;
+        }

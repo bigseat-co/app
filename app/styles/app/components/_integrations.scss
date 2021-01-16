@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #INTEGRATIONS
+\*------------------------------------*/
+
+.integrations {}
+
+    .integrations__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .integrations__item {
+            padding: $spacing-unit;
+            width: 100%;
+
+            @include respond-to('large') {
+                width: calc(100% / 2);
+            }
+
+            @include respond-to('x-large') {
+                width: calc(100% / 3);
+            }
+        }

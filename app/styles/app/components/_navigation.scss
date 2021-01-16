@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    #NAVIGATION
+\*------------------------------------*/
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: ($spacing-unit * 5);
+    padding-right: 0;
+    height: 100vh;
+}
+
+    .navigation__top {}
+
+        .navigation__logo {
+            padding-left: ($spacing-unit * 1.75);
+            font-size: $font-size-2x-large;
+            font-weight: $font-weight-extra-bold;
+            letter-spacing: $letter-spacing-x-small;
+        }
+
+        .navigation__items {
+            margin-top: $spacing-unit * 2;
+        }
+
+            .navigation__item {}
+
+                .navigation__item-link {
+                    display: block;
+                    margin-right: $spacing-unit * 2;
+                    padding: ($spacing-unit / 0.75) ($spacing-unit * 2);
+                    color: $gray-500;
+                    font-weight: $font-weight-normal;
+                    border-radius: 5px;
+
+                    &:hover {
+                        color: $indigo-500;
+                        background-color: $gray-200;
+                    }
+
+                    &.active {
+                        color: $indigo-500;
+                        font-weight: $font-weight-medium;
+                        background-color: $indigo-100;
+                    }
+                }
+
+                    .navigation__item-icon {
+                          margin-right: $spacing-unit;
+                          width: 24px;
+                          vertical-align: middle;
+                          fill: currentColor;
+                    }
+
+    .navigation__bottom {}
+
+        .navigation__delimiter {
+            margin-right: $spacing-unit * 2;
+            border-top: 1px solid $gray-300;
+        }
+
+        .navigation__sub-items {
+            margin-top: $spacing-unit * 2;
+            line-height: $line-height-x-large;
+        }
+
+            .navigation__sub-item {
+                color: $gray-500;
+            }
+
+            .navigation__sub-item--username {
+                margin-top: $spacing-unit * 3;
+                color: $black;
+                font-weight: $font-weight-medium;
+            }
+
+                .navigation__sub-item-link {
+                    display: block;
+                }

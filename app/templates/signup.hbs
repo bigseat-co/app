@@ -1,0 +1,106 @@
+<div class="signup">
+  <div class="signup__wrapper">
+    <div class="signup__intro">
+      <h3 class="signup__title">Welcome to BigSeat.</h3>
+      <div class="signup__description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis orci sed ligula mattis lacinia. Etiam volutpat mattis orci, et ullamcorper enim tincidunt eu. Vivamus vitae tempor est, vel ornare tortor.</p>
+
+        <p>Pellentesque consequat dapibus lorem a consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+        <p>Mauris ac ipsum luctus, placerat leo vel, laoreet elit. Aenean leo diam, hendrerit vel lorem a, venenatis condimentum tellus. Aenean sit amet leo ac diam condimentum semper non id massa. Morbi porttitor libero in mi tempor tincidunt. Duis sed euismod nisi. Donec vitae sem velit.</p>
+      </div>
+    </div>
+    <div class="signup__form">
+      <div class="signup__asset">
+        {{inline-svg "illustrations/files" class="svg"}}
+      </div>
+
+      <form class="form">
+        <div class="grid grid--large">
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="email" class="form__label">Email</label>
+              <Input @id="email" @type="text" @placeholder="hello@gmail.com" class="form__input" />
+            </div>
+          </div>
+
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="company" class="form__label">Company</label>
+              <Input @id="company" @type="text" @placeholder="Smith Corp." class="form__input" />
+            </div>
+          </div>
+
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="first_name" class="form__label">First Name</label>
+              <Input @id="first_name" @type="text" @placeholder="John" class="form__input" />
+            </div>
+          </div>
+
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="last_name" class="form__label">Last name</label>
+              <Input @id="last_name" @type="text" @placeholder="Smith" class="form__input" />
+            </div>
+          </div>
+
+          <div class="grid__cell">
+            <div class="form__group">
+              <label for="password" class="form__label">Password</label>
+              <Input @id="password" @type="password" class="form__input"/>
+            </div>
+          </div>
+
+          <div class="grid__cell">
+            <div class="form__group">
+                <div class="grid grid--middle">
+                  <div class="grid__cell grid__cell--10">
+                    <Input @id="terms" @type="checkbox" class="form__input" />
+                  </div>
+                  <div class="grid__cell grid__cell--90">
+                    <label for="terms" class="form__label form__label--terms">
+                      I agree to BigSeat's <button type="button" class="text-button text-button--primary" {{on "click" this.toggleTerms}}>Terms of Service</button> and the use of personal data as explained in BigSeat's <button type="button" class="text-button text-button--primary" {{on "click" this.togglePrivacy}}>Privacy Policy</button>.
+                    </label>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="grid__cell">
+            <div class="form__group">
+              <button type="button" {{on "click" this.submitForm}} class="button button--primary button--full">Sign up free</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{#if isShowingTerms}}
+  <ModalDialog
+      @onClose={{this.toggleTerms}}
+      @targetAttachment="none"
+      @translucentOverlay="true"
+      @wrapperClass="centered-scrolling"
+      @overlayClass="centered-scrolling__overlay"
+      @containerClass="centered-scrolling__container"
+  >
+    <Terms />
+  </ModalDialog>
+{{/if}}
+
+
+{{#if isShowingPrivacy}}
+  <ModalDialog
+      @onClose={{this.togglePrivacy}}
+      @targetAttachment="none"
+      @translucentOverlay="true"
+      @wrapperClass="centered-scrolling"
+      @overlayClass="centered-scrolling__overlay"
+      @containerClass="centered-scrolling__container"
+  >
+    <Privacy />
+  </ModalDialog>
+{{/if}}

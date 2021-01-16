@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #SVG
+\*------------------------------------*/
+
+
+.svg {
+    max-width: 100%;
+
+    .room-editor__thumbnails-add & {
+        @include center;
+        width: 40px;
+    }
+
+    .card-integration__status & {
+        width: 15px;
+        vertical-align: bottom;
+        fill: currentColor;
+    }
+}

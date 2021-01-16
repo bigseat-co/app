@@ -1,0 +1,121 @@
+/*------------------------------------*\
+    #BUTTON
+\*------------------------------------*/
+
+.button {
+    @include button-reset;
+    display: inline-block;
+    padding: $spacing-unit ($spacing-unit * 1.5);
+    color: $white;
+    font-size: $font-size;
+    font-weight: $font-weight-medium;
+    line-height: $line-height;
+    background-color: $gray-500;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    outline: 0;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($gray-500, 0.5);
+    }
+}
+
+/**
+ * Colors
+ */
+
+.button--primary {
+    background-color: $indigo-500;
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($indigo-500, 0.5);
+    }
+}
+
+.button--success {
+    background-color: $green-500;
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($green-500, 0.5);
+    }
+}
+
+.button--danger {
+    background-color: $red-500;
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($red-500, 0.5);
+    }
+}
+
+.button--outline {
+    color: $gray-500;
+    background-color: $white;
+    border-color: $gray-500;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.button--primary-outline {
+    color: $indigo-500;
+    background-color: $white;
+    border-color: $indigo-500;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.button--success-outline {
+    color: $green-500;
+    background-color: $white;
+    border-color: $green-500;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.button--danger-outline {
+    color: $red-500;
+    background-color: $white;
+    border-color: $red-500;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+
+/**
+ * Sizes
+ */
+
+.button--small {
+    padding: ($spacing-unit * 0.5) $spacing-unit;
+    font-size: $font-size-small;
+}
+
+.button--large {
+    padding: $spacing-unit ($spacing-unit * 2.5);
+    font-size: $font-size-large;
+}
+
+.button--x-large {
+    padding: ($spacing-unit * 1.5) ($spacing-unit * 3.5);
+    font-size: $font-size-large;
+}
+
+.button--full {
+    display: block;
+    width: 100%;
+    text-align: center;
+}

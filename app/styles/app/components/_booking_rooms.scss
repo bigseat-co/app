@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    #BOOKING-ROOMS
+\*------------------------------------*/
+
+.booking-rooms {}
+
+    .booking-rooms__items {
+        padding: $spacing-unit * 4;
+    }
+
+        .booking-rooms__item {
+            display: flex;
+            margin-bottom: $spacing-unit * 3;
+        }
+
+            .booking-rooms__thumbnail {
+                max-width: 150px;
+            }
+
+                .booking-rooms__thumbnail-picture {}
+
+            .booking-rooms__content {
+                padding-left: $spacing-unit * 2;
+                //padding: $spacing-unit;
+            }
+
+                .booking-rooms__title {
+                    font-size: $font-size-x-large;
+                    font-weight: $font-weight-bold;
+                    letter-spacing: $letter-spacing-x-small;
+                }
+
+                .booking-rooms__availability {}
+
+                .booking-rooms__description {}

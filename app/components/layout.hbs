@@ -1,0 +1,35 @@
+{{#if this.isAdminLayout}}
+  <div class="layout-admin">
+    <div class="layout-admin__wrapper">
+      <div class="layout-admin__sidebar">
+        <Navigation />
+      </div>
+      <div class="layout-admin__main">
+        {{yield}}
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+{{#if this.isBookingLayout}}
+  <div class="layout-booking">
+    <div class="layout-booking__wrapper">
+      <div class="layout-booking__header">
+        <h1 class="layout-booking__logo">
+          BigSeat.
+        </h1>
+        <h2 class="layout-booking__title">
+          Book a seat
+        </h2>
+      </div>
+      <div class="layout-booking__main">
+        {{yield}}
+      </div>
+      <div class="layout-booking__footer">
+        <LinkTo @route="booking.privacy" class="link link--secondary">Privacy Policy</LinkTo>
+        -
+        <LinkTo @route="booking.terms" class="link link--secondary">Terms of use</LinkTo>
+      </div>
+    </div>
+  </div>
+{{/if}}

@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #LOADER
+\*------------------------------------*/
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+    .loader__ring {
+        display: block;
+        position: absolute;
+        margin: 2px;
+        width: 16px;
+        height: 16px;
+        border: 2px solid $white;
+        border-color: $white transparent transparent transparent;
+        border-radius: 50%;
+        box-sizing: border-box;
+        animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+
+    .loader__ring--second {
+        animation-delay: -0.45s;
+    }
+
+    .loader__ring--third {
+        animation-delay: -0.3s;
+    }
+
+    .loader__ring--fourth {
+        animation-delay: -0.15s;
+    }

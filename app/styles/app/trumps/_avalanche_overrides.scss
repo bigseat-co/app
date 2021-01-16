@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #AVALANCHE-OVERRIDES
+\*------------------------------------*/
+
+/**
+ * So the font-size in a .grid__cell follows
+ * our body {} font defaults (ie. /app/generic/_global.scss).
+ */
+.#{avCreateElementClassName()}{
+    font-size: $font-size-small;
+
+    @include respond-to('medium') {
+        font-size: $font-size;
+    }
+}

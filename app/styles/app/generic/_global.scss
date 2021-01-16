@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    #GLOBAL
+\*------------------------------------*/
+
+/**
+ * 1. ensure the page is always at least the height of the viewport
+ * 2. ensure OSX fonts will look more consistent with other OSes that do not
+ *    utilize sub-pixel anti-aliasing.
+ * 3. changing this value will potentially break inline-block based layout
+ * 4. ensure browsers will not automatically zoom fonts.
+ * 5. ensure all pages, regardless of the height of thier content, have a right-
+ *    hand scrollbar to prevent visual jittering between pages.
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%; /* [1] */
+    color: $black;
+    font-size:  $root-font-size;
+    font-family: $font-family-primary;
+    letter-spacing: normal; /* [3] */
+    text-size-adjust: 100%; /* [4] */
+    background-color: $gray-100;
+    -moz-osx-font-smoothing: grayscale; /* [2] */
+    -webkit-font-smoothing:  antialiased; /* [2] */
+    overflow-y: scroll; /* [5] */
+}
+
+/**
+ * If you tweak the font-size
+ * take a look at /app/trumps/avalanche_overrides.scss
+ */
+body {
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: $line-height;
+
+    @include respond-to('medium') {
+        font-size: $font-size;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input:focus,
+input:active {
+    outline: 0;
+}
+
+strong {
+    font-weight: $font-weight-bold;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+code {
+    line-height: $line-height;
+}
+
+select {
+    display: none;
+}
+
+img {
+  max-width: 100%;
+}
+

@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    #SHIMMER-EFFECT
+\*------------------------------------*/
+
+/**
+ * Inspired from https://github.com/zalog/placeholder-loading
+ */
+
+/// Adds a fancy shimmer effect. Useful to represent a loading state.
+///
+/// @param {Color} $color - Color of the shimmer
+/// @param {Animation Duration} $animation-duration
+///
+/// @example scss - SVG mixin
+///     .block {
+///         @include shimmer-effect($color: red, $animation-duration: 3s);
+///     }
+
+@keyframes shimmer-effect {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(150%, 0, 0);
+    }
+}
+
+$shimmer-effect-color: #ffffff !default;
+$shimmer-effect-animation-duration: 1s !default;
+
+@mixin shimmer-effect($color: $shimmer-effect-color, $animation-duration: $shimmer-effect-animation-duration) {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -50%;
+        z-index: 1;
+        width: 100%;
+        background: linear-gradient(to right, rgba($color, 0) 32%, rgba($color, 0.15) 50%, rgba($color, 0) 64%) 50% 50%;
+        animation: shimmer-effect $animation-duration linear infinite;
+    }
+}

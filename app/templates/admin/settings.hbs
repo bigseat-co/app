@@ -1,0 +1,64 @@
+<Layout @type="admin">
+  <div class="settings">
+    <div class="form">
+      <div class="settings__section">
+        <h2 class="settings__title">Account</h2>
+        <p class="settings__description">You can manage your account from there</p>
+
+        <div class="grid grid--huge">
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="email" class="form__label">Email</label>
+              <input id="email" type="text" name="email" placeholder="user@bigseat.co" class="form__input" />
+            </div>
+          </div>
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="password" class="form__label">Password</label>
+              <input id="password" type="password" name="password" class="form__input" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings__section">
+        <h2 class="settings__title">Contact</h2>
+        <p class="settings__description">Who is the person we address ourselves to?</p>
+
+        <div class="grid grid--huge">
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="first_name" class="form__label">First name</label>
+              <input id="first_name" type="text" name="first_name" placeholder="Laurent" class="form__input" />
+            </div>
+          </div>
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="last_name" class="form__label">Last name</label>
+              <input id="last_name" type="text" name="last_name" placeholder="Schaffner" class="form__input" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings__section">
+        <h2 class="settings__title">Company</h2>
+        <p class="settings__description">What's your company?</p>
+
+        <div class="grid grid--huge">
+          <div class="grid__cell grid__cell--50">
+            <div class="form__group">
+              <label for="company_name" class="form__label">Name</label>
+              <input id="company_name" type="text" name="company_name" placeholder="Syatt HQ" class="form__input" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings__footer">
+        <button class="button button--danger-outline">Sign-out</button>
+        <button class="button button--primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</Layout>
