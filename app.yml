@@ -13,3 +13,5 @@ static_sites:
   name: app
   routes:
   - path: /
+  catchall_document:
+    index.html
