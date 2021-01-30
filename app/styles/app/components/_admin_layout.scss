@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #ADMIN-LAYOUT
+\*------------------------------------*/
+
+.admin-layout {
+    margin: 0 auto;
+    max-width: $breakpoint-2x-large;
+}
+
+    .admin-layout__sidebar {
+        position: fixed;
+        background: gray;
+        width: $sidebar-width;
+        align-self: start;
+    }
+
+    .admin-layout__main {
+        flex: auto;
+        position: relative;
+        min-height: 100%;
+        margin-left: $sidebar-width;
+        padding: $spacing-unit * 5;
+        margin-top: $spacing-unit * 5;
+        margin-bottom: $spacing-unit * 5;
+        background: $white;
+        height: calc(100vh - #{$spacing-unit * 10});
+        border-radius: 6px;
+        box-shadow: $box-shadow;
+        background: white;
+    }

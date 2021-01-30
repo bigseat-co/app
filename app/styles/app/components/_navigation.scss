@@ -9,9 +9,8 @@
     justify-content: space-between;
     padding: 0;
     padding-bottom: 100px;
-    min-width: 250px;
+    min-width: $sidebar-width;
     height: 100vh;
-
 }
 
     .navigation__top {}
@@ -56,7 +55,9 @@
                           fill: currentColor;
                     }
 
-    .navigation__bottom {}
+    .navigation__bottom {
+        padding-left: $spacing-unit * 1.75;
+    }
 
         .navigation__delimiter {
             margin-right: $spacing-unit * 2;

@@ -23,8 +23,8 @@
 
 @import 'app/components/example';
 @import 'app/components/style_guide';
-@import 'app/components/layout_admin';
-@import 'app/components/layout_booking';
+@import 'app/components/admin_layout';
+@import 'app/components/booking_layout';
 @import 'app/components/navigation';
 @import 'app/components/empty_state';
 @import 'app/components/button';
@@ -42,7 +42,6 @@
 @import 'app/components/grid';
 @import 'app/components/settings';
 @import 'app/components/rooms';
-@import 'app/components/layout_booking';
 @import 'app/components/card_integration';
 @import 'app/components/integrations';
 @import 'app/components/text_button';

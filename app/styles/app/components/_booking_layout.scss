@@ -1,29 +1,29 @@
 /*------------------------------------*\
-    #LAYOUT-BOOKING
+    #BOOKING-LAYOUT
 \*------------------------------------*/
 
-.layout-booking {
+.booking-layout {
     margin: 0 auto;
     max-width: $breakpoint-x-large;
 }
 
-    .layout-booking__wrapper {
+    .booking-layout__wrapper {
         margin-top: $spacing-unit * 4;
     }
 
-        .layout-booking__header {
+        .booking-layout__header {
             display: flex;
             align-items: center;
         }
 
-            .layout-booking__logo {
+            .booking-layout__logo {
                 flex: 1;
                 font-size: $font-size-2x-large;
                 font-weight: $font-weight-extra-bold;
                 letter-spacing: $letter-spacing-x-small;
             }
 
-            .layout-booking__title {
+            .booking-layout__title {
                 font-size: $font-size-large;
                 font-weight: $font-weight-bold;
                 letter-spacing: $letter-spacing-small;
@@ -31,7 +31,7 @@
                 flex: 1;
             }
 
-        .layout-booking__main {
+        .booking-layout__main {
             background-color: $white;
             min-height: 600px;
             border-radius: 6px;
@@ -39,7 +39,7 @@
 
         }
 
-        .layout-booking__footer {
+        .booking-layout__footer {
             margin-top: $spacing-unit * 4;
             text-align: center;
             color: $gray-500;
