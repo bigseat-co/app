@@ -19,11 +19,10 @@
         position: relative;
         min-height: 100%;
         margin-left: $sidebar-width;
-        padding: $spacing-unit * 5;
+        padding: $spacing-unit * 1.5;
         margin-top: $spacing-unit * 5;
-        margin-bottom: $spacing-unit * 5;
         background: $white;
-        height: calc(100vh - #{$spacing-unit * 10});
+        min-height: calc(100vh - #{$spacing-unit * 10});
         border-radius: 6px;
         box-shadow: $box-shadow;
         background: white;

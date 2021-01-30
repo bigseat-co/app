@@ -10,7 +10,7 @@
     }
 
         .integrations__item {
-            padding: $spacing-unit;
+            padding: $spacing-unit * 1.5;
             width: 100%;
 
             @include respond-to('large') {
