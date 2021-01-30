@@ -7,20 +7,21 @@
     max-width: $breakpoint-2x-large;
 }
 
-    .layout-admin__wrapper {
-        display: grid;
-        height: 100vh;
-        grid-template-columns: 350px 1fr;
-    }
+    .layout-admin__wrapper {}
 
         .layout-admin__sidebar {
+            position: fixed;
+            background: gray;
+            width: $sidebar-width;
             align-self: start;
         }
 
         .layout-admin__main {
+            flex: auto;
             position: relative;
-            margin: $spacing-unit * 5;
-            margin-left: 0;
+            min-height: 100%;
+            margin: 50px 0;
+            margin-left: 250px;
             padding: $spacing-unit * 5;
             background: $white;
             border-radius: 6px;
