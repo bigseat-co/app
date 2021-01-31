@@ -41,7 +41,7 @@
                         background-color: $gray-200;
                     }
 
-                    &.active {
+                    &.is-active {
                         color: $indigo-500;
                         font-weight: $font-weight-medium;
                         background-color: $indigo-100;
@@ -69,9 +69,7 @@
             line-height: $line-height-x-large;
         }
 
-            .navigation__sub-item {
-                color: $gray-500;
-            }
+            .navigation__sub-item {}
 
             .navigation__sub-item--username {
                 margin-top: $spacing-unit * 3;
@@ -81,4 +79,10 @@
 
                 .navigation__sub-item-link {
                     display: block;
+                    color: $gray-500;
+
+                    &.is-active {
+                        color: $indigo-500;
+                        font-weight: $font-weight-medium;
+                    }
                 }

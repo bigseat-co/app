@@ -1,4 +1,4 @@
 import Model, { attr } from '@ember-data/model';
 
-export default class RoomModel extends Model {
+export default class SpaceModel extends Model {
 }

@@ -4,24 +4,29 @@ admin:
       title: There's no analytics so far
       description: You need to use the app more so that some metrics can be digested.
 
+  billing:
+    no_results:
+      title: Good news! This is an open beta.
+      description: Our app is currently free and unlimited for our early customers.
+
   labels:
     email: Email
     password: Password
 
   people:
     no_results:
-      title: No one booked so far
-      description: You need more people booking to be able to manage them here.
+      title: You don't have any team mates
+      description: You need to add more people to your organization to have more information here.
 
-  rooms:
+  spaces:
     add_pictures:
-      title: Please add pictures of your room
+      title: Please add pictures of your space
       description: Once those pictures are uploaded, you can assign people to different desks.
       drop_files_here: Drop files here or click to upload
-    new_room: Create my first room
+    new_space: Create my first space
     no_results:
-      title: You don't have any room yet
-      description: By creating a room, you'll be able to pin your desks and assign people to them according to your planning.
+      title: You don't have any space yet
+      description: By creating a space, you'll be able to pin your desks and assign people to them according to your planning.
 
   signin:
     welcome_back: Happy to see you again!

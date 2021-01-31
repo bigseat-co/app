@@ -3,7 +3,7 @@
     <LinkTo @route="application" class="navigation__logo">BigSeat</LinkTo>
     <ul class="navigation__items">
       <li class="navigation__item">
-        <LinkTo @route="admin.rooms" @query="{{hash showRecords="true"}}" class="navigation__item-link">
+        <LinkTo @route="admin.spaces" @query="{{hash showRecords="true"}}" class="navigation__item-link">
           {{inline-svg "icons/stack" class="navigation__item-icon"}} Spaces
         </LinkTo>
       </li>
@@ -31,7 +31,7 @@
         <a href="#" class="navigation__sub-item-link">Help Center</a>
       </li>
       <li class="navigation__sub-item">
-        <a href="#" class="navigation__sub-item-link">Billing</a>
+        <LinkTo @route="admin.billing" class="navigation__sub-item-link">Billing</LinkTo>
       </li>
       <li class="navigation__sub-item navigation__sub-item--username">
         <LinkTo @route="admin.settings" class="navigation__sub-item-link">

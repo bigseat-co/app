@@ -8,7 +8,7 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
   this.route('admin', { path: '/' }, function () {
-    this.route('rooms', { path: '/spaces' }, function () {
+    this.route('spaces', function () {
       this.route('new');
       this.route('edit');
     });
@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('plugins', function () {});
     this.route('people', function () {});
     this.route('settings');
+    this.route('billing', function() {});
   });
 
   this.route('booking', function () {

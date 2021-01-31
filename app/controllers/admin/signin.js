@@ -15,7 +15,7 @@ export default class AdminSiginController extends Controller {
     later(this, function () {
       this.set('isProcessing', false);
       this.auth.signIn();
-      this.transitionToRoute('admin.rooms');
+      this.transitionToRoute('admin.spaces');
     }, 2000);
   }
 }
