@@ -1,11 +1,11 @@
 admin:
   analytics:
-    no_results:
+    no-results:
       title: There's no analytics so far
       description: You need to use the app more so that some metrics can be digested.
 
   billing:
-    no_results:
+    no-results:
       title: Good news! This is an open beta.
       description: Our app is currently free and unlimited for our early customers.
 
@@ -14,7 +14,7 @@ admin:
     password: Password
 
   people:
-    no_results:
+    no-results:
       title: You don't have any team mates
       description: You need to add more people to your organization to have more information here.
 
@@ -34,6 +34,12 @@ admin:
     description: Sign-in to access your account
     email_placeholder: john.smith@gmail.com
     submit: Sign-in
+
+check-in:
+  index:
+    title: Check-in Completed
+    punchline: It's all settled.
+    close_page: You can close the page
 
 site_name: BigSeat.
 
