@@ -1,36 +1,36 @@
 /*------------------------------------*\
-    #CARD-INTEGRATION
+    #PLUGIN-CARD
 \*------------------------------------*/
 
-$card-integration-padding: $spacing-unit * 3 !default;
+$plugin-card-padding: $spacing-unit * 3 !default;
 
-.card-integration {
+.plugin-card {
     height: 100%;
     border: 1px solid $gray-300;
     border-radius: 6px;
     background: $white;
 }
 
-    .card-integration__wrapper {
+    .plugin-card__wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: $card-integration-padding;
+        padding: $plugin-card-padding;
         height: 100%;
     }
-        .card-integration__body {}
+        .plugin-card__body {}
 
-            .card-integration__header {
+            .plugin-card__header {
                 display: flex;
                 justify-content: space-between;
             }
 
-                .card-integration__logo {
+                .plugin-card__logo {
                     width: 100%;
                     max-width: 50px;
                 }
 
-                .card-integration__status {
+                .plugin-card__status {
                     color: $gray-500;
                     font-size: $font-size-small;
                     font-weight: $font-weight-normal;
@@ -38,26 +38,26 @@ $card-integration-padding: $spacing-unit * 3 !default;
                     line-height: $line-height-none;
                 }
 
-                .card-integration__status--enabled {
+                .plugin-card__status--enabled {
                     color: $green-500;
                 }
 
-                .card-integration__status--disabled {}
+                .plugin-card__status--disabled {}
 
-            .card-integration__content {}
+            .plugin-card__content {}
 
-                .card-integration__title {
+                .plugin-card__title {
                     margin-top: $spacing-unit * 2;
                     font-size: $font-size-x-large;
                     font-weight: $font-weight-semi-bold;
                     letter-spacing: $letter-spacing-x-small;
                 }
 
-                .card-integration__description {
+                .plugin-card__description {
                     margin-top: $spacing-unit * 2;
                     margin-bottom: $spacing-unit * 4;
                     font-size: $font-size;
                     line-height: $line-height;
                 }
 
-        .card-integration__footer {}
+        .plugin-card__footer {}

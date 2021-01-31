@@ -14,7 +14,7 @@ Router.map(function() {
     });
 
     this.route('analytics', function () {});
-    this.route('integrations', { path: 'plugins' });
+    this.route('plugins', function () {});
     this.route('people', function () {});
     this.route('settings');
   });

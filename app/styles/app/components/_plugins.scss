@@ -1,15 +1,15 @@
 /*------------------------------------*\
-    #INTEGRATIONS
+    #PLUGINS
 \*------------------------------------*/
 
-.integrations {}
+.plugins {}
 
-    .integrations__list {
+    .plugins__list {
         display: flex;
         flex-wrap: wrap;
     }
 
-        .integrations__item {
+        .plugins__item {
             padding: $spacing-unit * 1.5;
             width: 100%;
 

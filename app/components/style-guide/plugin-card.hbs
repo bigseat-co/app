@@ -1,0 +1,60 @@
+<h3 class="style-guide__heading style-guide__heading--1">Plugin Card</h3>
+
+<div class="style-guide__section-child">
+  <h4 class="style-guide__heading style-guide__heading--2">Global Example</h4>
+
+  <div class="style-guide__example">
+    <div class="grid grid--huge">
+      <div class="grid__cell grid__cell--50">
+        <div class="plugin-card">
+          <div class="plugin-card__wrapper">
+            <div class="plugin-card__body">
+              <div class="plugin-card__header">
+                <div class="plugin-card__logo">
+                  {{inline-svg "plugins/notion" class="svg"}}
+                </div>
+                <div class="plugin-card__status plugin-card__status--enabled">
+                  {{inline-svg "icons/checkmark" class="svg"}} Enabled
+                </div>
+              </div>
+              <div class="plugin-card__content">
+                <h3 class="plugin-card__title">Notion</h3>
+                <p class="plugin-card__description">
+                  Notion makes all your tools work better by letting you integrate industry-leading software and custom apps right into Slack.<br/>
+                </p>
+              </div>
+            </div>
+            <div class="plugin-card__footer">
+              <button class="button button--success button--full">Configure</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid__cell grid__cell--50">
+        <div class="plugin-card">
+          <div class="plugin-card__wrapper">
+            <div class="plugin-card__body">
+              <div class="plugin-card__header">
+                <div class="plugin-card__logo">
+                  {{inline-svg "plugins/slack" class="svg"}}
+                </div>
+                <div class="plugin-card__status plugin-card__status--disabled">
+                  {{inline-svg "icons/disabled" class="svg"}} Disabled
+                </div>
+              </div>
+              <div class="plugin-card__content">
+                <h3 class="plugin-card__title">Slack</h3>
+                <p class="plugin-card__description">
+                  Slack makes all your tools work better by letting you integrate industry-leading software and custom apps right into Slack.<br/>
+                </p>
+              </div>
+            </div>
+            <div class="plugin-card__footer">
+              <button class="button button--primary button--full">Install</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
