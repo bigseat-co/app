@@ -1,57 +1,56 @@
-@import 'ember-modal-dialog/ember-modal-structure';
-@import 'ember-modal-dialog/ember-modal-appearance';
-
-@import 'app/settings/spacing';
-@import 'app/settings/colors';
-@import 'app/settings/breakpoints';
-@import 'app/settings/grid';
-@import 'app/settings/typography';
-@import 'app/settings/components';
-
 @import 'ember-basic-dropdown';
+@import 'ember-modal-dialog/ember-modal-appearance';
+@import 'ember-modal-dialog/ember-modal-structure';
+
+@import 'app/settings/breakpoints';
+@import 'app/settings/colors';
+@import 'app/settings/components';
+@import 'app/settings/grid';
+@import 'app/settings/spacing';
+@import 'app/settings/typography';
+
 @import 'vendor/avalanche/avalanche';
 
-@import 'app/mixins/respond_to';
+@import 'app/mixins/button-reset';
 @import 'app/mixins/center';
-@import 'app/mixins/shimmer_effect';
-@import 'app/mixins/full_bleed';
-@import 'app/mixins/button_reset';
+@import 'app/mixins/full-bleed';
+@import 'app/mixins/respond-to';
+@import 'app/mixins/shimmer-effect';
 
 @import 'app/generic/fonts';
 @import 'app/generic/reset';
 @import 'app/generic/global';
 
-@import 'app/components/example';
-@import 'app/components/style_guide';
-@import 'app/components/admin_layout';
-@import 'app/components/booking_layout';
-@import 'app/components/navigation';
-@import 'app/components/empty_state';
+@import 'app/components/admin-layout';
+@import 'app/components/booking-calendar';
+@import 'app/components/booking-layout';
+@import 'app/components/booking-rooms';
 @import 'app/components/button';
-@import 'app/components/signup';
-@import 'app/components/svg';
-@import 'app/components/form';
-@import 'app/components/link';
-@import 'app/components/signin';
+@import 'app/components/centered-scrolling';
 @import 'app/components/dropdown';
-@import 'app/components/upload_zone';
-@import 'app/components/not_found';
-@import 'app/components/room_editor';
-@import 'app/components/table';
-@import 'app/components/loader';
+@import 'app/components/empty-state';
+@import 'app/components/example';
+@import 'app/components/form';
 @import 'app/components/grid';
-@import 'app/components/settings';
-@import 'app/components/rooms';
-@import 'app/components/plugin_card';
+@import 'app/components/link';
+@import 'app/components/loader';
+@import 'app/components/navigation';
+@import 'app/components/not-found';
+@import 'app/components/plugin-card';
 @import 'app/components/plugins';
-@import 'app/components/text_button';
-@import 'app/components/centered_scrolling';
 @import 'app/components/privacy';
+@import 'app/components/room-editor';
+@import 'app/components/rooms';
+@import 'app/components/settings';
+@import 'app/components/signin';
+@import 'app/components/signup';
+@import 'app/components/style-guide';
+@import 'app/components/svg';
+@import 'app/components/table';
 @import 'app/components/terms';
-@import 'app/components/booking_rooms';
-@import 'app/components/booking_calendar';
+@import 'app/components/text-button';
+@import 'app/components/upload-zone';
 
-@import 'app/hooks/ember_basic_dropdown';
-@import 'app/hooks/ember_modal_dialog';
-
-@import 'app/trumps/avalanche_overrides';
+@import 'app/hooks/ember-basic-dropdown';
+@import 'app/hooks/ember-modal-dialog';
+@import 'app/hooks/avalanche';
