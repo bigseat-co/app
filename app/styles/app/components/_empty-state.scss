@@ -10,23 +10,18 @@
     .empty-state__asset {
         display: block;
         margin: 0 auto;
-        max-width: 500px;
-    }
-
-    .empty-state__asset--rooms {}
-
-    .empty-state__asset--not-found {
         max-width: 600px;
     }
+
+    .empty-state__asset--spaces {}
+    .empty-state__asset--not-found {}
 
     .empty-state__asset--analytics {
         margin-top: $spacing-unit * 5;
         max-width: 500px;
     }
 
-    .empty-state__asset--add-pictures {
-        max-width: 600px;
-    }
+    .empty-state__asset--add-pictures {}
 
     .empty-state__asset--people {
         margin-top: $spacing-unit * 15;
