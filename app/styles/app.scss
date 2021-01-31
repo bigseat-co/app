@@ -2,13 +2,14 @@
 @import 'ember-modal-dialog/ember-modal-appearance';
 @import 'ember-modal-dialog/ember-modal-structure';
 
+@import 'app/settings/box-shadows';
 @import 'app/settings/breakpoints';
 @import 'app/settings/colors';
 @import 'app/settings/components';
-@import 'app/settings/grid';
 @import 'app/settings/spacing';
 @import 'app/settings/typography';
 
+@import 'app/settings/avalanche';
 @import 'vendor/avalanche/avalanche';
 
 @import 'app/mixins/button-reset';

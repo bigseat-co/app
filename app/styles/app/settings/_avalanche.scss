@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #GRID
+    #AVALANCHE
 \*------------------------------------*/
 
 /**
@@ -8,7 +8,7 @@
  * settings can be found here: https://github.com/colourgarden/avalanche
  */
 
-$av-gutter:  10px;
+$av-gutter:  $spacing-unit;
 $av-widths:  (2, 3, 4, 5, 10);
 
 $av-breakpoint-class-chain:  '-at-';
