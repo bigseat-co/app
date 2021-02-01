@@ -48,4 +48,4 @@ site_name: BigSeat.
 not_found:
   title: Not found
   description: The page you’re looking for cannot be found
-  return_to_root: Back to homepage
+  return_to_root: Return to BigSeat
