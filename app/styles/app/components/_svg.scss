@@ -16,4 +16,9 @@
         vertical-align: bottom;
         fill: currentColor;
     }
+
+    .checkin-confirmation & {
+        width: 100px;
+        fill: $green-500;
+    }
 }

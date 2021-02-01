@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    #CHECKIN-CONFIRMATION
+\*------------------------------------*/
+
+.checkin-confirmation {
+    padding: ($spacing-unit * 8) 0;
+    text-align: center;
+}
+
+    .checkin-confirmation__title {
+        margin-top: $spacing-unit * 2;
+        font-size: $font-size-4x-large;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-none;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .checkin-confirmation__punchline {
+        font-size: $font-size-3x-large;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .checkin-confirmation__excerpt {
+        margin: ($spacing-unit * 4) auto;
+        padding: ($spacing-unit * 4) 0;
+        max-width: 70%;
+        border-top: 1px solid $gray-300;
+        border-bottom: 1px solid $gray-300;
+    }
+
+        .checkin-confirmation__excerpt-thumbnail {
+            max-width: 100px;
+        }
+
+            .checkin-confirmation__excerpt-thumbnail-picture {
+                border-radius: 6px;
+            }
+
+        .checkin-confirmation__excerpt-content {
+            margin-left: $spacing-unit;
+            text-align: left;
+        }
+
+            .checkin-confirmation__excerpt-space {
+                font-size: $font-size-x-large;
+                font-weight: $font-weight-bold;
+                letter-spacing: $letter-spacing-small;
+            }
+
+            .checkin-confirmation__excerpt-details {
+                font-size: $font-size;
+            }
+
+                .checkin-confirmation__excerpt-user {
+                    margin-top: $spacing-unit;
+                    font-weight: $font-weight-bold;
+                }
+
+                .checkin-confirmation__excerpt-time {}
+
+    .checkin-confirmation__footer {
+        color: $green-500;
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+    }

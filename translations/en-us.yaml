@@ -35,11 +35,13 @@ admin:
     email_placeholder: john.smith@gmail.com
     submit: Sign-in
 
-check-in:
+checkin:
+  layout:
+    title: Check-in
   index:
-    title: Check-in Completed
+    title: Check-in completed
     punchline: It's all settled.
-    close_page: You can close the page
+    close_page: You can close this page
 
 site_name: BigSeat.
 

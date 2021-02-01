@@ -1,29 +1,29 @@
 /*------------------------------------*\
-    #CHECK-IN-LAYOUT
+    #CHECKIN-LAYOUT
 \*------------------------------------*/
 
-.check-in-layout {
+.checkin-layout {
     margin: 0 auto;
     max-width: $breakpoint-x-large;
 }
 
-    .check-in-layout__wrapper {
+    .checkin-layout__wrapper {
         margin-top: $spacing-unit * 4;
     }
 
-        .check-in-layout__header {
+        .checkin-layout__header {
             display: flex;
             align-items: center;
         }
 
-            .check-in-layout__logo {
+            .checkin-layout__logo {
                 flex: 1;
                 font-size: $font-size-2x-large;
                 font-weight: $font-weight-extra-bold;
                 letter-spacing: $letter-spacing-x-small;
             }
 
-            .check-in-layout__title {
+            .checkin-layout__title {
                 font-size: $font-size-large;
                 font-weight: $font-weight-bold;
                 letter-spacing: $letter-spacing-small;
@@ -31,7 +31,7 @@
                 flex: 1;
             }
 
-        .check-in-layout__main {
+        .checkin-layout__main {
             background-color: $white;
             min-height: 600px;
             border-radius: 6px;

@@ -25,7 +25,7 @@ Router.map(function() {
     this.route('terms');
   });
 
-  this.route('check-in', function () {});
+  this.route('checkin', function () {});
 
   this.route('signup');
   this.route('signin');
