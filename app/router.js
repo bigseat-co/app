@@ -16,7 +16,10 @@ Router.map(function() {
     this.route('analytics', function () {});
     this.route('plugins', function () {});
     this.route('people', function () {});
-    this.route('settings');
+    this.route('settings', function () {
+      this.route('security');
+      this.route('danger-zone');
+    });
     this.route('billing', function() {});
   });
 

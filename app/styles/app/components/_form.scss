@@ -5,7 +5,7 @@
 .form {}
 
     .form__group {
-        margin-top: $spacing-unit * 2;
+        margin-bottom: $spacing-unit * 2;
     }
 
         .form__label {
@@ -16,6 +16,10 @@
 
             + .form__input {
               margin-top: $spacing-unit / 2;
+            }
+
+            .settings & {
+                font-weight: $font-weight-medium;
             }
         }
 

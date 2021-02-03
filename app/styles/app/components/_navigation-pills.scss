@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #NAVIGATION-PILLS
+\*------------------------------------*/
+
+.navigation-pills {
+    margin-bottom: $spacing-unit * 4;
+}
+
+    .navigation-pills__items {
+        display: flex;
+    }
+
+        .navigation-pills__item {
+            margin-left: $spacing-unit;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+
+            .navigation-pills__item-link {
+                padding: $spacing-unit ($spacing-unit * 1.5);
+                color: $indigo-500;
+                font-weight: $font-weight-medium;
+
+                &.is-active {
+                    background: $indigo-100;
+                    border-radius: 6px;
+                }
+            }
