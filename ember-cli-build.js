@@ -9,9 +9,5 @@ module.exports = function(defaults) {
      }
   });
 
-  app.import('vendor/netlify.toml', {
-    destDir: '/',
-  });
-
   return app.toTree();
 };
