@@ -38,13 +38,13 @@
 
                     &:hover {
                         color: $indigo-500;
-                        background-color: $gray-200;
+                        background-color: $indigo-100;
                     }
 
                     &.is-active {
                         color: $indigo-500;
                         font-weight: $font-weight-medium;
-                        background-color: $indigo-100;
+                        background-color: $indigo-200;
                     }
                 }
 

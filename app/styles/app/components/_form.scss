@@ -31,9 +31,19 @@
 
         .form__input {
             display: block;
-            padding: $spacing-unit * 1.5;
+            padding: ($spacing-unit * 1.25) ($spacing-unit * 1.5);
             width: 100%;
             font-size: $font-size;
             border: 1px solid $gray-400;
-            border-radius: 5px;
+            border-radius: 6px;
+            transition: border-color 0.1s;
+
+            &:hover,
+            &:focus {
+                border-color: $indigo-400;
+            }
+        }
+
+        .form__input--loose {
+            padding: $spacing-unit * 1.5;
         }

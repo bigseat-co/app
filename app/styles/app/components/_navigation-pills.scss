@@ -11,7 +11,7 @@
     }
 
         .navigation-pills__item {
-            margin-left: $spacing-unit;
+            margin-left: $spacing-unit / 2.5;
 
             &:first-of-type {
                 margin-left: 0;
@@ -19,12 +19,18 @@
         }
 
             .navigation-pills__item-link {
-                padding: $spacing-unit ($spacing-unit * 1.5);
-                color: $indigo-500;
-                font-weight: $font-weight-medium;
+                padding: ($spacing-unit * 0.75) ($spacing-unit * 1.25);
+                color: $gray-500;
+                font-size: $font-size;
+                font-weight: $font-weight-semi-bold;
 
                 &.is-active {
-                    background: $indigo-100;
+                    color: $indigo-500;
+                    background: $indigo-200;
                     border-radius: 6px;
+                }
+
+                &:hover {
+                    color: $indigo-500;
                 }
             }

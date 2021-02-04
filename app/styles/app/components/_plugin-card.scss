@@ -6,9 +6,9 @@ $plugin-card-padding: $spacing-unit * 3 !default;
 
 .plugin-card {
     height: 100%;
+    background: $white;
     border: 1px solid $gray-300;
     border-radius: 6px;
-    background: $white;
 }
 
     .plugin-card__wrapper {
@@ -27,15 +27,15 @@ $plugin-card-padding: $spacing-unit * 3 !default;
 
                 .plugin-card__logo {
                     width: 100%;
-                    max-width: 50px;
+                    max-width: 40px;
                 }
 
                 .plugin-card__status {
                     color: $gray-500;
                     font-size: $font-size-small;
-                    font-weight: $font-weight-normal;
-                    text-transform: uppercase;
+                    font-weight: $font-weight-medium;
                     line-height: $line-height-none;
+                    text-transform: uppercase;
                 }
 
                 .plugin-card__status--enabled {

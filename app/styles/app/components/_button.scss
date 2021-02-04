@@ -10,19 +10,21 @@
     font-size: $font-size;
     font-weight: $font-weight-medium;
     line-height: $line-height;
-    background-color: $gray-500;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    box-shadow: $box-shadow;
+    background-color: $white;
+    border: 1px solid $gray-400;
+    color: $black;
+    border-radius: 6px;
     cursor: pointer;
     outline: 0;
+    transition: background-color 0.4s;
 
     &:disabled {
         cursor: not-allowed;
     }
 
+    &:hover,
     &:focus {
-        box-shadow: 0 0 0 3px rgba($gray-500, 0.5);
+        background: $gray-200;
     }
 }
 
@@ -31,26 +33,35 @@
  */
 
 .button--primary {
+    color: $white;
     background-color: $indigo-500;
+    border-color: $indigo-500;
 
+    &:hover,
     &:focus {
-        box-shadow: 0 0 0 3px rgba($indigo-500, 0.5);
+        background-color: $indigo-600;
     }
 }
 
 .button--success {
+    color: $white;
     background-color: $green-500;
+    border-color: $green-500;
 
+    &:hover,
     &:focus {
-        box-shadow: 0 0 0 3px rgba($green-500, 0.5);
+        background-color: $green-600;
     }
 }
 
 .button--danger {
+    color: $white;
     background-color: $red-500;
+    border-color: $red-500;
 
+    &:hover,
     &:focus {
-        box-shadow: 0 0 0 3px rgba($red-500, 0.5);
+        background-color: $red-600;
     }
 }
 
@@ -59,8 +70,9 @@
     background-color: $white;
     border-color: $gray-500;
 
+    &:hover,
     &:focus {
-        box-shadow: none;
+        background-color: $gray-100;
     }
 }
 
@@ -69,8 +81,9 @@
     background-color: $white;
     border-color: $indigo-500;
 
+    &:hover,
     &:focus {
-        box-shadow: none;
+        background-color: $indigo-100;
     }
 }
 
@@ -79,8 +92,9 @@
     background-color: $white;
     border-color: $green-500;
 
+    &:hover,
     &:focus {
-        box-shadow: none;
+        background-color: $green-100;
     }
 }
 
@@ -89,8 +103,9 @@
     background-color: $white;
     border-color: $red-500;
 
+    &:hover,
     &:focus {
-        box-shadow: none;
+        background-color: $red-100;
     }
 }
 
