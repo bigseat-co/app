@@ -8,7 +8,7 @@ A short introduction of this app could easily go here.
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
+* [Node.js](https://nodejs.org/) (with yarn)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
@@ -16,7 +16,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd bigseat`
-* `npm install`
+* `yarn install`
 
 ## Running / Development
 
@@ -46,7 +46,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Push to master and it's ... live!
 
 ## Further Reading / Useful Links
 
