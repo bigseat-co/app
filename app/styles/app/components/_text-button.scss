@@ -4,8 +4,9 @@
 
 .text-button {
     @include button-reset;
-    outline: 0;
+    color: $gray-500;
     cursor: pointer;
+    outline: 0;
 }
 
 .text-button--primary {

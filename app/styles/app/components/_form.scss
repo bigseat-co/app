@@ -11,15 +11,12 @@
         .form__label {
             display: block;
             width: 100%;
-            font-size: $font-size;
-            font-weight: $font-weight-light;
+            color: $gray-500;
+            font-size: $font-size-small;
+            font-weight: $font-weight-medium;
 
             + .form__input {
               margin-top: $spacing-unit / 2;
-            }
-
-            .settings & {
-                font-weight: $font-weight-medium;
             }
         }
 
@@ -31,19 +28,24 @@
 
         .form__input {
             display: block;
-            padding: ($spacing-unit * 1.25) ($spacing-unit * 1.5);
+            padding: ($spacing-unit * 1.5) ($spacing-unit * 1.75);
             width: 100%;
-            font-size: $font-size;
-            border: 1px solid $gray-400;
+            font-family: $font-family-primary;
+            font-weight: $font-weight-light;
+            border: 0;
             border-radius: 6px;
-            transition: border-color 0.1s;
+            box-shadow: 0 0 0 1px $gray-400 inset;
+            transition: box-shadow 0.2s ease;
 
-            &:hover,
-            &:focus {
-                border-color: $indigo-400;
+            &:hover {
+                box-shadow: 0 0 0 1px darken($gray-400, 11%) inset;
             }
-        }
 
-        .form__input--loose {
-            padding: $spacing-unit * 1.5;
+            &:focus {
+                box-shadow: 0 0 0 1px $indigo-500 inset;
+            }
+
+            &[type="checkbox"] {
+                box-shadow: none;
+            }
         }

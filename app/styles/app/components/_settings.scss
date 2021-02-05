@@ -11,6 +11,13 @@
         letter-spacing: $letter-spacing-x-small;
     }
 
+    .settings__subtitle {
+        margin-bottom: $spacing-unit / 1.5;
+        font-size: $font-size-x-large;
+        font-weight: $font-weight-medium;
+        letter-spacing: $letter-spacing-small;
+    }
+
     .settings__content {
         position: relative;
         margin: ($spacing-unit * 2) 0;
@@ -21,7 +28,9 @@
     }
 
         .settings__section {
-            max-width: 65%;
+            @include respond-to('large') {
+                max-width: 65%;
+            }
         }
 
         .settings__description {
