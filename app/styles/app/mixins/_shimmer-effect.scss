@@ -26,7 +26,7 @@
     }
 }
 
-$shimmer-effect-color: #ffffff !default;
+$shimmer-effect-color: $white !default;
 $shimmer-effect-animation-duration: 1s !default;
 
 @mixin shimmer-effect($color: $shimmer-effect-color, $animation-duration: $shimmer-effect-animation-duration) {

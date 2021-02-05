@@ -4,13 +4,13 @@
 
 .navigation {
     display: flex;
-    position: fixed;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
     padding: 0;
     padding-bottom: 100px;
-    min-width: $sidebar-width;
     height: 100vh;
+    min-width: $sidebar-width;
 }
 
     .navigation__top {}

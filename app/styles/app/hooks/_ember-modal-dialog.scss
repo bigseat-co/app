@@ -2,6 +2,8 @@
     #EMBER-MODAL-DIALOG
 \*------------------------------------*/
 
+$ember-modal-dialog-overlay: rgba($black, 0.5);
+
 .ember-modal-overlay.translucent {
-    background-color: rgba($black, 0.5);
+    background-color: $ember-modal-dialog-overlay;
 }

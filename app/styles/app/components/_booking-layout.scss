@@ -24,16 +24,16 @@
             }
 
             .booking-layout__title {
+                flex: 1;
                 font-size: $font-size-large;
                 font-weight: $font-weight-bold;
                 letter-spacing: $letter-spacing-small;
                 text-align: right;
-                flex: 1;
             }
 
         .booking-layout__main {
-            background-color: $white;
             min-height: 600px;
+            background-color: $white;
             border-radius: 6px;
             box-shadow: $box-shadow;
 
@@ -41,6 +41,6 @@
 
         .booking-layout__footer {
             margin-top: $spacing-unit * 4;
-            text-align: center;
             color: $gray-500;
+            text-align: center;
         }

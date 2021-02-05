@@ -6,7 +6,7 @@
  * So the font-size in a .grid__cell follows
  * our body {} font defaults (ie. /app/generic/_global.scss).
  */
-.#{avCreateElementClassName()}{
+.#{avCreateElementClassName()} {
     font-size: $font-size-small;
 
     @include respond-to('medium') {

@@ -6,13 +6,12 @@
     @include button-reset;
     display: inline-block;
     padding: $spacing-unit ($spacing-unit * 1.5);
-    color: $white;
+    color: $black;
     font-size: $font-size;
     font-weight: $font-weight-medium;
     line-height: $line-height;
     background-color: $white;
     border: 1px solid $gray-400;
-    color: $black;
     border-radius: 6px;
     cursor: pointer;
     outline: 0;

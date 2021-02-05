@@ -24,17 +24,16 @@
             }
 
             .checkin-layout__title {
+                flex: 1;
                 font-size: $font-size-large;
                 font-weight: $font-weight-bold;
                 letter-spacing: $letter-spacing-small;
                 text-align: right;
-                flex: 1;
             }
 
         .checkin-layout__main {
-            background-color: $white;
             min-height: 600px;
+            background-color: $white;
             border-radius: 6px;
             box-shadow: $box-shadow;
-
         }
