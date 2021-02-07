@@ -1,12 +1,46 @@
-<div class="empty-state">
-  <div class="empty-state__asset empty-state__asset--add-pictures">
-    {{inline-svg "illustrations/camera" class="svg"}}
+<div class="create-space">
+  <h1 class="create-space__title">Create my space</h1>
+
+  <div class="create-space__section">
+    <h3 class="create-space__subtitle">Essential</h3>
+    <p class="create-space__description">People will book those spaces by the name you define. You can also define the maximum number of people it can welcome at once.</p>
+
+    <div class="form">
+      <div class="grid grid--huge">
+        <div class="grid__cell grid__cell--50">
+          <div class="form__group">
+            <label for="name" class="form__label">Name*</label>
+            <input id="name" type="text" class="form__input" />
+          </div>
+          <div class="form__group">
+            <label for="name" class="form__label">Maximum People</label>
+            <input id="name" type="number" placeholder="0" class="form__input" />
+          </div>
+        </div>
+        <div class="grid__cell grid__cell--50">
+          <div class="form__group">
+            <label class="form__label">Working Days</label>
+            <input id="working-days-start" type="text" class="form__input" />
+            to
+            <input id="working-days-end" type="text" class="form__input" />
+          </div>
+          <div class="form__group">
+            <label class="form__label">Open Hours</label>
+            <div class="form__inputs">
+              <input id="working-days-start" type="text" class="form__input" />
+              to
+              <input id="working-days-end" type="text" class="form__input" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h1 class="empty-state__title">{{t "admin.spaces.add_pictures.title"}}</h1>
-  <p class="empty-state__description">{{t "admin.spaces.add_pictures.description"}}</p>
-
-  <div class="upload-zone" {{on "click" (fn this.attemptUpload this.model)}}>
-    <div class="upload-zone__title">{{t "admin.spaces.add_pictures.drop_files_here"}}</div>
+  <div class="create-space__section">
+    <h3 class="create-space__subtitle">Styling</h3>
+    <p>Upload a picture of the room, office, or whatever you feel illustrate best its spirit.</p>
   </div>
+
+  <button class="button button--primary">Confirm</button>
 </div>

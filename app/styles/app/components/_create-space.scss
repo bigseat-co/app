@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #CREATE-SPACE
+\*------------------------------------*/
+
+.create-space {}
+
+    .create-space__title {
+        padding-bottom: $spacing-unit * 2;
+        font-size: $font-size-3x-large;
+        font-weight: $font-weight-extra-bold;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .create-space__section {
+        padding-top: $spacing-unit * 3;
+        border-top: 1px solid $gray-200;
+    }
+
+        .create-space__subtitle {
+            margin-bottom: $spacing-unit / 1.5;
+            font-size: $font-size-large;
+            font-weight: $font-weight-bold;
+            letter-spacing: $letter-spacing-small;
+        }
+
+        .create-space__description {
+            display: block;
+            margin-bottom: $spacing-unit * 2;
+        }

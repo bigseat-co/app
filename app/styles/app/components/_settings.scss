@@ -11,13 +11,6 @@
         letter-spacing: $letter-spacing-x-small;
     }
 
-    .settings__subtitle {
-        margin-bottom: $spacing-unit / 1.5;
-        font-size: $font-size-x-large;
-        font-weight: $font-weight-medium;
-        letter-spacing: $letter-spacing-small;
-    }
-
     .settings__content {
         position: relative;
         margin: ($spacing-unit * 2) 0;
@@ -36,6 +29,5 @@
         .settings__description {
             display: block;
             margin-bottom: $spacing-unit * 2;
-            font-size: $font-size;
-            font-weight: $font-weight-light;
+            line-height: $line-height-large;
         }

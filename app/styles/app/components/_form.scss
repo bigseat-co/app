@@ -31,7 +31,6 @@
             padding: ($spacing-unit * 1.5) ($spacing-unit * 1.75);
             width: 100%;
             font-family: $font-family-primary;
-            font-weight: $font-weight-light;
             border: 0;
             border-radius: 6px;
             box-shadow: 0 0 0 1px $gray-400 inset;
@@ -42,7 +41,7 @@
             }
 
             &:focus {
-                box-shadow: 0 0 0 1px $indigo-500 inset;
+                box-shadow: 0 0 0 2px $indigo-500 inset;
             }
 
             &[type="checkbox"] {
