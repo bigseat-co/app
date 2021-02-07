@@ -10,7 +10,9 @@
     }
 
         .plugins__item {
-            padding: $spacing-unit * 1.5;
+            padding-right: $spacing-unit;
+            padding-bottom: $spacing-unit * 1.5;
+            padding-left: $spacing-unit;
             width: 100%;
 
             @include respond-to('large') {

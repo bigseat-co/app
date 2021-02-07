@@ -3,20 +3,45 @@
 \*------------------------------------*/
 
 .upload-picture {
-    margin: 0 auto;
-    margin-top: $spacing-unit * 4;
-    padding: ($spacing-unit * 6) ($spacing-unit * 4);
-    max-width: 90%;
-    border: 1px dashed $gray-500;
-
-    &:hover {
-      cursor: pointer;
-    }
+    margin: ($spacing-unit * 2) 0;
+    max-width: 400px;
 }
 
     .upload-picture__title {
+        margin-bottom: $spacing-unit / 2;
+        font-weight: $font-weight-medium;
         color: $gray-500;
-        font-size: $font-size-x-large;
-        font-weight: $font-weight-semi-bold;
-        letter-spacing: $letter-spacing-small;
     }
+
+    .upload-picture__zone {
+        display: flex;
+        align-items: center;
+        padding: ($spacing-unit * 2) ($spacing-unit * 4);
+        border: 2px dashed $gray-400;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+
+
+        &:hover {
+            cursor: pointer;
+            background-color: $gray-100;
+        }
+    }
+
+        .upload-picture__thumbnail {}
+
+            .upload-picture__thumbnail-picture {
+                width: 80px;
+                border-radius: 6px;
+            }
+
+        .upload-picture__content {
+            margin-left: $spacing-unit * 2;
+            text-align: center;
+        }
+
+            .upload-picture__description {
+                font-weight: $font-weight-medium;
+                color: $gray-500;
+            }
+

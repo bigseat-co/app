@@ -6,11 +6,6 @@
 .svg {
     max-width: 100%;
 
-    .room-editor__thumbnails-add & {
-        @include center;
-        width: 40px;
-    }
-
     .plugin-card__status & {
         width: 15px;
         vertical-align: bottom;
@@ -20,5 +15,10 @@
     .checkin-confirmation & {
         width: 100px;
         fill: $green-500;
+    }
+
+    .upload-picture__content & {
+        width: 15px;
+        fill: $gray-500;
     }
 }

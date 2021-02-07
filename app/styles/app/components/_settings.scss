@@ -12,13 +12,6 @@
     }
 
 
-    .settings__subtitle {
-        margin-bottom: $spacing-unit / 1.5;
-        font-size: $font-size-large;
-        font-weight: $font-weight-bold;
-        letter-spacing: $letter-spacing-small;
-    }
-
     .settings__content {
         position: relative;
         margin: ($spacing-unit * 2) 0;
@@ -34,8 +27,25 @@
             }
         }
 
-        .settings__description {
-            display: block;
-            margin-bottom: $spacing-unit * 2;
-            line-height: $line-height-large;
+        .settings__section--delete-account {
+            padding: $spacing-unit * 3;
+            background: $red-100;
+            border-radius: 6px;
         }
+
+            .settings__subtitle {
+                margin-bottom: $spacing-unit / 1.5;
+                font-size: $font-size-large;
+                font-weight: $font-weight-bold;
+                letter-spacing: $letter-spacing-small;
+
+                .settings__section--delete-account & {
+                    color: $red-500;
+                }
+            }
+
+            .settings__description {
+                display: block;
+                margin-bottom: $spacing-unit * 2;
+                line-height: $line-height-large;
+            }
