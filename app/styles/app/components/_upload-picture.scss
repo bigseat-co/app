@@ -1,8 +1,8 @@
 /*------------------------------------*\
-    #UPLOAD-ZONE
+    #UPLOAD-picture
 \*------------------------------------*/
 
-.upload-zone {
+.upload-picture {
     margin: 0 auto;
     margin-top: $spacing-unit * 4;
     padding: ($spacing-unit * 6) ($spacing-unit * 4);
@@ -14,7 +14,7 @@
     }
 }
 
-    .upload-zone__title {
+    .upload-picture__title {
         color: $gray-500;
         font-size: $font-size-x-large;
         font-weight: $font-weight-semi-bold;
