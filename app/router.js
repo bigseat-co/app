@@ -7,33 +7,60 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  /**
+   * Admin
+   */
   this.route('admin', { path: '/' }, function () {
+    this.route('analytics', function () {
+      this.route('index');
+    });
+
+    this.route('billing', function() {
+      this.route('index');
+    });
+
+    this.route('configure-checkin');
+
     this.route('spaces', function () {
       this.route('new');
       this.route('edit');
     });
 
-    this.route('analytics', function () {});
-    this.route('plugins', function () {});
-    this.route('people', function () {});
+    this.route('plugins', function () {
+      this.route('index');
+    });
+
+    this.route('people', function () {
+      this.route('index');
+    });
+
     this.route('settings', function () {
       this.route('security');
       this.route('danger-zone');
     });
-    this.route('billing', function() {});
   });
 
+  /**
+   * Booking
+   */
   this.route('booking', function () {
     this.route('privacy');
     this.route('terms');
   });
 
-  this.route('checkin', function () {});
+  /**
+   * Checkin
+   */
+  this.route('checkin', function () {
+    this.route('index');
+  });
 
-  this.route('signup');
-  this.route('signin');
-
-  this.route('style-guide');
-
+  /**
+   * Root
+   */
   this.route('not-found', { path: '/*path' });
+
+  this.route('signin');
+  this.route('signup');
+  this.route('style-guide');
 });

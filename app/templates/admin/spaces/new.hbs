@@ -13,8 +13,8 @@
             <input id="name" type="text" placeholder="Kitties room" class="form__input" />
           </div>
           <div class="form__group">
-            <label for="name" class="form__label">Maximum People</label>
-            <input id="name" type="number" placeholder="0" class="form__input form__input--width-small" />
+            <label for="max-people" class="form__label">Maximum People</label>
+            <input id="max-people" type="number" placeholder="0" class="form__input form__input--width-small" />
           </div>
         </div>
         <div class="grid__cell grid__cell--70">
@@ -27,9 +27,9 @@
           <div class="form__group">
             <label class="form__label">Open Hours</label>
             <div class="form__inputs">
-              <input id="working-days-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
+              <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
               to
-              <input id="working-days-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
+              <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
             </div>
           </div>
         </div>
@@ -55,5 +55,5 @@
     </div>
   </div>
 
-  <button class="button button--primary">Confirm</button>
+  <LinkTo @route="admin.configure-checkin" class="button button--primary">Confirm</LinkTo>
 </div>

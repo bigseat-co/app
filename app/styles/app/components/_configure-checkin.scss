@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    #CONFIGURE-CHECKIN
+\*------------------------------------*/
+
+.configure-checkin {}
+
+    .configure-checkin__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .configure-checkin__title {
+            padding-bottom: $spacing-unit * 2;
+            font-size: $font-size-4x-large;
+            font-weight: $font-weight-extra-bold;
+            letter-spacing: $letter-spacing-x-small;
+        }
+
+        .configure-checkin__action {}
+
+    .configure-checkin__description {
+        padding-top: $spacing-unit * 3;
+        border-top: 1px solid $gray-200;
+
+        strong {
+            font-weight: $font-weight-semi-bold;
+        }
+    }
+
+    .configure-checkin__content {
+        padding: 0 ($spacing-unit * 2);
+
+        @include respond-to('large') {
+            margin: 0 auto;
+            max-width: 70%;
+        }
+    }
+
+        .configure-checkin__sync {
+            margin: 0 auto;
+            margin-top: $spacing-unit * 6;
+            text-align: center;
+        }
+
+            .configure-checkin__sync-title {
+                font-size: $font-size-2x-large;
+                font-weight: $font-weight-semi-bold;
+                letter-spacing: $letter-spacing-x-small;
+            }
+
+            .configure-checkin__sync-description {
+                margin-top: $spacing-unit;
+            }
+
+        .configure-checkin__cards {
+            display: flex;
+            justify-content: center;
+            margin-top: $spacing-unit * 3;
+        }
+
+            .configure-checkin__card {
+                flex: 1;
+                margin: 0 $spacing-unit * 1.5;
+                padding: $spacing-unit * 3;
+                max-width: 300px;
+                text-align: center;
+                border: 1px solid $gray-300;
+                border-radius: 6px;
+            }
+
+                .configure-checkin__card-title {
+                    margin: ($spacing-unit * 2) 0;
+                    font-size: $font-size-3x-large;
+                    font-weight: $font-weight-semi-bold;
+                    letter-spacing: $letter-spacing-x-small;
+                }
+
+                .configure-checkin__card-asset {
+                    margin: 0 auto;
+                    max-width: 100px;
+                }
