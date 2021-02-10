@@ -12,7 +12,7 @@ Router.map(function() {
    */
   this.route('admin', { path: '/' }, function () {
     this.route('analytics', function () {
-      this.route('index');
+      // Implicit index route automatically defined
     });
 
     this.route('billing', function() {
@@ -35,7 +35,7 @@ Router.map(function() {
     });
 
     this.route('people', function () {
-      this.route('index');
+      // Implicit index route automatically defined
     });
 
     this.route('settings', function () {
@@ -56,7 +56,7 @@ Router.map(function() {
    * Checkin
    */
   this.route('checkin', function () {
-    this.route('index');
+    // Implicit index route automatically defined
   });
 
   /**
