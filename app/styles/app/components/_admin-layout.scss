@@ -13,10 +13,11 @@
     .admin-layout__main {
         flex: auto;
         position: relative;
-        margin-top: $spacing-unit * 5;
+        margin-top: $spacing-unit * 2.5;
+        margin-bottom: $spacing-unit * 2.5;
         margin-left: $sidebar-width;
         padding: $spacing-unit * 3;
-        min-height: calc(100vh - #{$spacing-unit * 10});
+        min-height: calc(100vh - #{$spacing-unit * 5});
         background: $white;
         border-radius: 6px;
         box-shadow: $box-shadow;

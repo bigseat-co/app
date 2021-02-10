@@ -7,9 +7,10 @@
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
+    margin-top: $spacing-unit * 2.5;
+    margin-bottom: $spacing-unit * 2.5;
     padding: 0;
-    padding-bottom: 100px;
-    height: 100vh;
+    height: calc(100vh - #{$spacing-unit * 7.5});
     min-width: $sidebar-width;
 }
 
