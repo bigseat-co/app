@@ -23,24 +23,28 @@
 @import 'app/generic/global';
 
 @import 'app/components/admin-layout';
-@import 'app/components/checkin-layout';
-@import 'app/components/checkin-confirmation';
-@import 'app/components/create-space';
 @import 'app/components/booking-calendar';
 @import 'app/components/booking-layout';
 @import 'app/components/booking-rooms';
 @import 'app/components/button';
 @import 'app/components/centered-scrolling';
+@import 'app/components/checkin-confirmation';
+@import 'app/components/checkin-layout';
+@import 'app/components/configure-checkin';
+@import 'app/components/create-space';
+@import 'app/components/create-team';
 @import 'app/components/dropdown';
 @import 'app/components/empty-state';
 @import 'app/components/example';
 @import 'app/components/form';
 @import 'app/components/grid';
+@import 'app/components/heading-section';
 @import 'app/components/link';
 @import 'app/components/loader';
 @import 'app/components/navigation';
 @import 'app/components/navigation-pills';
 @import 'app/components/not-found';
+@import 'app/components/page-header';
 @import 'app/components/plugin-card';
 @import 'app/components/plugins';
 @import 'app/components/privacy';
@@ -54,8 +58,8 @@
 @import 'app/components/table';
 @import 'app/components/terms';
 @import 'app/components/text-button';
+@import 'app/components/thumbnail';
 @import 'app/components/upload-picture';
-@import 'app/components/configure-checkin';
 
 @import 'app/hooks/ember-basic-dropdown';
 @import 'app/hooks/ember-modal-dialog';

@@ -1,22 +1,26 @@
 <AdminLayout>
   <div class="configure-checkin">
-    <div class="configure-checkin__header">
-      <h1 class="configure-checkin__title">Configure check-in</h1>
-      <div class="configure-checkin__action">
+    <div class="page-header">
+      <div class="page-header__cell">
+        <h1 class="page-header__title">Configure check-in</h1>
+      </div>
+      <div class="page-header__cell">
         <button class="button button--outline">Skip this step for now -></button>
       </div>
     </div>
-    <p class="configure-checkin__description">
+    <div class="configure-checkin__description">
       Each time someone visits the office, he can <strong>check-in</strong> to notify his presence.
-    </p>
+    </div>
     <div class="configure-checkin__content">
       <div class="configure-checkin__sync">
-        <h3 class="configure-checkin__sync-title">
-          Synchronize your team!
-        </h3>
-        <p class="configure-checkin__sync-description">
-          To ease your company setup, you can sync up with one of your favorite tools. No worry, we’ll only ask you the essential to make it work together smoothly.
-        </p>
+        <div class="heading-section">
+          <h3 class="heading-section__title">
+            Synchronize your team!
+          </h3>
+          <p class="heading-section__description">
+            To ease your company setup, you can sync up with one of your favorite tools. No<br/> worry, we’ll only ask you the essential to make it work together smoothly.
+          </p>
+        </div>
       </div>
       <div class="configure-checkin__cards">
         <div class="configure-checkin__card">
@@ -24,11 +28,11 @@
             {{inline-svg "brands/slack" class="svg"}}
           </div>
           <h3 class="configure-checkin__card-title">Slack</h3>
-          <button class="button button--full button--primary">Setup</button>
+          <LinkTo @route="admin.plugins.slack.teams.new" class="button button--full button--primary">Setup</LinkTo>
         </div>
         <div class="configure-checkin__card">
           <div class="configure-checkin__card-asset">
-            {{inline-svg "icons/file-upload" class="svg"}}
+            {{inline-svg "icons/file-convert" class="svg"}}
           </div>
           <h3 class="configure-checkin__card-title">CSV</h3>
           <button class="button button--full button--primary">Setup</button>

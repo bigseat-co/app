@@ -21,4 +21,11 @@
         width: 15px;
         fill: $gray-500;
     }
+
+    .page-header__cell & {
+        display: inline-block;
+        margin-right: $spacing-unit / 2;
+        width: 50px;
+        vertical-align: middle
+    }
 }

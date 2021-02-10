@@ -1,0 +1,81 @@
+<div class="create-team">
+
+  <div class="page-header">
+    <div class="page-header__cell">
+      {{inline-svg "brands/slack" class="svg"}}
+      <h1 class="page-header__title">Slack</h1>
+    </div>
+    <div class="page-header__cell">
+      <button class="button button--outline">Skip this step for now -></button>
+    </div>
+  </div>
+
+  <div class="create-team__content">
+    <div class="heading-section">
+      <h3 class="heading-section__title">
+        Add your team in a few clicks!
+      </h3>
+      <p class="heading-section__description">
+        You can easily add them now to the people list. This can be done manually or through CSV later on if you prefer.
+      </p>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th><!-- Avatar --></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Group</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="thumbnail thumbnail--rounded">
+            <img class="thumbnail__picture" src="/jeremie.jpg" />
+          </div>
+        </td>
+        <td>
+          <strong>Jeremie Ges</strong>
+        </td>
+        <td>
+          jeremie@bigseat.co
+        </td>
+        <td>
+          <button class="button button--small">Regularly in office</button>
+          <button class="button button--small">Mostly remote</button>
+        </td>
+        <td>
+          <button class="button button--small button--danger">Remove</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="thumbnail thumbnail--rounded">
+            <img class="thumbnail__picture" src="/laurent.jpg" />
+          </div>
+        </td>
+        <td>
+          <strong>Laurent Schaffner</strong>
+        </td>
+        <td>
+          laurent@bigseat.co
+        </td>
+        <td>
+          <button class="button button--small">Regularly in office</button>
+          <button class="button button--small">Mostly remote</button>
+        </td>
+        <td>
+          <button class="button button--small button--danger">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="create-team__submit">
+    <button class="button button--primary">Finish setup</button>
+  </div>
+</div>

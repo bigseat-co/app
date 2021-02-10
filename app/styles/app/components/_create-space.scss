@@ -4,16 +4,13 @@
 
 .create-space {}
 
-    .create-space__title {
-        padding-bottom: $spacing-unit * 2;
-        font-size: $font-size-4x-large;
-        font-weight: $font-weight-extra-bold;
-        letter-spacing: $letter-spacing-x-small;
-    }
-
     .create-space__section {
         padding-top: $spacing-unit * 3;
-        border-top: 1px solid $gray-200;
+        border-bottom: 1px solid $gray-200;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
     }
 
         .create-space__subtitle {

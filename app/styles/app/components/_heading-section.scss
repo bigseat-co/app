@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #HEADING-SECTION
+\*------------------------------------*/
+
+.heading-section {
+    text-align: center;
+}
+
+    .heading-section__title {
+        font-size: $font-size-2x-large;
+        font-weight: $font-weight-semi-bold;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .heading-section__description {
+        margin-top: $spacing-unit;
+    }

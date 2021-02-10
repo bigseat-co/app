@@ -27,7 +27,11 @@ Router.map(function() {
     });
 
     this.route('plugins', function () {
-      this.route('index');
+      this.route('slack', function () {
+        this.route('teams', function () {
+          this.route('new');
+        });
+      });
     });
 
     this.route('people', function () {

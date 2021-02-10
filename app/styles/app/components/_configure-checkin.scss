@@ -4,20 +4,6 @@
 
 .configure-checkin {}
 
-    .configure-checkin__header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-        .configure-checkin__title {
-            padding-bottom: $spacing-unit * 2;
-            font-size: $font-size-4x-large;
-            font-weight: $font-weight-extra-bold;
-            letter-spacing: $letter-spacing-x-small;
-        }
-
-        .configure-checkin__action {}
-
     .configure-checkin__description {
         padding-top: $spacing-unit * 3;
         border-top: 1px solid $gray-200;
@@ -29,11 +15,6 @@
 
     .configure-checkin__content {
         padding: 0 ($spacing-unit * 2);
-
-        @include respond-to('large') {
-            margin: 0 auto;
-            max-width: 70%;
-        }
     }
 
         .configure-checkin__sync {
@@ -41,16 +22,6 @@
             margin-top: $spacing-unit * 6;
             text-align: center;
         }
-
-            .configure-checkin__sync-title {
-                font-size: $font-size-2x-large;
-                font-weight: $font-weight-semi-bold;
-                letter-spacing: $letter-spacing-x-small;
-            }
-
-            .configure-checkin__sync-description {
-                margin-top: $spacing-unit;
-            }
 
         .configure-checkin__cards {
             display: flex;

@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    #CREATE-TEAM
+\*------------------------------------*/
+
+.create-team {}
+
+    .create-team__content {
+        margin: ($spacing-unit * 4) 0;
+    }
+
+        .create-team__submit {
+            margin-top: $spacing-unit * 4;
+            text-align: center;
+        }
