@@ -1,0 +1,62 @@
+/*------------------------------------*\
+    #CONFIGURE-BOOKING
+\*------------------------------------*/
+
+$configure-booking-copy-url-radius: 6px !default;
+
+.configure-booking {}
+
+    .configure-booking__description {
+        margin-bottom: $spacing-unit * 4;
+        padding-top: $spacing-unit * 3;
+    }
+
+    .configure-booking__asset {
+        margin: 0 auto;
+        margin-top: $spacing-unit * 2;
+        width: 300px;
+    }
+
+    .configure-booking__copy-url {
+        margin-top: $spacing-unit * 4;
+        text-align: center;
+    }
+
+        .configure-booking__copy-url-container {
+            display: inline-block;
+            height: 50px;
+        }
+
+            .configure-booking__copy-url-input {
+                display: inline-block;
+                padding: ($spacing-unit * 1.5) ($spacing-unit * 1.75);
+                width: 280px;
+                height: 100%;
+                float: left;
+                font-family: $font-family-primary;
+                border: 0;
+                border-bottom-left-radius: $configure-booking-copy-url-radius;
+                border-top-left-radius: $configure-booking-copy-url-radius;
+                box-shadow: $box-shadow-input;
+                transition: box-shadow 0.2s ease;
+
+                &:hover {
+                    box-shadow: $box-shadow-input-on-hover;
+                }
+
+                &:focus {
+                    box-shadow: $box-shadow-input-on-focus;
+                }
+            }
+
+            .configure-booking__copy-url-button {
+                margin-left: -1px; // Hide right side box-shadow `.configure-booking__copy-url-input` for a cleaner look
+                padding: 0;
+                height: 100%;
+                min-width: 150px;
+                float: left;
+                border-width: 2px;
+                border-radius: 0;
+                border-top-right-radius: $configure-booking-copy-url-radius;
+                border-bottom-right-radius: $configure-booking-copy-url-radius;
+            }

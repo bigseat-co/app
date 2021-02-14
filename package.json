@@ -69,5 +69,6 @@
     "edition": "octane"
   },
   "dependencies": {
+    "sass-lint": "^1.13.1"
   }
 }

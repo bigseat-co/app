@@ -12,7 +12,7 @@
     line-height: $line-height;
     background-color: $white;
     border: 1px solid $gray-400;
-    border-radius: 6px;
+    border-radius: $border-radius;
     cursor: pointer;
     outline: 0;
     transition: background-color 0.4s;
@@ -39,6 +39,7 @@
     &:hover,
     &:focus {
         background-color: $indigo-600;
+        border-color: $indigo-600;
     }
 }
 
@@ -50,6 +51,7 @@
     &:hover,
     &:focus {
         background-color: $green-600;
+        border-color: $green-600;
     }
 }
 
@@ -61,6 +63,7 @@
     &:hover,
     &:focus {
         background-color: $red-600;
+        border-color: $red-600;
     }
 }
 

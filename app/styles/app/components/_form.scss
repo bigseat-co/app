@@ -32,16 +32,16 @@
             width: 100%;
             font-family: $font-family-primary;
             border: 0;
-            border-radius: 6px;
-            box-shadow: 0 0 0 1px $gray-400 inset;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow-input;
             transition: box-shadow 0.2s ease;
 
             &:hover {
-                box-shadow: 0 0 0 1px darken($gray-400, 11%) inset;
+                box-shadow: $box-shadow-input-on-hover;
             }
 
             &:focus {
-                box-shadow: 0 0 0 2px $indigo-500 inset;
+                box-shadow: $box-shadow-input-on-focus;
             }
 
             &[type="checkbox"] {

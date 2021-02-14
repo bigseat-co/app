@@ -2,9 +2,10 @@
 @import 'ember-modal-dialog/ember-modal-appearance';
 @import 'ember-modal-dialog/ember-modal-structure';
 
-@import 'app/settings/box-shadows';
+@import 'app/settings/border-radius';
 @import 'app/settings/breakpoints';
 @import 'app/settings/colors';
+@import 'app/settings/box-shadows';
 @import 'app/settings/components';
 @import 'app/settings/spacing';
 @import 'app/settings/typography';
@@ -30,6 +31,7 @@
 @import 'app/components/centered-scrolling';
 @import 'app/components/checkin-confirmation';
 @import 'app/components/checkin-layout';
+@import 'app/components/configure-booking';
 @import 'app/components/configure-checkin';
 @import 'app/components/create-space';
 @import 'app/components/create-team';

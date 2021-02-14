@@ -20,6 +20,7 @@ Router.map(function() {
     });
 
     this.route('configure-checkin');
+    this.route('configure-booking');
 
     this.route('spaces', function () {
       this.route('new');
