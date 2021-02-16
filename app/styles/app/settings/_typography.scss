@@ -34,6 +34,8 @@ $font-size-4x-large: 3.8rem;
  * @source https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping
  */
 
+// TODO - This starts to feel wrong, we should use the units directly.
+
 $font-weight-light:      300;
 $font-weight-normal:     400;
 $font-weight-medium:     500;

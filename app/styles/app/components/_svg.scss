@@ -28,4 +28,15 @@
         width: 50px;
         vertical-align: middle
     }
+
+    .table__actions & {
+        width: 24px;
+        fill: $gray-400;
+        cursor: pointer;
+        transition: fill 0.2s ease;
+    }
+
+    .table__actions:hover & {
+        fill: $gray-500;
+    }
 }

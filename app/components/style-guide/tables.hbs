@@ -3,38 +3,86 @@
 <div class="style-guide__section-child">
   <h4 class="style-guide__heading style-guide__heading--2">Global Example</h4>
 
-  <div class="style-guide__example">
+  <div class="style-guide__example style-guide__example--white-background">
     <table class="table">
       <thead>
         <tr>
           <th>Person</th>
           <th>Last visit</th>
           <th>Visits</th>
-          <th>Actions</th>
+          <th>Status</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            Laurent Schaffner
+            <div class="grid grid--auto grid--middle">
+              <div class="grid__cell">
+                <div class="thumbnail thumbnail--small thumbnail--circle">
+                  <img class="thumbnail__picture" src="/laurent.jpg" />
+                </div>
+              </div>
+              <div class="grid__cell">
+                <p class="table__group">
+                  <span class="table__group-key"><strong>Laurent Schaffner</strong></span>
+                  <span class="table__group-value">laurent@bigseat.co</span>
+                </p>
+              </div>
+            </div>
           </td>
           <td>
-            Yesterday
+            <p class="table__group">
+              <span class="table__group-key">October 10, 2020</span>
+              <span class="table__group-value">yesterday</span>
+            </p>
           </td>
           <td>
             10
           </td>
           <td>
-            <a href="#" class="button button--primary button--small">Edit person</a>
-            <button class="button button--danger button--small" disabled="disabled">Archiving <Loader /></button>
+            <span class="badge badge--warning">Remote</span>
+          </td>
+          <td>
+            <div class="table__actions">
+              <BasicDropdown as |dd|>
+                <dd.Trigger>
+                  {{inline-svg "icons/dots" class="svg"}}
+                </dd.Trigger>
+                <dd.Content>
+                  <div class="dropdown">
+                    <ul class="dropdown__items">
+                      <li class="dropdown__item">
+                        <a class="dropdown__item-link" href="#">Log out</a>
+                      </li>
+                      <li class="dropdown__item">
+                        <a class="dropdown__item-link" href="#">Other action</a>
+                      </li>
+                      <li class="dropdown__item">
+                        <a class="dropdown__item-link" href="#">Yolo</a>
+                      </li>
+                    </ul>
+                  </div>
+                </dd.Content>
+              </BasicDropdown>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <p class="table__group">
-              <span class="table__group-key"><strong>Jeremie Ges</strong></span>
-              <span class="table__group-value">jeremie@syatt.io</span>
-            </p>
+            <div class="grid grid--auto grid--middle">
+              <div class="grid__cell">
+                <div class="thumbnail thumbnail--small thumbnail--circle">
+                  <img class="thumbnail__picture" src="/jeremie.jpg" />
+                </div>
+              </div>
+              <div class="grid__cell">
+                <p class="table__group">
+                  <span class="table__group-key"><strong>Jeremie Ges</strong></span>
+                  <span class="table__group-value">jeremie@bigseat.co</span>
+                </p>
+              </div>
+            </div>
           </td>
           <td>
             <p class="table__group">
@@ -46,20 +94,28 @@
             10
           </td>
           <td>
-            <a href="#" class="button button--primary button--small">Edit person</a>
-            <a href="#" class="button button--danger button--small">Archive person</a>
+            <span class="badge badge--warning">Remote</span>
+          </td>
+          <td>
+            <a href="#" class="table__actions">
+              {{inline-svg "icons/dots" class="svg"}}
+            </a>
           </td>
         </tr>
         <tr>
           <td>
-            <div class="thumbnail">
-              <img class="thumbnail__picture" src="/thumbnail.jpg" />
-            </div>
-            <div class="thumbnail">
-              <img class="thumbnail__picture" src="/thumbnail.jpg" />
-            </div>
-            <div class="thumbnail">
-              <img class="thumbnail__picture" src="/thumbnail.jpg" />
+            <div class="grid grid--auto grid--middle">
+              <div class="grid__cell">
+                <div class="thumbnail thumbnail--small thumbnail--circle">
+                  <img class="thumbnail__picture" src="/thumbnail.jpg" />
+                </div>
+              </div>
+              <div class="grid__cell">
+                <p class="table__group">
+                  <span class="table__group-key"><strong>Grumpy Cat</strong></span>
+                  <span class="table__group-value">grumpy.cat@bigseat.co</span>
+                </p>
+              </div>
             </div>
           </td>
           <td>
@@ -72,8 +128,12 @@
             10
           </td>
           <td>
-            <a href="#" class="button button--primary button--small">Edit person</a>
-            <a href="#" class="button button--danger button--small">Archive person</a>
+            <span class="badge badge--primary">In-office</span>
+          </td>
+          <td>
+            <a href="#" class="table__actions">
+              {{inline-svg "icons/dots" class="svg"}}
+            </a>
           </td>
         </tr>
       </tbody>

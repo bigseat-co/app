@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #BADGE
+\*------------------------------------*/
+
+.badge {
+    padding: ($spacing-unit / 2) $spacing-unit * 1.5;
+    background-color: $gray-300;
+    color: $gray-500;
+    font-weight: $font-weight-medium;
+    border-radius: 20px;
+    font-size: $font-size-small;
+}
+
+.badge--primary {
+    color: $indigo-500;
+    background-color: $indigo-200;
+}
+
+.badge--success {
+  color: $green-500;
+  background-color: $green-200;
+}
+
+.badge--danger {
+  color: $red-500;
+  background-color: $red-200;
+}
+
+.badge--warning {
+    color: $amber-600;
+    background-color: $amber-100;
+}

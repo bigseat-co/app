@@ -29,6 +29,15 @@
       {{/each}}
     </div>
 
+    <h4 class="style-guide__heading style-guide__heading--2">Amber</h4>
+    <div class="style-guide__swatches">
+      {{#each (array 100 200 300 400 500 600 700 800 900) as |variant|}}
+        <div class="style-guide__swatch style-guide__swatch--amber-{{variant}}">
+          <div class="style-guide__swatch-value">{{variant}}</div>
+        </div>
+      {{/each}}
+    </div>
+
     <h4 class="style-guide__heading style-guide__heading--2">Red</h4>
     <div class="style-guide__swatches">
       {{#each (array 100 200 300 400 500 600 700 800 900) as |variant|}}

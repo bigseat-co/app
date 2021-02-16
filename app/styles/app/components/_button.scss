@@ -31,6 +31,11 @@
  * Colors
  */
 
+.button--transparent {
+    background-color: transparent;
+    border-color: transparent;
+}
+
 .button--primary {
     color: $white;
     background-color: $indigo-500;
