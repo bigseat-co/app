@@ -66,4 +66,8 @@ $table-border: 1px solid $gray-300 !default;
             font-size: $font-size-small;
         }
 
-    .table__actions {}
+    .table__actions {
+        &:hover {
+            cursor: pointer;
+        }
+    }

@@ -1,66 +1,128 @@
-<div class="rooms">
+<div class="spaces">
   {{#if this.showRecords}}
-    <div class="rooms__wrapper">
-      <div class="rooms__content">
-        <table class="table">
+    <div class="page-header">
+      <div class="page-header__cell">
+        <h4 class="page-header__title">Spaces</h4>
+      </div>
+      <div class="page-header__cell">
+        <LinkTo @route="admin.spaces.new" class="button button--primary">Create space</LinkTo>
+      </div>
+    </div>
+
+    <div class="spaces__wrapper">
+      <div class="spaces__content">
+        <table class="table table--full">
           <thead>
             <tr>
-              <th>Images</th>
               <th>Name</th>
-              <th>Total Seats</th>
-              <th>Actions</th>
+              <th class="align-center">Maximum People</th>
+              <th>Schedule</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                <ul>
-                  <li class="thumbnail">
-                    <img class="thumbnail__picture" src="/thumbnail.jpg" />
-                  </li>
-                  <li class="thumbnail">
-                    <img class="thumbnail__picture" src="/thumbnail.jpg" />
-                  </li>
-                  <li class="thumbnail">
-                    <img class="thumbnail__picture" src="/thumbnail.jpg" />
-                  </li>
-                  <li class="thumbnail-label">
-                    +2
-                  </li>
-                </ul>
+                <div class="grid grid--auto grid--middle">
+                  <div class="grid__cell">
+                    <div class="thumbnail thumbnail--small thumbnail--circle">
+                      <img class="thumbnail__picture" src="/thumbnail.jpg" />
+                    </div>
+                  </div>
+                  <div class="grid__cell">
+                    <p class="table__group">
+                      <span class="table__group-key"><strong>Kitty room</strong></span>
+                    </p>
+                  </div>
+                </div>
               </td>
-              <td>Yellow Room</td>
-              <td>10</td>
+              <td>20 people</td>
               <td>
-                <a href="#" class="button button--primary button--small">Edit room</a>
-                <a href="#" class="button button--danger button--small">Remove room</a>
+                <p class="table__group">
+                  <span class="table__group-key"><strong>Monday - Friday</strong></span>
+                  <span class="table__group-value">08:00 - 18:00</span>
+                </p>
+              </td>
+              <td>
+                <div class="table__actions">
+                  <BasicDropdown as |dd|>
+                    <dd.Trigger>
+                      {{inline-svg "icons/dots" class="svg"}}
+                    </dd.Trigger>
+                    <dd.Content>
+                      <div class="dropdown">
+                        <ul class="dropdown__items">
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Log out</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Other action</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Yolo</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd.Content>
+                  </BasicDropdown>
+                </div>
               </td>
             </tr>
             <tr>
               <td>
-                <ul>
-                  <li class="thumbnail">
-                    <img class="thumbnail__picture" src="/thumbnail.jpg" />
-                  </li>
-                </ul>
+                <div class="grid grid--auto grid--middle">
+                  <div class="grid__cell">
+                    <div class="thumbnail thumbnail--small thumbnail--circle">
+                      <img class="thumbnail__picture" src="/thumbnail.jpg" />
+                    </div>
+                  </div>
+                  <div class="grid__cell">
+                    <p class="table__group">
+                      <span class="table__group-key"><strong>Copycat room</strong></span>
+                    </p>
+                  </div>
+                </div>
               </td>
-              <td>Blue Room</td>
-              <td>23</td>
+              <td>40 people</td>
               <td>
-                <a href="#" class="button button--primary button--small">Edit room</a>
-                <a href="#" class="button button--danger button--small">Remove room</a>
+                <p class="table__group">
+                  <span class="table__group-key"><strong>Monday - Sunday</strong></span>
+                  <span class="table__group-value">08:00 - 22:00</span>
+                </p>
+              </td>
+              <td>
+                <div class="table__actions">
+                  <BasicDropdown as |dd|>
+                    <dd.Trigger>
+                      {{inline-svg "icons/dots" class="svg"}}
+                    </dd.Trigger>
+                    <dd.Content>
+                      <div class="dropdown">
+                        <ul class="dropdown__items">
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Log out</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Other action</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Yolo</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd.Content>
+                  </BasicDropdown>
+                </div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <div class="rooms__footer">
-        <button type="button" class="button button--primary button--large">Add a new room</button>
+      <div class="spaces__footer">
       </div>
     </div>
   {{else}}
-    <div class="rooms__no-results">
+    <div class="spaces__no-results">
       <div class="empty-state">
         <div class="empty-state__asset empty-state__asset--spaces">
           {{inline-svg "illustrations/table" class="svg"}}
