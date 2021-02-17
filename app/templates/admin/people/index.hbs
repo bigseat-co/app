@@ -1,39 +1,161 @@
 <div class="people">
   {{#if this.showRecords}}
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Person</th>
-          <th>Last visit</th>
-          <th>Visits</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each (array 1 2 3 4 5 6 7 8 9 10)}}
-          <tr>
-            <td>
-              <p class="table__group">
-                <span class="table__group-key"><strong>Jeremie Ges</strong></span>
-                <span class="table__group-value">jeremie@syatt.io</span>
-              </p>
-            </td>
-            <td>
-              <p class="table__group">
-                <span class="table__group-key">October 3, 2020</span>
-                <span class="table__group-value">a week ago</span>
-              </p>
-            </td>
-            <td>
-              10
-            </td>
-            <td>
-              <a href="#" class="button button--primary button--small">Edit member</a>
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <div class="page-header">
+      <div class="page-header__cell">
+        <h4 class="page-header__title">People</h4>
+      </div>
+      <div class="page-header__cell">
+        <a href="#" class="button button--primary">Export as CSV</a>
+      </div>
+    </div>
+    <div class="people__wrapper">
+      <div class="people__content">
+        <table class="table table--full">
+          <thead>
+            <tr>
+              <th colspan="5">
+                <div class="form">
+                  <div class="grid grid--middle grid--auto">
+                    <div class="grid__cell grid__cell--100">
+                        <!-- TODO - Fix that BS min-width -->
+                        <input class="text" class="form__input" style="min-width: 250px" placeholder="Search" />
+                    </div>
+                    <div class="grid__cell grid__cell--100">
+                        <span class="badge badge--warning">Remote</span>
+                        <span class="badge badge">In-office</span>
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>Person</th>
+              <th>Group</th>
+              <th>Last booking</th>
+              <th>Last check-in</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="grid grid--auto grid--middle">
+                  <div class="grid__cell">
+                    <div class="thumbnail thumbnail--small thumbnail--circle">
+                      <img class="thumbnail__picture" src="/jeremie.jpg" />
+                    </div>
+                  </div>
+                  <div class="grid__cell">
+                    <p class="table__group">
+                      <span class="table__group-key"><strong>Jeremie Ges</strong></span>
+                      <span class="table__group-value">jeremie@syatt.io</span>
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <span class="badge badge--primary">In-office</span>
+              </td>
+              <td>
+                <p class="table__group">
+                  <span class="table__group-key">October 3, 2020</span>
+                  <span class="table__group-value">a week ago</span>
+                </p>
+              </td>
+              <td>
+                <p class="table__group">
+                  <span class="table__group-key">October 3, 2020</span>
+                  <span class="table__group-value">a week ago</span>
+                </p>
+              </td>
+              <td>
+                <div class="table__actions">
+                  <BasicDropdown as |dd|>
+                    <dd.Trigger>
+                      {{inline-svg "icons/dots" class="svg"}}
+                    </dd.Trigger>
+                    <dd.Content>
+                      <div class="dropdown">
+                        <ul class="dropdown__items">
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Log out</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Other action</a>
+                          </li>
+                          <li class="dropdown__item">
+                            <a class="dropdown__item-link" href="#">Yolo</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd.Content>
+                  </BasicDropdown>
+                </div>
+              </td>
+            </tr>
+            {{#each (array 1 2 3 4 5)}}
+              <tr>
+                <td>
+                  <div class="grid grid--auto grid--middle">
+                    <div class="grid__cell">
+                      <div class="thumbnail thumbnail--small thumbnail--circle">
+                        <img class="thumbnail__picture" src="/laurent.jpg" />
+                      </div>
+                    </div>
+                    <div class="grid__cell">
+                      <p class="table__group">
+                        <span class="table__group-key"><strong>Laurent Schaffner</strong></span>
+                        <span class="table__group-value">laurent@syatt.io</span>
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--warning">Remote</span>
+                </td>
+                <td>
+                  <p class="table__group">
+                    <span class="table__group-key">October 3, 2020</span>
+                    <span class="table__group-value">a week ago</span>
+                  </p>
+                </td>
+                <td>
+                  <p class="table__group">
+                    <span class="table__group-key">October 3, 2020</span>
+                    <span class="table__group-value">a week ago</span>
+                  </p>
+                </td>
+                <td>
+                  <div class="table__actions">
+                    <BasicDropdown as |dd|>
+                      <dd.Trigger>
+                        {{inline-svg "icons/dots" class="svg"}}
+                      </dd.Trigger>
+                      <dd.Content>
+                        <div class="dropdown">
+                          <ul class="dropdown__items">
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Log out</a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Other action</a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Yolo</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </dd.Content>
+                    </BasicDropdown>
+                  </div>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
   {{else}}
     <div class="empty-state">
       <div class="empty-state__asset empty-state__asset--people">
