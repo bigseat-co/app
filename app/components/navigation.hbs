@@ -3,6 +3,11 @@
     <LinkTo @route="application" class="navigation__logo">BigSeat.</LinkTo>
     <ul class="navigation__items">
       <li class="navigation__item">
+        <LinkTo @route="admin.activity" class="navigation__item-link">
+          {{inline-svg "icons/pulse" class="navigation__item-icon"}} Activity
+        </LinkTo>
+      </li>
+      <li class="navigation__item">
         <LinkTo @route="admin.spaces" @query="{{hash showRecords="true"}}" class="navigation__item-link">
           {{inline-svg "icons/stack" class="navigation__item-icon"}} Spaces
         </LinkTo>
@@ -14,7 +19,7 @@
       </li>
       <li class="navigation__item">
         <LinkTo @route="admin.analytics" class="navigation__item-link">
-          {{inline-svg "icons/pulse" class="navigation__item-icon"}} Analytics
+          {{inline-svg "icons/bar-chart" class="navigation__item-icon"}} Analytics
         </LinkTo>
       </li>
       <li class="navigation__item">

@@ -11,6 +11,10 @@ Router.map(function() {
    * Admin
    */
   this.route('admin', { path: '/' }, function () {
+    this.route('activity', function () {
+      // Implicit index route automatically defined
+    });
+
     this.route('analytics', function () {
       // Implicit index route automatically defined
     });

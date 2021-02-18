@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #ACTIVITY
+\*------------------------------------*/
+
+.activity {}
+
+    // TODO - This pattern wrapper / content is duplicated in different scss
+    // components, we should abstract it for a page component (like we did for page-header).
+    .activity__wrapper {}
+
+        .activity__content {
+            margin: ($spacing-unit * 2) 0;
+        }

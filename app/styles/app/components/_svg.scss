@@ -39,4 +39,9 @@
     .table__actions:hover & {
         fill: $gray-500;
     }
+
+    .table__list-item & {
+        width: 10px;
+        vertical-align: middle;
+    }
 }

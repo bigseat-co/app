@@ -71,3 +71,10 @@ $table-border: 1px solid $gray-300 !default;
             cursor: pointer;
         }
     }
+
+    .table__list {}
+
+        .table__list-item {
+            color: $gray-500;
+            font-size: $font-size-small;
+        }
