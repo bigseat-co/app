@@ -1,33 +1,41 @@
 <BookingLayout>
   <div class="grid">
     <div class="grid__cell grid__cell--50">
-      <div class="booking-rooms">
-        <div class="booking-rooms__items">
+      <div class="booking-calendar">
+        <div class="booking-calendar__title">Select a date & time</div>
+        <PowerCalendar
+          @center={{today}}
+          @selected={{today}}
+          class="calendar" as |calendar|>
+          <calendar.Nav/>
+          <calendar.Days/>
+        </PowerCalendar>
+      </div>
+    </div>
+    <div class="grid__cell grid__cell--50">
+      <div class="booking-spaces">
+        <div class="booking-spaces__title">Today's space</div>
+        <div class="booking-spaces__items">
           <!-- One day I'll found out how to do #times x -->
           {{#each (array 1 2 3 4 5 6 7 8 9 10) as |number| }}
-            <div class="booking-rooms__item">
-              <div class="booking-rooms__thumbnail">
-                <img class="booking-rooms__thumbnail-picture" src="/empty_office.jpg" />
+            <div class="booking-spaces__item">
+              <div class="booking-spaces__thumbnail">
+                <img class="booking-spaces__thumbnail-picture" src="/thumbnail.jpg" />
               </div>
-              <div class="booking-rooms__content">
-                <div class="booking-rooms__title">
+              <div class="booking-spaces__content">
+                <div class="booking-spaces__title">
                   Room #{{number}}
                 </div>
-                <div class="booking-rooms__availability">
+                <div class="booking-spaces__availability">
                   10/10 seats available
                 </div>
-                <div class="booking-rooms__description">
+                <div class="booking-spaces__description">
                   Laurent, Pierre and Roger have permanent seats there. Schaffner will be there in a few days.
                 </div>
               </div>
             </div>
           {{/each}}
         </div>
-      </div>
-    </div>
-    <div class="grid__cell grid__cell--50">
-      <div class="booking-calendar">
-        <div class="booking-calendar__title">Select a date range</div>
       </div>
     </div>
   </div>

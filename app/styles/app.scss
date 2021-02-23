@@ -1,6 +1,7 @@
 @import 'ember-basic-dropdown';
 @import 'ember-modal-dialog/ember-modal-appearance';
 @import 'ember-modal-dialog/ember-modal-structure';
+@import 'ember-power-calendar';
 
 @import 'app/settings/border-radius';
 @import 'app/settings/breakpoints';
@@ -29,8 +30,9 @@
 @import 'app/components/badge';
 @import 'app/components/booking-calendar';
 @import 'app/components/booking-layout';
-@import 'app/components/booking-rooms';
+@import 'app/components/booking-spaces';
 @import 'app/components/button';
+@import 'app/components/calendar';
 @import 'app/components/centered-scrolling';
 @import 'app/components/checkin-confirmation';
 @import 'app/components/checkin-layout';

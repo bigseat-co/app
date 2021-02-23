@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #CALENDAR
+\*------------------------------------*/
+
+// WIP
+ .calendar {
+    @include ember-power-calendar($cell-size: 1px); // currently must set some value.
+
+    border: 1px solid transparent;
+    position: relative;
+    width: initial!important; // required to override EPC.
+
+    .ember-power-calendar-day,
+    .ember-power-calendar-weekday {
+      display: flex;
+      height: calc(2.5 * 1rem); // arbitrary height
+      max-height: initial!important; // required to override EPC
+      max-width: initial!important; // required to override EPC
+      width: calc(100% / 7);
+    }
+
+    .ember-power-calendar-day:nth-child(n+2) {
+      border-left: 1px solid white; // add separator between inner days.
+    }
+
+    .ember-power-calendar-weekdays,
+    .ember-power-calendar-week {
+      height: initial!important; // required to override EPC.
+    }
+  }

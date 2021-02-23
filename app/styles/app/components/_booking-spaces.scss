@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #BOOKING-SPACES
+\*------------------------------------*/
+
+.booking-spaces {}
+
+    .booking-spaces__title {
+        font-size: $font-size-x-large;
+        font-weight: $font-weight-bold;
+        letter-spacing: $letter-spacing-x-small;
+    }
+
+    .booking-spaces__items {
+        padding: $spacing-unit * 4;
+    }
+
+        .booking-spaces__item {
+            display: flex;
+            margin-bottom: $spacing-unit * 3;
+        }
+
+            .booking-spaces__thumbnail {
+                max-width: 150px;
+            }
+
+                .booking-spaces__thumbnail-picture {}
+
+            .booking-spaces__content {
+                padding-left: $spacing-unit * 2;
+            }
+
+                .booking-spaces__title {
+                    font-size: $font-size-x-large;
+                    font-weight: $font-weight-bold;
+                    letter-spacing: $letter-spacing-x-small;
+                }
+
+                .booking-spaces__availability {}
+
+                .booking-spaces__description {}
