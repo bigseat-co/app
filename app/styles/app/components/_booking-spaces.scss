@@ -2,16 +2,19 @@
     #BOOKING-SPACES
 \*------------------------------------*/
 
-.booking-spaces {}
+.booking-spaces {
+}
 
     .booking-spaces__title {
-        font-size: $font-size-x-large;
+        font-size: $font-size-large;
         font-weight: $font-weight-bold;
-        letter-spacing: $letter-spacing-x-small;
+        letter-spacing: $letter-spacing-small;
     }
 
     .booking-spaces__items {
-        padding: $spacing-unit * 4;
+        margin-top: $spacing-unit * 2;
+        max-height: 500px;
+        overflow: auto;
     }
 
         .booking-spaces__item {
@@ -19,22 +22,29 @@
             margin-bottom: $spacing-unit * 3;
         }
 
-            .booking-spaces__thumbnail {
-                max-width: 150px;
+            .booking-spaces__cover {
+                max-width: 80px;
             }
 
-                .booking-spaces__thumbnail-picture {}
+                .booking-spaces__cover-picture {
+                    border-radius: $border-radius;
+                }
 
             .booking-spaces__content {
                 padding-left: $spacing-unit * 2;
             }
 
-                .booking-spaces__title {
-                    font-size: $font-size-x-large;
-                    font-weight: $font-weight-bold;
-                    letter-spacing: $letter-spacing-x-small;
-                }
+                .booking-spaces__thumbnails {}
 
                 .booking-spaces__availability {}
 
-                .booking-spaces__description {}
+                .booking-spaces__people {
+                    display: none;
+                    font-size: $font-size-small;
+                }
+
+                .booking-spaces__description {
+                    display: none;
+
+                    margin-top: $spacing-unit;
+                }

@@ -32,7 +32,6 @@
 @import 'app/components/booking-layout';
 @import 'app/components/booking-spaces';
 @import 'app/components/button';
-@import 'app/components/calendar';
 @import 'app/components/centered-scrolling';
 @import 'app/components/checkin-confirmation';
 @import 'app/components/checkin-layout';
@@ -72,5 +71,6 @@
 
 @import 'app/hooks/ember-basic-dropdown';
 @import 'app/hooks/ember-modal-dialog';
+@import 'app/hooks/ember-power-calendar';
 @import 'app/hooks/ember-toggle';
 @import 'app/hooks/avalanche';

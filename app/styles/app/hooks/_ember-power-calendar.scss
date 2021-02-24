@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    #EMBER-POWER-CALENDAR
+\*------------------------------------*/
+
+.ember-power-calendar--bigseat {
+    @include ember-power-calendar($cell-size: 1px); // Must set some value ...
+    position: relative;
+    width: initial !important; // !important required to override base implementation
+    font-family: $font-family-primary;
+    background: $white;
+    border: 1px solid transparent;
+
+    .ember-power-calendar-nav {}
+
+        .ember-power-calendar-nav-title {
+            font-weight: $font-weight-bold;
+            font-size: $font-size-large;
+        }
+
+    .ember-power-calendar-day,
+    .ember-power-calendar-weekday {
+        display: flex;
+        width: calc(100% / 7);
+        height: 60px;
+        max-height: initial !important; // !important required to override base implementation
+        max-width: initial !important;  // !important required to override base implementation
+    }
+
+    .ember-power-calendar-day:nth-child(n+2) {
+        border-left: 1px solid white; // add separator between inner days
+    }
+
+    .ember-power-calendar-weekdays,
+    .ember-power-calendar-week {
+        height: initial !important; // !important required to override base implementation
+    }
+
+    .ember-power-calendar-day {
+    }
+
+    .ember-power-calendar-day--current-month {}
+    .ember-power-calendar-day--today {}
+}

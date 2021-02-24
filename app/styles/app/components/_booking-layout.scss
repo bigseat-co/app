@@ -36,8 +36,11 @@
             background-color: $white;
             border-radius: 6px;
             box-shadow: $box-shadow;
-
         }
+
+            .booking-layout__panel {
+                padding: $spacing-unit * 4;
+            }
 
         .booking-layout__footer {
             margin-top: $spacing-unit * 4;
