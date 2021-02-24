@@ -34,6 +34,13 @@ $table-border: 1px solid $gray-300 !default;
     tbody {
         tr {}
 
+        tr:hover {
+            .booking-spaces__items & {
+                background: $gray-100;
+                cursor: pointer;
+            }
+        }
+
         td {
             padding: $spacing-unit * 1.5;
             vertical-align: middle;
