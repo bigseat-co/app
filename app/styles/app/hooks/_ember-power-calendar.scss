@@ -13,8 +13,8 @@
     .ember-power-calendar-nav {}
 
         .ember-power-calendar-nav-title {
-            font-weight: $font-weight-bold;
-            font-size: $font-size-large;
+            font-weight: $font-weight-medium;
+            font-size: $font-size;
         }
 
     .ember-power-calendar-day,
@@ -35,9 +35,14 @@
         height: initial !important; // !important required to override base implementation
     }
 
-    .ember-power-calendar-day {
+    .ember-power-calendar-day {}
+
+    .ember-power-calendar-day--current-month {
+        background-color: $gray-100;
+        color: $black;
     }
 
-    .ember-power-calendar-day--current-month {}
-    .ember-power-calendar-day--today {}
+    .ember-power-calendar-day--today {
+        color: $indigo-500;
+    }
 }
