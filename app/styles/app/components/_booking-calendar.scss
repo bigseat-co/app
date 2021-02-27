@@ -5,6 +5,7 @@
 .booking-calendar {}
 
     .booking-calendar__title {
+        margin-bottom: $spacing-unit * 2;
         font-size: $font-size-large;
         font-weight: $font-weight-bold;
         letter-spacing: $letter-spacing-small;

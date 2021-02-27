@@ -5,7 +5,7 @@
 .ember-power-calendar--bigseat {
     @include ember-power-calendar($cell-size: 1px); // Must set some value ...
     position: relative;
-    width: initial !important; // !important required to override base implementation
+    width: 100%;
     font-family: $font-family-primary;
     background: $white;
     border: 1px solid transparent;
@@ -17,32 +17,82 @@
             font-size: $font-size;
         }
 
-    .ember-power-calendar-day,
-    .ember-power-calendar-weekday {
-        display: flex;
-        width: calc(100% / 7);
-        height: 60px;
-        max-height: initial !important; // !important required to override base implementation
-        max-width: initial !important;  // !important required to override base implementation
+        .ember-power-calendar-nav-control {
+            font-family: $font-family-primary;
+            cursor: pointer;
+        }
+
+    .ember-power-calendar-row {
+        justify-content: center;
     }
 
-    .ember-power-calendar-day:nth-child(n+2) {
-        border-left: 1px solid white; // add separator between inner days
-    }
+        .ember-power-calendar-day,
+        .ember-power-calendar-weekday {
+            height: 70px;
+            max-height: 70px;
+            max-width: 70px;
+        }
 
-    .ember-power-calendar-weekdays,
-    .ember-power-calendar-week {
-        height: initial !important; // !important required to override base implementation
-    }
+        .ember-power-calendar-day:nth-child(n+2) {
+            border-left: 1px solid white; // add separator between inner days
+        }
 
-    .ember-power-calendar-day {}
+        .ember-power-calendar-weekdays,
+        .ember-power-calendar-week {
+            height: 100%;
+        }
 
-    .ember-power-calendar-day--current-month {
-        background-color: $gray-100;
-        color: $black;
-    }
+        .ember-power-calendar-day {
+            &:not([disabled]):hover {
+                color: $white;
+                background-color: $indigo-500;
+            }
 
-    .ember-power-calendar-day--today {
-        color: $indigo-500;
-    }
+            &:nth-child(n+2) {
+                border-left: 0;
+            }
+        }
+
+        .ember-power-calendar-day--current-month {
+            background: none;
+            color: $black;
+        }
+
+        .ember-power-calendar-day--today {
+            color: $indigo-500;
+            font-weight: $font-weight-bold;
+            outline: 0;
+        }
+
+        .ember-power-calendar-day--focused {
+            box-shadow: none;
+        }
+
+        .ember-power-calendar-day--selected {
+            background: #EEF2FF;
+            color: $black;
+            font-weight: $font-weight-normal;
+
+            &:hover {
+                font-weight: $font-weight-normal
+            }
+
+            &.ember-power-calendar-day--range-start {
+                color: $white;
+                background: $indigo-500;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+            }
+
+            &.ember-power-calendar-day--range-end {
+                color: $white;
+                background: $indigo-500;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+
+            &.ember-power-calendar-day--range-start.ember-power-calendar-day--range-end {
+                border-radius: 50%;
+            }
+        }
 }

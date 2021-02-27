@@ -41,10 +41,26 @@ $table-border: 1px solid $gray-300 !default;
             }
         }
 
+        tr.is-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        tr:hover.is-disabled {
+            .booking-spaces__items & {
+                background: none;
+                cursor: not-allowed;
+            }
+        }
+
         td {
             padding: $spacing-unit * 1.5;
             vertical-align: middle;
             border-bottom: $table-border;
+
+            tr.is-disabled & {
+                cursor: not-allowed;
+            }
         }
 
         tr:last-child td {
@@ -85,3 +101,14 @@ $table-border: 1px solid $gray-300 !default;
             color: $gray-500;
             font-size: $font-size-small;
         }
+
+    .table__fraction {
+        font-weight: normal;
+        font-size: $font-size-2x-large;
+
+        sup,
+        sub {
+            font-weight: normal;
+        }
+    }
+

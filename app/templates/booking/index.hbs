@@ -4,86 +4,110 @@
       <div class="booking-layout__panel">
         <div class="booking-calendar">
           <div class="booking-calendar__title">Select a date & time</div>
-          <PowerCalendar
-            @center={{today}}
-            @selected={{today}}
-            class="ember-power-calendar--bigseat" as |calendar|>
+          <PowerCalendarRange
+            class="ember-power-calendar--bigseat"
+            @center={{center}}
+            @selected={{selected}}
+            @onCenterChange={{action (mut center) value="date"}}
+            @onSelect={{action (mut selected) value="date"}}
+            @minRange={{0}}
+            as |calendar|>
             <calendar.Nav/>
-            <calendar.Days/>
-          </PowerCalendar>
+            <calendar.Days as |day|>
+              <span>{{day.number}}</span>
+            </calendar.Days>
+          </PowerCalendarRange>
         </div>
       </div>
     </div>
     <div class="grid__cell grid__cell--50">
       <div class="booking-layout__panel">
         <div class="booking-spaces">
-          <div class="booking-spaces__title">Today's spaces</div>
+          <div class="booking-spaces__title">Select a space</div>
+          Spaces available today
           <div class="booking-spaces__items">
             <table class="table table--full">
               <tbody>
-                {{#each (array 1 2 3 4 5)}}
-
-                  <tr>
-                    <td>
-                      <div class="grid grid--auto grid--middle">
-                        <div class="grid__cell">
-                          <div class="thumbnail thumbnail--small thumbnail--circle">
-                            <img class="thumbnail__picture" src="/laurent.jpg" />
-                          </div>
-                        </div>
-                        <div class="grid__cell">
-                          <p class="table__group">
-                            <span class="table__group-key"><strong>Laurent's Space</strong></span>
-                            <span class="table__group-value">1 spot available</span>
-                          </p>
+                <tr>
+                  <td>
+                    <div class="grid grid--auto grid--middle">
+                      <div class="grid__cell">
+                        <div class="thumbnail thumbnail--small thumbnail--circle">
+                          <img class="thumbnail__picture" src="/laurent.jpg" />
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--success">0% capacity</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="grid grid--auto grid--middle">
-                        <div class="grid__cell">
-                          <div class="thumbnail thumbnail--small thumbnail--circle">
-                            <img class="thumbnail__picture" src="/jeremie.jpg" />
-                          </div>
-                        </div>
-                        <div class="grid__cell">
-                          <p class="table__group">
-                            <span class="table__group-key"><strong>Jeremie's space</strong></span>
-                            <span class="table__group-value">1 spot available</span>
-                          </p>
+                      <div class="grid__cell">
+                        <p class="table__group">
+                          <span class="table__group-key"><strong>Laurent's Space</strong></span>
+                          <span class="table__group-value">10 people max.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--success">0% capacity</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="grid grid--auto grid--middle">
+                      <div class="grid__cell">
+                        <div class="thumbnail thumbnail--small thumbnail--circle">
+                          <img class="thumbnail__picture" src="/jeremie.jpg" />
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--success">0% capacity</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="grid grid--auto grid--middle">
-                        <div class="grid__cell">
-                          <div class="thumbnail thumbnail--small thumbnail--circle">
-                            <img class="thumbnail__picture" src="/thumbnail.jpg" />
-                          </div>
-                        </div>
-                        <div class="grid__cell">
-                          <p class="table__group">
-                            <span class="table__group-key"><strong>Kitty Room</strong></span>
-                            <span class="table__group-value">6 spots available</span>
-                          </p>
+                      <div class="grid__cell">
+                        <p class="table__group">
+                          <span class="table__group-key"><strong>Jeremie's space</strong></span>
+                          <span class="table__group-value">10 people max.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--warning">50% capacity</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="grid grid--auto grid--middle">
+                      <div class="grid__cell">
+                        <div class="thumbnail thumbnail--small thumbnail--circle">
+                          <img class="thumbnail__picture" src="/dog.jpg" />
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <span class="badge badge--danger">90% capacity</span>
-                    </td>
-                  </tr>
-                {{/each}}
+                      <div class="grid__cell">
+                        <p class="table__group">
+                          <span class="table__group-key"><strong>Dog Room</strong></span>
+                          <span class="table__group-value">20 people max.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--danger">90% capacity</span>
+                  </td>
+                </tr>
+                <tr class="is-disabled">
+                  <td>
+                    <div class="grid grid--auto grid--middle">
+                      <div class="grid__cell">
+                        <div class="thumbnail thumbnail--small thumbnail--circle">
+                          <img class="thumbnail__picture" src="/cat.jpg" />
+                        </div>
+                      </div>
+                      <div class="grid__cell">
+                        <p class="table__group">
+                          <span class="table__group-key"><strong>Kitty Room</strong></span>
+                          <span class="table__group-value">30 people max.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--danger">100% capacity</span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
