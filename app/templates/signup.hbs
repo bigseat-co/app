@@ -69,7 +69,7 @@
 
           <div class="grid__cell">
             <div class="form__group">
-              <button type="button" {{on "click" this.submitForm}} class="button button--primary button--full">Sign up free</button>
+              <button type="button" {{on "click" this.submitForm}} disabled={{this.isProcessing}} class="button button--primary button--full">Sign up free</button>
             </div>
           </div>
         </div>
@@ -77,6 +77,11 @@
     </div>
   </div>
 </div>
+
+<NotificationContainer
+  @position="top"
+  zindex="9999"
+/>
 
 {{#if isShowingTerms}}
   <ModalDialog

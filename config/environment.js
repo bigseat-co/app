@@ -20,6 +20,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    apollo: {
+      apiURL: 'http://localhost:4000/graphql'
+    },
+    'ember-cli-notifications': {
+      autoClear: true
+    },
+    'ember-toggle': {
+      defaultTheme: 'ios'
     }
   };
 
@@ -44,12 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
   }
-
-  ENV['ember-toggle'] = {
-    defaultTheme: 'ios'
-  };
 
   return ENV;
 };
