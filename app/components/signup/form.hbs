@@ -1,0 +1,96 @@
+<div class="signup__form">
+  <div class="signup__asset">
+    {{inline-svg "illustrations/files" class="svg"}}
+  </div>
+
+  <form class="form">
+    <div class="grid grid--large">
+      <div class="grid__cell grid__cell--50">
+        <div class="form__group">
+          <label for="email" class="form__label">Email</label>
+          <Input
+            @id="email"
+            @type="text"
+            @placeholder="hello@gmail.com"
+            value={{this.signup.email}}
+            class="form__input"
+            {{on "input" (action (mut this.signup.email) value="target.value")}}
+          />
+        </div>
+      </div>
+
+      <div class="grid__cell grid__cell--50">
+        <div class="form__group">
+          <label for="company" class="form__label">Company</label>
+          <Input
+            @id="company"
+            @type="text"
+            @placeholder="Smith Corp."
+            value={{this.signup.company}}
+            class="form__input"
+            {{on "input" (action (mut this.signup.company) value="target.value")}}
+          />
+        </div>
+      </div>
+
+      <div class="grid__cell grid__cell--50">
+        <div class="form__group">
+          <label for="first_name" class="form__label">First Name</label>
+          <Input
+            @id="first-name"
+            @type="text"
+            @placeholder="John"
+            class="form__input"
+            {{on "input" (action (mut this.signup.firstName) value="target.value")}}
+          />
+        </div>
+      </div>
+
+      <div class="grid__cell grid__cell--50">
+        <div class="form__group">
+          <label for="last_name" class="form__label">Last name</label>
+          <Input
+            @id="last_name"
+            @type="text"
+            @placeholder="Smith"
+            class="form__input"
+            {{on "input" (action (mut this.signup.lastName) value="target.value")}}
+          />
+        </div>
+      </div>
+
+      <div class="grid__cell">
+        <div class="form__group">
+          <label for="password" class="form__label">Password</label>
+          <Input
+            @id="password"
+            @type="password"
+            class="form__input"
+            {{on "input" (action (mut this.signup.password) value="target.value")}}
+          />
+        </div>
+      </div>
+
+      <div class="grid__cell">
+        <div class="form__group">
+            <div class="grid grid--middle">
+              <div class="grid__cell grid__cell--10">
+                <Input @id="terms" @type="checkbox" class="form__input" />
+              </div>
+              <div class="grid__cell grid__cell--90">
+                <label for="terms" class="form__label form__label--terms">
+                  I agree to BigSeat's <button type="button" class="text-button text-button--primary" {{on "click" this.toggleTerms}}>Terms of Service</button> and the use of personal data as explained in BigSeat's <button type="button" class="text-button text-button--primary" {{on "click" this.togglePrivacy}}>Privacy Policy</button>.
+                </label>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="grid__cell">
+        <div class="form__group">
+          <button type="button" {{on "click" this.submit}} disabled={{this.isProcessing}} class="button button--primary button--full">Sign up free</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

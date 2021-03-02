@@ -52,3 +52,9 @@
         .form__input--width-small {
             max-width: 100px;
         }
+
+        .form__error {
+            padding-top: $spacing-unit / 2;
+            font-size: $font-size-x-small;
+            color: $red-500;
+        }
