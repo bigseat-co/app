@@ -3,56 +3,64 @@ import { tracked } from '@glimmer/tracking';
 import { action, computed } from "@ember/object";
 import { isEmpty } from '@ember/utils';
 import { inject as service } from '@ember/service';
-import signup from "../../gql/mutations/signup.graphql";
+import SignupMutation from "../../gql/mutations/signup.graphql";
 
 export default class SignupFormComponent extends Component {
   @service apollo;
   @service notifications;
 
-  @tracked signup = {
-    email: null,
-    firstName: null,
-    lastName: null,
-    company: null,
-    password: null
-  };
+  @tracked email;
+  @tracked firstName;
+  @tracked lastName;
+  @tracked organizationName;
+  @tracked password;
 
   @tracked isProcessing = false;
   @tracked isShowingTerms = false;
   @tracked isShowingPrivacy = false;
 
-  get isValidSignup() {
-    let fields = Object.values(this.signup);
-
-    return fields.every((field) => !isEmpty(field));
+  get signupValues() {
+    return [
+      this.email,
+      this.firstName,
+      this.lastName,
+      this.organizationName,
+      this.password
+    ];
   }
 
-  get variables() {
-    return {
-      email: this.signup.email,
-      firstName: this.signup.firstName,
-      lastName: this.signup.lastName,
-      organization: {
-        name: this.signup.company
-      },
-      password: this.signup.password
-    }
+  get signupValuesPresent() {
+    return this.signupValues.every(value => !isEmpty(value))
+  }
+
+  get isSignupValid() {
+    return this.signupValuesPresent;
+  }
+
+  performSignup() {
+    return this.apollo.mutate({ mutation: SignupMutation,
+      variables: {
+        email: this.email,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        organization: {
+          name: this.organizationName
+        },
+        password: this.password
+      }
+    });
   }
 
   @action
   submit() {
-    if (!this.isValidSignup) {
+    if (!this.isSignupValid) {
       return this.notifications.clearAll().error('The form is invalid');
     }
 
     this.isProcessing = true;
 
-    this.apollo
-      .mutate({
-        mutation: signup,
-        variables: this.variables
-      })
-      .then(() => {
+    this.performSignup()
+      .then((response) => {
         this.notifications.clearAll().success('Welcome to bigseat!');
       })
       .catch(() => {
