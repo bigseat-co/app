@@ -10,7 +10,8 @@
         <p>Mauris ac ipsum luctus, placerat leo vel, laoreet elit. Aenean leo diam, hendrerit vel lorem a, venenatis condimentum tellus. Aenean sit amet leo ac diam condimentum semper non id massa. Morbi porttitor libero in mi tempor tincidunt. Duis sed euismod nisi. Donec vitae sem velit.</p>
       </div>
     </div>
-    <Signup::Form />
+
+    <Signup::Form @changeset={{changeset this.signupRequest this.SignupRequestValidation}} @signup={{this.signup}} />
   </div>
 </div>
 
