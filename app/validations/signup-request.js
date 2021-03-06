@@ -7,7 +7,7 @@ import {
 
 export default {
   firstName: [
-    validatePresence(true),
+    validatePresence(true)
   ],
   lastName: [
     validatePresence(true)
@@ -24,7 +24,7 @@ export default {
   termsAcceptance: [
     validateExclusion({
       list: [false],
-      message: 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'
+      message: 'Please indicate that you have read and agree to the Terms of service'
     })
   ]
 };

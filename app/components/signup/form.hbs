@@ -11,13 +11,14 @@
           <Input
           @id="email"
           @type="text"
-          @placeholder="hello@gmail.com"
           @value={{@changeset.email}}
           class="form__input"
           />
 
           {{#if @changeset.error.email}}
-            {{@changeset.error.email.validation}}
+            <div class="form__error">
+              {{@changeset.error.email.validation}}
+            </div>
           {{/if}}
         </div>
       </div>
@@ -28,13 +29,14 @@
           <Input
           @id="organization-name"
           @type="text"
-          @placeholder="Smith Corp."
           @value={{@changeset.organizationName}}
           class="form__input"
           />
 
           {{#if @changeset.error.organizationName}}
-            {{@changeset.error.organizationName.validation}}
+            <div class="form__error">
+              {{@changeset.error.organizationName.validation}}
+            </div>
           {{/if}}
         </div>
       </div>
@@ -45,13 +47,14 @@
           <Input
           @id="first-name"
           @type="text"
-          @placeholder="John"
           @value={{@changeset.firstName}}
           class="form__input"
           />
 
           {{#if @changeset.error.firstName}}
-            {{@changeset.error.firstName.validation}}
+            <div class="form__error">
+              {{@changeset.error.firstName.validation}}
+            </div>
           {{/if}}
         </div>
       </div>
@@ -62,13 +65,14 @@
           <Input
           @id="last_name"
           @type="text"
-          @placeholder="Smith"
           @value={{@changeset.lastName}}
           class="form__input"
           />
 
           {{#if @changeset.error.lastName}}
-            {{@changeset.error.lastName.validation}}
+            <div class="form__error">
+              {{@changeset.error.lastName.validation}}
+            </div>
           {{/if}}
         </div>
       </div>
@@ -84,7 +88,9 @@
           />
 
           {{#if @changeset.error.password}}
-            {{@changeset.error.password.validation}}
+            <div class="form__error">
+              {{@changeset.error.password.validation}}
+            </div>
           {{/if}}
         </div>
       </div>
@@ -99,10 +105,6 @@
                 @checked={{@changeset.termsAcceptance}}
                 class="form__input"
                 />
-
-                {{#if @changeset.error.termsAcceptance}}
-                  {{@changeset.error.termsAcceptance.validation}}
-                {{/if}}
             </div>
             <div class="grid__cell grid__cell--90">
               <label for="terms" class="form__label form__label--terms">
@@ -110,12 +112,18 @@
               </label>
             </div>
           </div>
+
+          {{#if @changeset.error.termsAcceptance}}
+            <div class="form__error">
+              {{@changeset.error.termsAcceptance.validation}}
+            </div>
+          {{/if}}
         </div>
       </div>
 
       <div class="grid__cell">
         <div class="form__group">
-          <button class="button button--primary button--full">Sign up free</button>
+          <button class="button button--primary button--full">Sign up free -></button>
         </div>
       </div>
     </div>
