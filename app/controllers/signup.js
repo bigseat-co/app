@@ -16,6 +16,7 @@ class SignupRequest {
 
 export default class SignupController extends Controller {
   @service apollo
+  @service notifications
 
   SignupRequestValidation = SignupRequestValidation
   signupRequest = new SignupRequest()
@@ -23,7 +24,7 @@ export default class SignupController extends Controller {
   @tracked isProcessing = false
 
   @action
-  async signup(changeset, other, yolo) {
+  async signup(changeset) {
     if (this.isProcessing) {
       return;
     }
@@ -41,11 +42,9 @@ export default class SignupController extends Controller {
 
     this.createRecord()
       .then((response) => {
-        alert('Welcome to bigseat');
-        //this.auth.signIn();
-        //this.transitionToRoute('admin');
+        this.transitionToRoute('admin');
       })
-      .catch(() => {
+      .catch((response) => {
         alert('Unable to signup');
       })
       .finally(() => {

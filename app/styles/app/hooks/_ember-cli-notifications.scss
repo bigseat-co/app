@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #EMBER-CLI-NOTIFICATIONS
+\*------------------------------------*/
+
+/**
+ * The weird syntax "#{--var-name}" prevents sass-lint to crash.
+ * https://github.com/sasstools/sass-lint/issues/877#issuecomment-267176435
+ */
+
+:root {
+    #{--ecn-green}: $green-500;
+    #{--ecn-blue}: $indigo-500;
+    #{--ecn-orange}: $amber-500;
+    #{--ecn-red}: $red-500;
+
+    #{--ecn-spacing-1}: $spacing-unit * 2;
+    #{--ecn-spacing-2}: $spacing-unit;
+}
+
+.ember-cli-notifications-notification__container {
+    top: $spacing-unit * 2;
+    right: $spacing-unit * 2;
+
+    .c-notification {
+        box-shadow: rgb(0 0 0 / 8%) 0px 4px 13px;
+        background: $white;
+        border: 3px solid $gray-300;
+        border-radius: $border-radius * 2;
+    }
+
+    .c-notification--success .c-notification__svg {
+        fill: var(--ecn-green);
+    }
+
+    .c-notification--error .c-notification__svg {
+        fill: var(--ecn-red);
+    }
+
+
+    .c-notification--info .c-notification__svg {
+        fill: var(--ecn-blue);
+    }
+
+
+    .c-notification--warning  .c-notification__svg {
+        fill: var(--ecn-orange);
+    }
+
+    .c-notification__content {
+        padding: $spacing-unit * 2;
+        color: $gray-500;
+        font-size: $font-size;
+        font-weight: $font-weight-semi-bold;
+        box-shadow: rgb(0 0 0 / 8%) 0px 4px 13px;;
+    }
+
+    .c-notification__icon {
+        z-index: 1;
+        padding-left: $spacing-unit * 2;
+        padding-right: $spacing-unit * 2;
+        width: auto;
+        background: $white;
+    }
+
+    .c-notification__svg {
+        width: 24px;
+        height: 24px;
+        fill: $indigo-500;
+        vertical-align: top;
+    }
+
+    .c-notification__close .c-notification__svg {
+        display: block;
+        vertical-align: top;
+        width: 16px;
+        height: 16px;
+        background: transparent;
+        fill: $gray-500;
+    }
+
+    .c-notification__content {
+        padding-left: 0;
+    }
+}
