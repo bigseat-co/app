@@ -3,15 +3,18 @@
     <div class="signup__intro">
       <h3 class="signup__title">Welcome to BigSeat.</h3>
       <div class="signup__description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mattis orci sed ligula mattis lacinia. Etiam volutpat mattis orci, et ullamcorper enim tincidunt eu. Vivamus vitae tempor est, vel ornare tortor.</p>
+        <p>Merchandise Morty, your only purpose in life is to buy & consume merchandise and you did it, you went into a store an actual honest to god store and you bought something, you didn't ask questions or raise ethical complaints you just looked into the bleeding jaws of capitalism and said 'yes daddy please' and I'm so proud of you, I only wish you could have bought more, I love buying things so much Morty.</p>
 
-        <p>Pellentesque consequat dapibus lorem a consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-        <p>Mauris ac ipsum luctus, placerat leo vel, laoreet elit. Aenean leo diam, hendrerit vel lorem a, venenatis condimentum tellus. Aenean sit amet leo ac diam condimentum semper non id massa. Morbi porttitor libero in mi tempor tincidunt. Duis sed euismod nisi. Donec vitae sem velit.</p>
+        <p>Aw, man! I really liked this life! Well, at least I didn't really crap my pants. Ohh yea, you gotta get schwifty. Sorry I didn't listen to you and tried to kill the whole world and stuff. Guess I gotta learn how to live in the moment a little more.</p>
       </div>
     </div>
 
-    <Signup::Form @changeset={{changeset this.signupRequest this.SignupRequestValidation}} @signup={{this.signup}} />
+    <Signup::Form
+      @isProcessing={{this.isProcessing}}
+      @isCreating={{this.isCreating}}
+      @changeset={{changeset this.signupRequest this.SignupRequestValidation}}
+      @signup={{this.signup}}
+    />
   </div>
 </div>
 

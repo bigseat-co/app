@@ -20,23 +20,24 @@ export default class SignupController extends Controller {
   SignupRequestValidation = SignupRequestValidation
   signupRequest = new SignupRequest()
 
-  isCreatingRecord = false
+  @tracked isProcessing = false
 
   @action
   async signup(changeset, other, yolo) {
+    if (this.isProcessing) {
+      return;
+    }
+
+    this.isProcessing = true;
+
     await changeset.validate();
 
     if (changeset.isInvalid) {
+      this.isProcessing = false;
       return;
     }
 
     await changeset.save();
-
-    if (this.isCreatingRecord) {
-      return;
-    }
-
-    this.isCreatingRecord = true;
 
     this.createRecord()
       .then((response) => {
@@ -48,7 +49,7 @@ export default class SignupController extends Controller {
         alert('Unable to signup');
       })
       .finally(() => {
-        this.isCreatingRecord = false
+        this.isProcessing = false;
       });
   }
 

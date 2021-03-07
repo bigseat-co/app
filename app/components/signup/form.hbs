@@ -123,7 +123,11 @@
 
       <div class="grid__cell">
         <div class="form__group">
-          <button class="button button--primary button--full">Sign up free -></button>
+          {{#if @isProcessing}}
+            <button class="button button--primary button--full" disabled="disabled">Sign up free <Loader /></button>
+          {{else}}
+            <button class="button button--primary button--full">Sign up free -></button>
+          {{/if}}
         </div>
       </div>
     </div>

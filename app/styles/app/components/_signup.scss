@@ -12,6 +12,7 @@
         max-width: $breakpoint-large;
         box-shadow: $box-shadow;
         grid-template-columns: 45% 55%;
+        border-radius: $border-radius;
     }
 
 
@@ -19,35 +20,42 @@
             padding: $spacing-unit * 5;
             color: $white;
             background: linear-gradient(180deg, $indigo-500 0.1%, $indigo-700 100%);
-            border-bottom-left-radius: 5px;
-            border-top-left-radius: 5px;
-
-            p {
-                margin-top: $spacing-unit * 3;
-            }
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+            line-height: $line-height;
         }
+
+            .signup__description {
+                p {
+                    margin-top: $spacing-unit * 2;
+                }
+            }
 
             .signup__title {
                 font-size: $font-size-3x-large;
                 font-weight: $font-weight-semi-bold;
                 letter-spacing: $letter-spacing-x-small;
+                font-size: $font-size-3x-large;
+                font-weight: $font-weight-extra-bold;
+                letter-spacing: $letter-spacing-x-small;
             }
 
             .signup__description {
                 margin-top: $spacing-unit * 5;
-                line-height: $line-height-small;
             }
 
         .signup__form {
             padding: $spacing-unit * 5;
             padding-top: $spacing-unit * 2;
             background-color: $white;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
         }
 
             .signup__asset {
                 margin: 0 auto;
+                margin-bottom: $spacing-unit * 2;
                 max-width: 250px;
             }
+
 
