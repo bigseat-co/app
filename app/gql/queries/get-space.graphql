@@ -1,0 +1,21 @@
+query getSpace($id: ID!) {
+  getSpace(id: $id) {
+    id
+    avatarUrl
+    maximumPeople
+    name
+    openHours {
+      id
+      spaceId
+      closeTime
+      dayOfTheWeek
+      openTime
+    }
+    organization {
+      id
+      name
+      slug
+    }
+    slug
+  }
+}
