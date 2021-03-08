@@ -25,7 +25,8 @@ module.exports = function(environment) {
       apiURL: 'http://localhost:4000/graphql'
     },
     'ember-cli-notifications': {
-      autoClear: true
+      autoClear: true,
+      clearDuration: 10000 // ms
     },
     'ember-toggle': {
       defaultTheme: 'ios'

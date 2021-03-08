@@ -2,8 +2,11 @@
     #EMBER-CLI-NOTIFICATIONS
 \*------------------------------------*/
 
+$ember-cli-notifications-icon-size: 24px !default;
+$ember-cli-notifications-close-icon-size: 16px !default;
+
 /**
- * The weird syntax "#{--var-name}" prevents sass-lint to crash.
+ * The syntax "#{--var-name}" prevents sass-lint to crash.
  * https://github.com/sasstools/sass-lint/issues/877#issuecomment-267176435
  */
 
@@ -63,8 +66,8 @@
     }
 
     .c-notification__svg {
-        width: 24px;
-        height: 24px;
+        width: $ember-cli-notifications-icon-size;
+        height: $ember-cli-notifications-icon-size;
         fill: $indigo-500;
         vertical-align: top;
     }
@@ -72,8 +75,8 @@
     .c-notification__close .c-notification__svg {
         display: block;
         vertical-align: top;
-        width: 16px;
-        height: 16px;
+        width: $ember-cli-notifications-close-icon-size;
+        height: $ember-cli-notifications-close-icon-size;
         background: transparent;
         fill: $gray-500;
     }
