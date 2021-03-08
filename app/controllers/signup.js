@@ -24,6 +24,7 @@ const ERRORS = {
 
 export default class SignupController extends Controller {
   @service apollo
+  @service auth
   @service notifications
 
   SignupRequestValidation = SignupRequestValidation
@@ -51,13 +52,14 @@ export default class SignupController extends Controller {
     await changeset.save();
 
     return this.createRecord()
-      .then((response) => {
-        this.transitionToRoute('admin');
-      })
       .catch((response) => {
         let message = response.errors?.firstObject?.message || this.errors.default;
 
         this.notifications.clearAll().error(message);
+      })
+      .then((response) => {
+        this.auth.signIn(); // TODO - Need to implement with real token
+        this.transitionToRoute('admin');
       })
       .finally(() => {
         this.isProcessing = false;
