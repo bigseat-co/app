@@ -1,11 +1,5 @@
 <div class="spaces">
-  <div>
-    <!-- Sample to loop the spaces -->
-    {{#each model as |space index|}}
-      {{space.name}}
-    {{/each}}
-  </div>
-  {{#if this.showRecords}}
+  {{#if model}}
     <div class="page-header">
       <div class="page-header__cell">
         <h4 class="page-header__title">Spaces</h4>
@@ -27,100 +21,55 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <div class="grid grid--auto grid--middle">
-                  <div class="grid__cell">
-                    <div class="thumbnail thumbnail--small thumbnail--circle">
-                      <img class="thumbnail__picture" src="/cat.jpg" />
+            {{#each model as |space index|}}
+              <tr>
+                <td>
+                  <div class="grid grid--auto grid--middle">
+                    <div class="grid__cell">
+                      <div class="thumbnail thumbnail--small thumbnail--circle">
+                        <img class="thumbnail__picture" src="/cat.jpg" />
+                      </div>
+                    </div>
+                    <div class="grid__cell">
+                      <p class="table__group">
+                        <span class="table__group-key"><strong>{{space.name}}</strong></span>
+                      </p>
                     </div>
                   </div>
-                  <div class="grid__cell">
-                    <p class="table__group">
-                      <span class="table__group-key"><strong>Kitty room</strong></span>
-                    </p>
+                </td>
+                <td>{{space.maximumPeople}} people</td>
+                <td>
+                  <p class="table__group">
+                    <span class="table__group-key"><strong>Monday - Friday</strong></span>
+                    <span class="table__group-value">08:00 - 18:00</span>
+                  </p>
+                </td>
+                <td>
+                  <div class="table__actions">
+                    <BasicDropdown as |dd|>
+                      <dd.Trigger>
+                        {{inline-svg "icons/dots" class="svg"}}
+                      </dd.Trigger>
+                      <dd.Content>
+                        <div class="dropdown">
+                          <ul class="dropdown__items">
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Log out</a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Other action</a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#">Yolo</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </dd.Content>
+                    </BasicDropdown>
                   </div>
-                </div>
-              </td>
-              <td>20 people</td>
-              <td>
-                <p class="table__group">
-                  <span class="table__group-key"><strong>Monday - Friday</strong></span>
-                  <span class="table__group-value">08:00 - 18:00</span>
-                </p>
-              </td>
-              <td>
-                <div class="table__actions">
-                  <BasicDropdown as |dd|>
-                    <dd.Trigger>
-                      {{inline-svg "icons/dots" class="svg"}}
-                    </dd.Trigger>
-                    <dd.Content>
-                      <div class="dropdown">
-                        <ul class="dropdown__items">
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Log out</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Other action</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Yolo</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </dd.Content>
-                  </BasicDropdown>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="grid grid--auto grid--middle">
-                  <div class="grid__cell">
-                    <div class="thumbnail thumbnail--small thumbnail--circle">
-                      <img class="thumbnail__picture" src="/cat.jpg" />
-                    </div>
-                  </div>
-                  <div class="grid__cell">
-                    <p class="table__group">
-                      <span class="table__group-key"><strong>Copycat room</strong></span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>40 people</td>
-              <td>
-                <p class="table__group">
-                  <span class="table__group-key"><strong>Monday - Sunday</strong></span>
-                  <span class="table__group-value">08:00 - 22:00</span>
-                </p>
-              </td>
-              <td>
-                <div class="table__actions">
-                  <BasicDropdown as |dd|>
-                    <dd.Trigger>
-                      {{inline-svg "icons/dots" class="svg"}}
-                    </dd.Trigger>
-                    <dd.Content>
-                      <div class="dropdown">
-                        <ul class="dropdown__items">
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Log out</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Other action</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Yolo</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </dd.Content>
-                  </BasicDropdown>
-                </div>
-              </td>
-            </tr>
+                </td>
+              </tr>
+            {{/each}}
           </tbody>
         </table>
       </div>
