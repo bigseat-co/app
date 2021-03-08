@@ -6,31 +6,19 @@
     <div class="signin__card">
       <div class="signin__title">{{t "admin.signin.welcome_back"}}</div>
       <div class="signin__description">{{t "admin.signin.description" }}</div>
-      <div class="form">
-        <div class="form__group">
-          <label for="email" class="form__label">{{t "admin.labels.email"}}</label>
-          <Input @id="email" @name="email" @placeholder="{{t "admin.signin.email_placeholder"}}" class="form__input" />
-        </div>
 
-        <div class="form__group">
-          <label for="password" class="form__label">{{t "admin.labels.password"}}</label>
-          <Input @type="password" @id="password" @name="password" class="form__input" />
-        </div>
-
-        <div class="form__group">
-          <button type="button" class="button button--primary button--full" {{on "click" submitForm }} disabled={{this.isProcessing}}>
-            {{#if this.isProcessing}}
-              <Loader />
-            {{else}}
-              {{t "admin.signin.submit" }}
-            {{/if}}
-          </button>
-        </div>
-      </div>
+      <Signin::Form
+        @isProcessing={{this.isProcessing}}
+        @changeset={{changeset this.signinRequest this.SigninRequestValidation}}
+        @signin={{this.signin}}
+      />
     </div>
-
     <div class="signin__footer">
       <LinkTo @route="signup" class="button button--primary-outline button--full">{{t "admin.signin.create_account"}}</LinkTo>
     </div>
   </div>
 </div>
+
+<NotificationContainer
+  @position="top-right"
+/>

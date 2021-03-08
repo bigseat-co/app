@@ -32,7 +32,7 @@ admin:
     welcome_back: Happy to see you again!
     create_account: Create an account
     description: Sign-in to access your account
-    email_placeholder: john.smith@gmail.com
+    email_placeholder: your@email.com
     submit: Sign-in
 
 checkin:
@@ -42,6 +42,9 @@ checkin:
     title: Check-in completed
     punchline: It's all settled.
     close_page: You can close this page
+
+errors:
+  generic: 'Something went wrong and we are not totally sure why. We are here to help: support@bigseat.co'
 
 site_name: BigSeat.
 

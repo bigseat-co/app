@@ -1,0 +1,42 @@
+<div class="signin__form">
+  <form class="form" {{on "submit" (prevent-default (fn @signin @changeset))}}>
+    <div class="form__group">
+      <label for="email" class="form__label">{{t "admin.labels.email"}}</label>
+      <Input
+        @name="email"
+        @value={{ @changeset.email }}
+        @placeholder="{{t "admin.signin.email_placeholder"}}"
+        class="form__input"
+      />
+
+      {{#if @changeset.error.email}}
+        <div class="form__error">
+          {{@changeset.error.email.validation}}
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="form__group">
+      <label for="password" class="form__label">{{t "admin.labels.password"}}</label>
+      <Input
+        @type="password"
+        @name="password"
+        @value={{ @changeset.password }}
+        class="form__input"
+      />
+
+      {{#if @changeset.error.password}}
+        <div class="form__error">
+          {{@changeset.error.password.validation}}
+        </div>
+      {{/if}}
+    </div>
+    <div class="form__group">
+      {{#if @isProcessing}}
+        <button class="button button--primary button--full" disabled="disabled"><Loader /></button>
+      {{else}}
+        <button class="button button--primary button--full">{{t "admin.signin.submit" }}</button>
+      {{/if}}
+    </div>
+  </form>
+</div>

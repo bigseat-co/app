@@ -7,31 +7,23 @@ import SignupMutation from '../gql/mutations/signup.graphql';
 import SignupRequestValidation from '../validations/signup-request';
 
 class SignupRequest {
-  @tracked email
-  @tracked firstName
-  @tracked lastName
-  @tracked organizationName
-  @tracked password
-  @tracked termsAcceptance = false
+  email
+  firstName
+  lastName
+  organizationName
+  password
+  termsAcceptance = false
 }
-
-const ERRORS = {
-  default: `
-    Something went wrong and we are not totally sure why.
-    We are here to help: support@bigseat.co
-  `
-};
 
 export default class SignupController extends Controller {
   @service apollo
   @service auth
   @service cookies
+  @service intl
   @service notifications
 
-  SignupRequestValidation = SignupRequestValidation
   signupRequest = new SignupRequest()
-
-  errors = ERRORS
+  SignupRequestValidation = SignupRequestValidation
 
   @tracked isProcessing = false
 
@@ -52,16 +44,16 @@ export default class SignupController extends Controller {
 
     await changeset.save();
 
-    // TODO - I'm still blury on how to handle properly promises.
     return this.createRecord()
       .then((response) => {
-        // TODO - What happen if signup.apiKey does not exist? Should we handle that?
         this.cookies.write('token', response.signup.apiKey)
         this.auth.signIn(); // TODO - Need to implement with real token
         this.transitionToRoute('admin');
       })
+      // TODO - This is wrong, we are not only catching the apollo errors but
+      // everything processed in the THEN. Need a fix.
       .catch((response) => {
-        let message = response.errors?.firstObject?.message || this.errors.default;
+        let message = response.errors?.firstObject?.message || this.intl.t('errors.generic');
 
         this.notifications.clearAll().error(message);
       })
