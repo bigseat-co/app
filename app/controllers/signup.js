@@ -25,6 +25,7 @@ const ERRORS = {
 export default class SignupController extends Controller {
   @service apollo
   @service auth
+  @service cookies
   @service notifications
 
   SignupRequestValidation = SignupRequestValidation
@@ -51,15 +52,18 @@ export default class SignupController extends Controller {
 
     await changeset.save();
 
+    // TODO - I'm still blury on how to handle properly promises.
     return this.createRecord()
+      .then((response) => {
+        // TODO - What happen if signup.apiKey does not exist? Should we handle that?
+        this.cookies.write('token', response.signup.apiKey)
+        this.auth.signIn(); // TODO - Need to implement with real token
+        this.transitionToRoute('admin');
+      })
       .catch((response) => {
         let message = response.errors?.firstObject?.message || this.errors.default;
 
         this.notifications.clearAll().error(message);
-      })
-      .then((response) => {
-        this.auth.signIn(); // TODO - Need to implement with real token
-        this.transitionToRoute('admin');
       })
       .finally(() => {
         this.isProcessing = false;

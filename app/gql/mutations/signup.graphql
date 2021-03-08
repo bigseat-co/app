@@ -13,5 +13,9 @@ mutation Signup(
     password: $password
   ) {
     id
+    apiKey
+    email
+    firstName
+    lastName
   }
 }

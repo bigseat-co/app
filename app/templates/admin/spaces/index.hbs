@@ -1,4 +1,10 @@
 <div class="spaces">
+  <div>
+    <!-- Sample to loop the spaces -->
+    {{#each model as |space index|}}
+      {{space.name}}
+    {{/each}}
+  </div>
   {{#if this.showRecords}}
     <div class="page-header">
       <div class="page-header__cell">

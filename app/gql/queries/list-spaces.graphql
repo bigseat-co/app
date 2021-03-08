@@ -1,5 +1,21 @@
 query listSpaces {
   listSpaces {
     id
+    avatarUrl
+    maximumPeople
+    name
+    openHours {
+      id
+      spaceId
+      closeTime
+      dayOfTheWeek
+      openTime
+    }
+    organization {
+      id
+      name
+      slug
+    }
+    slug
   }
 }
