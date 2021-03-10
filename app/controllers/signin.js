@@ -14,10 +14,11 @@ class SigninRequest {
 export default class SigninController extends Controller {
   @service apollo
   @service auth
-  @service cookies
   @service intl
   @service notifications
+  @service session
 
+  signinError
   signinRequest = new SigninRequest()
   SigninRequestValidation = SigninRequestValidation
 
@@ -40,23 +41,25 @@ export default class SigninController extends Controller {
 
     await changeset.save();
 
-    return this.createRecord()
-      .then((response) => {
-        console.log(response);
-        this.cookies.write('token', response.signin.apiKey)
-        this.auth.signIn(); // TODO - Need to implement with real token
-        this.transitionToRoute('admin');
-      })
-      // TODO - This is wrong, we are not only catching the apollo errors but
-      // everything processed in the THEN. Need a fix.
-      .catch((response) => {
-        let message = response.errors?.firstObject?.message || this.intl.t('errors.generic');
-
-        this.notifications.clearAll().error(message);
-      })
-      .finally(() => {
-        this.isProcessing = false;
+    try {
+      await this.session.authenticate('authenticator:bigseat', {
+        email: this.signinRequest.email,
+        password: this.signinRequest.password
       });
+    } catch(error) {
+      this.signinError = error;
+    }
+
+    // TODO - This is horrible.
+    if (!this.session.isAuthenticated) {
+      let message = this.signinError.errors?.firstObject?.message || this.intl.t('errors.generic');
+      this.notifications.clearAll().error(message);
+      this.isProcessing = false;
+      return;
+    }
+
+    this.isProcessing = false;
+    this.transitionToRoute('admin');
   }
 
   createRecord() {

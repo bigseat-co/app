@@ -58,6 +58,7 @@
     "ember-power-calendar-luxon": "^0.1.8",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^8.0.2",
+    "ember-simple-auth": "^3.1.0",
     "ember-source": "~3.22.0",
     "ember-template-lint": "^2.15.0",
     "ember-toggle": "^7.1.0",
