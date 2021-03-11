@@ -85,6 +85,12 @@
             }
 
             .sidebar__signout {
+                @include button-reset;
                 vertical-align: middle;
                 font-size: $font-size-small;
+                outline: 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
