@@ -9,7 +9,7 @@
 
       <Signin::Form
         @isProcessing={{this.isProcessing}}
-        @changeset={{changeset this.signinRequest this.SigninRequestValidation}}
+        @changeset={{changeset @model this.SigninRequestValidation}}
         @signin={{this.signin}}
       />
     </div>

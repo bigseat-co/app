@@ -6,10 +6,6 @@ import { tracked } from '@glimmer/tracking';
 import SigninMutation from '../gql/mutations/signin.graphql';
 import SigninRequestValidation from '../validations/signin-request';
 
-class SigninRequest {
-  email
-  password
-}
 
 export default class SigninController extends Controller {
   @service apollo
@@ -18,8 +14,6 @@ export default class SigninController extends Controller {
   @service notifications
   @service session
 
-  signinError
-  signinRequest = new SigninRequest()
   SigninRequestValidation = SigninRequestValidation
 
   @tracked isProcessing = false
@@ -42,18 +36,9 @@ export default class SigninController extends Controller {
     await changeset.save();
 
     try {
-      await this.session.authenticate('authenticator:bigseat', {
-        email: this.signinRequest.email,
-        password: this.signinRequest.password
-      });
+      await this._authenticate();
     } catch(error) {
-      this.signinError = error;
-    }
-
-    // TODO - This is horrible.
-    if (!this.session.isAuthenticated) {
-      let message = this.signinError.errors?.firstObject?.message || this.intl.t('errors.generic');
-      this.notifications.clearAll().error(message);
+      this._showErrorMessage();
       this.isProcessing = false;
       return;
     }
@@ -62,17 +47,18 @@ export default class SigninController extends Controller {
     this.transitionToRoute('admin');
   }
 
-  createRecord() {
-    return this.apollo.mutate({
-      mutation: SigninMutation,
-      variables: this.serialize(this.signinRequest)
+  async _authenticate() {
+    let { email, password } = this.model;
+
+    return this.session.authenticate('authenticator:bigseat', {
+      email: email,
+      password: password
     });
   }
 
-  serialize(attrs) {
-    return {
-      email: attrs.email,
-      password: attrs.password
-    }
+  _showErrorMessage() {
+    let message = this.intl.t('errors.invalid_email_or_password');
+
+    this.notifications.clearAll().error(message);
   }
 }
