@@ -44,4 +44,17 @@
         width: 10px;
         vertical-align: middle;
     }
+
+    .sidebar__pill & {
+          margin-right: $spacing-unit;
+          width: 24px;
+          vertical-align: middle;
+          fill: currentColor;
+    }
+
+    .sidebar__profile & {
+        width: 18px;
+        fill: $gray-500;
+        vertical-align: middle;
+    }
 }

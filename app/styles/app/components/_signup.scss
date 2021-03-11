@@ -3,16 +3,17 @@
 \*------------------------------------*/
 
 .signup {
-    margin-top: $spacing-unit * 8;
+    margin: 0 auto;
+    margin-top: $spacing-unit * 6;
+    max-width: $breakpoint-large;
 }
 
-    .signup__wrapper {
+    .signup__card {
         display: grid;
         margin: 0 auto;
-        max-width: $breakpoint-large;
-        box-shadow: $box-shadow;
         grid-template-columns: 45% 55%;
         border-radius: $border-radius;
+        box-shadow: $box-shadow;
     }
 
 
@@ -57,5 +58,10 @@
                 margin-bottom: $spacing-unit * 2;
                 max-width: 250px;
             }
+
+        .signup__footer {
+            margin-top: $spacing-unit * 4;
+            text-align: center;
+        }
 
 

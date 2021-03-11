@@ -8,6 +8,6 @@ export default class CurrentUserService extends Service {
   async load() {
     let { __typename, ...user } = this.session.data.authenticated.signin;
 
-    this.set('user', user)
+    this.set('user', user);
   }
 }

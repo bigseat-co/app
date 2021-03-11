@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="sidebar__content sidebar__content--top">
+    <LinkTo @route="application" class="sidebar__logo">BigSeat.</LinkTo>
+    <div class="sidebar__pills">
+      <LinkTo @route="admin.activity" class="sidebar__pill">
+        {{inline-svg "icons/pulse" class="svg"}} Activity
+      </LinkTo>
+
+      <LinkTo @route="admin.spaces" @query="{{hash showRecords="true"}}" class="sidebar__pill">
+        {{inline-svg "icons/stack" class="svg"}} Spaces
+      </LinkTo>
+
+      <LinkTo @route="admin.people" class="sidebar__pill">
+        {{inline-svg "icons/user" class="svg"}} People
+      </LinkTo>
+
+      <LinkTo @route="admin.analytics" class="sidebar__pill">
+        {{inline-svg "icons/bar-chart" class="svg"}} Analytics
+      </LinkTo>
+
+      <LinkTo @route="admin.plugins" class="sidebar__pill">
+        {{inline-svg "icons/code" class="svg"}} Plugins
+      </LinkTo>
+    </div>
+  </div>
+  <div class="sidebar__content sidebar__content--bottom">
+    <div class="sidebar__links">
+      <LinkTo @route="admin.billing" class="sidebar__link">Billing</LinkTo>
+      <LinkTo @route="admin.settings" class="sidebar__link">Settings</LinkTo>
+    </div>
+
+    <div class="sidebar__profile">
+      <span class="sidebar__name">Ges Jeremie</span>
+      <button {{on "click" this.signout}} class="sidebar__signout">
+        sign out
+      </button>
+    </div>
+  </div>
+</div>

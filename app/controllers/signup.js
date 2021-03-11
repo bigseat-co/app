@@ -17,7 +17,6 @@ class SignupRequest {
 
 export default class SignupController extends Controller {
   @service apollo
-  @service auth
   @service cookies
   @service intl
   @service notifications
@@ -46,8 +45,8 @@ export default class SignupController extends Controller {
 
     return this.createRecord()
       .then((response) => {
+        // todo - Need to auto connect
         this.cookies.write('token', response.signup.apiKey)
-        this.auth.signIn(); // TODO - Need to implement with real token
         this.transitionToRoute('admin');
       })
       // TODO - This is wrong, we are not only catching the apollo errors but

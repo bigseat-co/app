@@ -1,5 +1,5 @@
 <div class="signup">
-  <div class="signup__wrapper">
+  <div class="signup__card">
     <div class="signup__intro">
       <h3 class="signup__title">Welcome to BigSeat.</h3>
       <div class="signup__description">
@@ -15,6 +15,9 @@
       @changeset={{changeset this.signupRequest this.SignupRequestValidation}}
       @signup={{this.signup}}
     />
+  </div>
+  <div class="signup__footer">
+    <LinkTo @route="signin" class="button button--primary-outline">I already have an account</LinkTo>
   </div>
 </div>
 

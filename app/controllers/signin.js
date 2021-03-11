@@ -9,7 +9,6 @@ import SigninRequestValidation from '../validations/signin-request';
 
 export default class SigninController extends Controller {
   @service apollo
-  @service auth
   @service intl
   @service notifications
   @service session
@@ -38,6 +37,7 @@ export default class SigninController extends Controller {
     try {
       await this._authenticate();
     } catch(error) {
+      alert(error);
       this._showErrorMessage();
       this.isProcessing = false;
       return;

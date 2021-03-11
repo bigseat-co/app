@@ -20,7 +20,7 @@ Router.map(function() {
     });
 
     this.route('billing', function() {
-      this.route('index');
+      // Implicit index route automatically defined
     });
 
     this.route('configure-checkin');
@@ -71,5 +71,6 @@ Router.map(function() {
 
   this.route('signin');
   this.route('signup');
+
   this.route('style-guide');
 });
