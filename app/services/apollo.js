@@ -4,7 +4,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Promise } from 'rsvp';
 
 export default class OverriddenApollo extends ApolloService {
-  @service cookies;
+  @service currentUser
 
   link() {
     let httpLink = super.link();
@@ -16,10 +16,14 @@ export default class OverriddenApollo extends ApolloService {
   }
 
   _runAuthorize() {
-    return new Promise(success => {
+    return new Promise((success) => {
       let headers = {};
-      let token = this.cookies.read('token');
-      headers['Authorization'] = token ? `Bearer ${token}` : '';
+
+      this.currentUser.load();
+
+      let { apiKey } = this.currentUser.user;
+
+      headers['Authorization'] = apiKey ? `Bearer ${apiKey}` : '';
 
       success({ headers });
     });
