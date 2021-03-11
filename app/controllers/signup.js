@@ -6,23 +6,18 @@ import { isEmpty } from '@ember/utils';
 import SignupMutation from '../gql/mutations/signup.graphql';
 import SignupRequestValidation from '../validations/signup-request';
 
-class SignupRequest {
-  email
-  firstName
-  lastName
-  organizationName
-  password
-  termsAcceptance = false
-}
 
 export default class SignupController extends Controller {
   @service apollo
   @service cookies
   @service intl
   @service notifications
+  @service session
 
-  signupRequest = new SignupRequest()
   SignupRequestValidation = SignupRequestValidation
+
+  error
+  response
 
   @tracked isProcessing = false
 
@@ -43,32 +38,28 @@ export default class SignupController extends Controller {
 
     await changeset.save();
 
-    return this.createRecord()
-      .then((response) => {
-        // todo - Need to auto connect
-        this.cookies.write('token', response.signup.apiKey)
-        this.transitionToRoute('admin');
-      })
-      // TODO - This is wrong, we are not only catching the apollo errors but
-      // everything processed in the THEN. Need a fix.
-      .catch((response) => {
-        let message = response.errors?.firstObject?.message || this.intl.t('errors.generic');
+    try {
+      this.response = await this._signup();
+    } catch(error) {
+      this.error = error;
+      this._showErrorMessage();
+      this.isProcessing = false;
+      return
+    }
 
-        this.notifications.clearAll().error(message);
-      })
-      .finally(() => {
-        this.isProcessing = false;
-      });
+    await this._authenticate();
+
+    this.transitionToRoute('admin');
   }
 
-  createRecord() {
+  async _signup() {
     return this.apollo.mutate({
       mutation: SignupMutation,
-      variables: this.serialize(this.signupRequest)
+      variables: this._serialize(this.model)
     });
   }
 
-  serialize(attrs) {
+  _serialize(attrs) {
     return {
       email: attrs.email,
       firstName: attrs.firstName,
@@ -78,5 +69,20 @@ export default class SignupController extends Controller {
       },
       password: attrs.password
     }
+  }
+
+  _authenticate() {
+    let { email, password } = this.model;
+
+    return this.session.authenticate('authenticator:bigseat', {
+      email: email,
+      password: password
+    });
+  }
+
+  _showErrorMessage() {
+    let message = this.error.errors?.firstObject?.message || this.intl.t('errors.generic');
+
+    this.notifications.clearAll().error(message);
   }
 }

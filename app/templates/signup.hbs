@@ -12,7 +12,7 @@
     <Signup::Form
       @isProcessing={{this.isProcessing}}
       @isCreating={{this.isCreating}}
-      @changeset={{changeset this.signupRequest this.SignupRequestValidation}}
+      @changeset={{changeset @model this.SignupRequestValidation}}
       @signup={{this.signup}}
     />
   </div>

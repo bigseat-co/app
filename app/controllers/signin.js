@@ -37,7 +37,6 @@ export default class SigninController extends Controller {
     try {
       await this._authenticate();
     } catch(error) {
-      alert(error);
       this._showErrorMessage();
       this.isProcessing = false;
       return;
@@ -47,7 +46,7 @@ export default class SigninController extends Controller {
     this.transitionToRoute('admin');
   }
 
-  async _authenticate() {
+  _authenticate() {
     let { email, password } = this.model;
 
     return this.session.authenticate('authenticator:bigseat', {
