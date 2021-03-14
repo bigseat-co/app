@@ -37,8 +37,7 @@ export default class SigninController extends Controller {
     try {
       await this._authenticate();
     } catch(error) {
-      this._showErrorMessage();
-      this.isProcessing = false;
+      this._onAuthenticateError(error);
       return;
     }
 
@@ -55,9 +54,10 @@ export default class SigninController extends Controller {
     });
   }
 
-  _showErrorMessage() {
+  _onAuthenticateError() {
     let message = this.intl.t('errors.invalid_email_or_password');
 
     this.notifications.clearAll().error(message);
+    this.isProcessing = false;
   }
 }
