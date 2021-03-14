@@ -30,7 +30,7 @@
     </div>
 
     <div class="sidebar__profile">
-      <span class="sidebar__name">Ges Jeremie</span>
+      <span class="sidebar__name">{{ this.currentUser.user.firstName }} {{ this.currentUser.user.lastName }}</span>
       <button {{on "click" this.signout}} class="sidebar__signout">
         sign out
       </button>
