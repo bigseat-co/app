@@ -21,7 +21,7 @@ export default class OverriddenApollo extends ApolloService {
 
       this.currentUser.load();
 
-      let { apiKey } = this.currentUser.user;
+      let apiKey = this.currentUser?.user?.apiKey;
 
       headers['Authorization'] = apiKey ? `Bearer ${apiKey}` : '';
 

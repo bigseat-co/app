@@ -6,7 +6,6 @@ import { isEmpty } from '@ember/utils';
 import SignupMutation from '../gql/mutations/signup.graphql';
 import SignupRequestValidation from '../validations/signup-request';
 
-
 export default class SignupController extends Controller {
   @service apollo
   @service cookies
@@ -15,9 +14,6 @@ export default class SignupController extends Controller {
   @service session
 
   SignupRequestValidation = SignupRequestValidation
-
-  error
-  response
 
   @tracked isProcessing = false
 
@@ -29,7 +25,7 @@ export default class SignupController extends Controller {
 
     this.isProcessing = true;
 
-    await changeset.validate();
+    await changeset.validate()
 
     if (changeset.isInvalid) {
       this.isProcessing = false;
@@ -39,20 +35,24 @@ export default class SignupController extends Controller {
     await changeset.save();
 
     try {
-      this.response = await this._signup();
+      await this._signup();
     } catch(error) {
-      this.error = error;
-      this._showErrorMessage();
-      this.isProcessing = false;
-      return
+      this._onSignupError(error);
+      return;
     }
 
-    await this._authenticate();
+    try {
+      await this._authenticate();
+    } catch(error) {
+      this._onAuthenticateError(error);
+      return;
+    }
 
+    this.isProcessing = false;
     this.transitionToRoute('admin');
   }
 
-  async _signup() {
+  _signup() {
     return this.apollo.mutate({
       mutation: SignupMutation,
       variables: this._serialize(this.model)
@@ -68,7 +68,7 @@ export default class SignupController extends Controller {
         name: attrs.organizationName
       },
       password: attrs.password
-    }
+    };
   }
 
   _authenticate() {
@@ -80,9 +80,15 @@ export default class SignupController extends Controller {
     });
   }
 
-  _showErrorMessage() {
-    let message = this.error.errors?.firstObject?.message || this.intl.t('errors.generic');
+  _onAuthenticateError(error) {
+    this.isProcessing = false;
+    this.transitionToRoute('signin');
+  }
 
+  _onSignupError(error) {
+    let message = error.errors?.firstObject?.message || this.intl.t('errors.generic');
+
+    this.isProcessing = false;
     this.notifications.clearAll().error(message);
   }
 }

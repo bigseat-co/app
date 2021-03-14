@@ -6,7 +6,6 @@ export default class AdminRoute extends Route {
   @service session
 
   beforeModel(transition) {
-    // TODO - Try without get
-    this.get('session').requireAuthentication(transition, 'signin');
+    this.session.requireAuthentication(transition, 'signin');
   }
 }

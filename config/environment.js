@@ -28,6 +28,9 @@ module.exports = function(environment) {
       autoClear: true,
       clearDuration: 10000 // ms
     },
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'admin'
+    },
     'ember-toggle': {
       defaultTheme: 'ios'
     }
