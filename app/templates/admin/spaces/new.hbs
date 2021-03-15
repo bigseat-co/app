@@ -18,7 +18,7 @@
           </div>
           <div class="form__group">
             <label for="max-people" class="form__label">Maximum People</label>
-            <input id="max-people" type="number" placeholder="0" class="form__input form__input--width-small" />
+            <input id="max-people" type="number" min="0" placeholder="0" class="form__input form__input--width-small" />
           </div>
         </div>
         <div class="grid__cell grid__cell--70">
@@ -30,15 +30,53 @@
           </div>
           <div class="form__group">
             <label class="form__label">Open Hours</label>
-            <div class="form__inputs">
-              <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
-              to
-              <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
-            </div>
+            <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
+            to
+            <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+
+  <div class="create-space__section">
+    <h3 class="create-space__subtitle">Opening Hours</h3>
+    {{#each this.days as |day|}}
+      <div class="grid grid--auto grid--middle">
+        <div class="grid__cell">
+          <XToggle @value="true" />
+        </div>
+        <div class="grid__cell">
+          {{day}}
+        </div>
+        <div class="grid__cell">
+          <select name="hours" id="hours">
+            {{#each this.hours as |hour|}}
+              <option value={{hour}}>{{hour}}</option>
+            {{/each}}
+          </select>
+          :
+          <select name="minutes" id="minutes">
+            {{#each this.minutes as |minute|}}
+              <option value={{minute}}>{{minute}}</option>
+            {{/each}}
+          </select>
+          to
+          <select name="hours" id="hours">
+            {{#each this.hours as |hour|}}
+              <option value={{hour}}>{{hour}}</option>
+            {{/each}}
+          </select>
+          :
+          <select name="minutes" id="minutes">
+            {{#each this.minutes as |minute|}}
+              <option value={{minute}}>{{minute}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    {{/each}}
   </div>
 
   <div class="create-space__section">
