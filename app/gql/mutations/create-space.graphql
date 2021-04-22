@@ -1,19 +1,13 @@
 mutation CreateSpace (
-    $avatarUrl: String,
     $dailyCheckin: Boolean!,
     $maximumPeople: Int!,
     $name: String!,
-    $openHours: [OpenHoursInput!],
-    $slug: String
   ) {
   createSpace(
-    avatarUrl: $avatarUrl,
     dailyCheckin: $dailyCheckin,
     maximumPeople: $maximumPeople,
     name: $name,
-    openHours: $openHours,
-    slug: $slug
   ) {
-    id
+    maximumPeople
   }
 }
