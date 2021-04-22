@@ -9,10 +9,10 @@
       </div>
     </div>
 
-    <SignupForm
+    <Signup::Form
       @showLoading={{this.isProcessing}}
       @changeset={{changeset @model this.SignupRequestValidation}}
-      @onSubmit={{this.handleSignup}}
+      @onSubmit={{this.signup}}
     />
   </div>
   <div class="signup__footer">

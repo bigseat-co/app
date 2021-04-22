@@ -3,7 +3,7 @@
     {{inline-svg "illustrations/files" class="svg"}}
   </div>
 
-  <form class="form" {{on "submit" (prevent-default (fn @signup @changeset))}}>
+  <form class="form" {{on "submit" (prevent-default (fn @onSubmit @changeset))}}>
     <div class="grid grid--large">
       <div class="grid__cell grid__cell--50">
         <div class="form__group">
