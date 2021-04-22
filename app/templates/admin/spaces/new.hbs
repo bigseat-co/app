@@ -1,101 +1,124 @@
-<div class="create-space">
-  <div class="page-header">
-    <div class="page-header__cell">
-      <h1 class="page-header__title">Create Space</h1>
+{{#with (changeset @model CreateSpaceRequestValidation) as |changeset|}}
+  <div class="create-space">
+    <div class="page-header">
+      <div class="page-header__cell">
+        <h1 class="page-header__title">Create Space</h1>
+      </div>
     </div>
-  </div>
 
-  <div class="create-space__section">
-    <h3 class="create-space__subtitle">Essential</h3>
-    <p class="create-space__description">People will book those spaces by the name you define. You can also define the maximum number of people it can welcome at once.</p>
+    <div class="create-space__section">
+      <h3 class="create-space__subtitle">Essential</h3>
+      <p class="create-space__description">People will book those spaces by the name you define. You can also define the maximum number of people it can welcome at once.</p>
+      <div class="form">
+        <div class="grid grid--huge">
+          <div class="grid__cell grid__cell--30">
+            <div class="form__group">
+              <label for="name" class="form__label">Name*</label>
+              <input id="name" type="text" placeholder="Kitties room" class="form__input" />
 
-    <div class="form">
-      <div class="grid grid--huge">
-        <div class="grid__cell grid__cell--30">
-          <div class="form__group">
-            <label for="name" class="form__label">Name*</label>
-            <input id="name" type="text" placeholder="Kitties room" class="form__input" />
+              <Input
+                @name="name"
+                @value={{ changeset.name }}
+                @placeholder="Kitties room"
+                class="form__input"
+              />
+
+              {{#if changeset.error.name}}
+                <div class="form__error">
+                  {{changeset.error.name.validation}}
+                </div>
+              {{/if}}
+            </div>
+            <div class="form__group">
+              <label for="max-people" class="form__label">Maximum People</label>
+              <input id="max-people" type="number" min="0" placeholder="0" class="form__input form__input--width-small" />
+            </div>
           </div>
-          <div class="form__group">
-            <label for="max-people" class="form__label">Maximum People</label>
-            <input id="max-people" type="number" min="0" placeholder="0" class="form__input form__input--width-small" />
+          <div class="grid__cell grid__cell--70">
+            <PowerSelect @options={{this.workingDays}} @selected={{this.workingDayStart}} @onChange={{this.setWorkingDayStart}} as |name|>
+              {{name}}
+            </PowerSelect>
+
+            <PowerSelect @options={{this.workingDaysForEnd}} @selected={{this.workingDayEnd}} @onChange={{this.setWorkingDayEnd}} as |name|>
+              {{name}}
+            </PowerSelect>
+
+            <div class="form__group">
+
+              <label class="form__label">Working Days</label>
+              <input id="working-days-start" type="text" placeholder="Monday" class="form__input form__input--width-small" />
+              to
+              <input id="working-days-end" type="text" placeholder="Friday" class="form__input form__input--width-small" />
+            </div>
+            <div class="form__group">
+              <label class="form__label">Open Hours</label>
+              <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
+              to
+              <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
+            </div>
           </div>
         </div>
-        <div class="grid__cell grid__cell--70">
-          <div class="form__group">
-            <label class="form__label">Working Days</label>
-            <input id="working-days-start" type="text" placeholder="Monday" class="form__input form__input--width-small" />
+      </div>
+    </div>
+
+
+    <div class="create-space__section">
+      <h3 class="create-space__subtitle">Opening Hours</h3>
+      {{#each this.days as |day|}}
+        <div class="grid grid--auto grid--middle">
+          <div class="grid__cell">
+            <XToggle @value="true" />
+          </div>
+          <div class="grid__cell">
+            {{day}}
+          </div>
+          <div class="grid__cell">
+            <select name="hours" id="hours">
+              {{#each this.hours as |hour|}}
+                <option value={{hour}}>{{hour}}</option>
+              {{/each}}
+            </select>
+            :
+            <select name="minutes" id="minutes">
+              {{#each this.minutes as |minute|}}
+                <option value={{minute}}>{{minute}}</option>
+              {{/each}}
+            </select>
             to
-            <input id="working-days-end" type="text" placeholder="Friday" class="form__input form__input--width-small" />
+            <select name="hours" id="hours">
+              {{#each this.hours as |hour|}}
+                <option value={{hour}}>{{hour}}</option>
+              {{/each}}
+            </select>
+            :
+            <select name="minutes" id="minutes">
+              {{#each this.minutes as |minute|}}
+                <option value={{minute}}>{{minute}}</option>
+              {{/each}}
+            </select>
           </div>
-          <div class="form__group">
-            <label class="form__label">Open Hours</label>
-            <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
-            to
-            <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="create-space__section">
+      <h3 class="create-space__subtitle">Styling</h3>
+      <p>Upload a picture of the room, office, or whatever you feel illustrate best its spirit.</p>
+
+      <div class="upload-picture">
+        <h4 class="upload-picture__title">Avatar</h4>
+        <div class="upload-picture__zone">
+          <div class="upload-picture__thumbnail">
+            <img class="upload-picture__thumbnail-picture" src="/cat.jpg" />
+          </div>
+          <div class="upload-picture__content">
+            {{inline-svg "icons/upload" class="svg"}}
+            <p class="upload-picture__description">Drag &amp; drop a picture or click to select one</p>
           </div>
         </div>
       </div>
     </div>
+
+    <LinkTo @route="admin.configure-checkin" class="button button--primary">Confirm</LinkTo>
   </div>
-
-
-  <div class="create-space__section">
-    <h3 class="create-space__subtitle">Opening Hours</h3>
-    {{#each this.days as |day|}}
-      <div class="grid grid--auto grid--middle">
-        <div class="grid__cell">
-          <XToggle @value="true" />
-        </div>
-        <div class="grid__cell">
-          {{day}}
-        </div>
-        <div class="grid__cell">
-          <select name="hours" id="hours">
-            {{#each this.hours as |hour|}}
-              <option value={{hour}}>{{hour}}</option>
-            {{/each}}
-          </select>
-          :
-          <select name="minutes" id="minutes">
-            {{#each this.minutes as |minute|}}
-              <option value={{minute}}>{{minute}}</option>
-            {{/each}}
-          </select>
-          to
-          <select name="hours" id="hours">
-            {{#each this.hours as |hour|}}
-              <option value={{hour}}>{{hour}}</option>
-            {{/each}}
-          </select>
-          :
-          <select name="minutes" id="minutes">
-            {{#each this.minutes as |minute|}}
-              <option value={{minute}}>{{minute}}</option>
-            {{/each}}
-          </select>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-
-  <div class="create-space__section">
-    <h3 class="create-space__subtitle">Styling</h3>
-    <p>Upload a picture of the room, office, or whatever you feel illustrate best its spirit.</p>
-
-    <div class="upload-picture">
-      <h4 class="upload-picture__title">Avatar</h4>
-      <div class="upload-picture__zone">
-        <div class="upload-picture__thumbnail">
-          <img class="upload-picture__thumbnail-picture" src="/cat.jpg" />
-        </div>
-        <div class="upload-picture__content">
-          {{inline-svg "icons/upload" class="svg"}}
-          <p class="upload-picture__description">Drag &amp; drop a picture or click to select one</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <LinkTo @route="admin.configure-checkin" class="button button--primary">Confirm</LinkTo>
-</div>
+{{/with}}

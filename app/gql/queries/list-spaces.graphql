@@ -1,7 +1,7 @@
 query listSpaces {
   listSpaces {
     id
-    avatarUrl
+    avatar
     maximumPeople
     name
     openHours {

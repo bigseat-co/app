@@ -1,5 +1,5 @@
 <div class="signin__form">
-  <form class="form" {{on "submit" (prevent-default (fn @signin @changeset))}}>
+  <form class="form" {{on "submit" (prevent-default (fn @onSubmit @changeset))}}>
     <div class="form__group">
       <label for="email" class="form__label">{{t "admin.labels.email"}}</label>
       <Input
@@ -32,7 +32,7 @@
       {{/if}}
     </div>
     <div class="form__group">
-      {{#if @isProcessing}}
+      {{#if @showLoading}}
         <button class="button button--primary button--full" disabled="disabled"><Loader /></button>
       {{else}}
         <button class="button button--primary button--full">{{t "admin.signin.submit" }}</button>

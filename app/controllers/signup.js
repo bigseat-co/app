@@ -18,7 +18,7 @@ export default class SignupController extends Controller {
   @tracked isProcessing = false
 
   @action
-  async signup(changeset) {
+  async handleSignup(changeset) {
     if (this.isProcessing) {
       return;
     }

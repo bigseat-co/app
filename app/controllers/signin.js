@@ -6,14 +6,13 @@ import { tracked } from '@glimmer/tracking';
 import SigninMutation from '../gql/mutations/signin.graphql';
 import SigninRequestValidation from '../validations/signin-request';
 
-
 export default class SigninController extends Controller {
+  SigninRequestValidation = SigninRequestValidation
+
   @service apollo
   @service intl
   @service notifications
   @service session
-
-  SigninRequestValidation = SigninRequestValidation
 
   @tracked isProcessing = false
 

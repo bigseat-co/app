@@ -3,5 +3,7 @@
 \*------------------------------------*/
 
 .ember-basic-dropdown-trigger {
-    display: inline-block;
+    &:not(.ember-power-select-trigger) {
+      display: inline-block;
+    }
 }

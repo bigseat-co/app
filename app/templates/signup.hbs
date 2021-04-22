@@ -9,11 +9,10 @@
       </div>
     </div>
 
-    <Signup::Form
-      @isProcessing={{this.isProcessing}}
-      @isCreating={{this.isCreating}}
+    <SignupForm
+      @showLoading={{this.isProcessing}}
       @changeset={{changeset @model this.SignupRequestValidation}}
-      @signup={{this.signup}}
+      @onSubmit={{this.handleSignup}}
     />
   </div>
   <div class="signup__footer">
