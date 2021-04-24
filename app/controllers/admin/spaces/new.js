@@ -5,6 +5,7 @@ import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
 import SpaceValidation from '../../../validations/space';
 import CreateSpaceMutation from '../../../gql/mutations/create-space.graphql';
+import listSpaces from "../../../gql/queries/list-spaces.graphql";
 
 export default class AdminSpacesNewController extends Controller {
   SpaceValidation = SpaceValidation
@@ -46,19 +47,22 @@ export default class AdminSpacesNewController extends Controller {
       return;
     }
 
-    alert('Space Created!');
+    this.isProcessing = false;
+
+    this.transitionToRoute('admin.spaces');
   }
 
   _create() {
-    debugger;
-
     return this.apollo.mutate({
       mutation: CreateSpaceMutation,
       variables: {
         name: this.model.name,
         maximumPeople: 10,
-        dailyCheckin: false
-      }
+        dailyCheckin: false,
+        openHours: []
+      },
+      refetchQueries: [{ query: listSpaces }],
+      awaitRefetchQueries: true
     });
   }
 

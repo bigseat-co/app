@@ -2,12 +2,16 @@ mutation CreateSpace (
     $dailyCheckin: Boolean!,
     $maximumPeople: Int!,
     $name: String!,
+    $openHours: OpenHoursInput!
   ) {
   createSpace(
     dailyCheckin: $dailyCheckin,
     maximumPeople: $maximumPeople,
     name: $name,
+    openHours: $openHours
   ) {
+    id
     maximumPeople
+    name
   }
 }

@@ -6,7 +6,7 @@ export default class AdminSpacesIndexRoute extends Route {
   @queryManager apollo;
 
   model() {
-    return this.apollo.watchQuery({ query: listSpaces }, 'listSpaces').catch(error => alert(error));
+    return this.apollo.query({ query: listSpaces }, 'listSpaces').catch(error => alert(error));
   }
 
   resetController(controller, isExiting, transition) {
