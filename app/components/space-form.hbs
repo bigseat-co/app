@@ -1,0 +1,85 @@
+<form class="space-form form" {{on "submit" (prevent-default (fn @onSubmit @changeset))}}>
+  <div class="space-form__section">
+    <h3 class="space-form__subtitle">Essential</h3>
+    <p class="space-form__description">People will book those spaces by the name you define. You can also define the maximum number of people it can welcome at once.</p>
+    <div class="form">
+      <div class="grid grid--huge">
+        <div class="grid__cell grid__cell--30">
+          <div class="form__group">
+            <label for="name" class="form__label">Name*</label>
+            <Input
+              {{auto-focus}}
+              @id="name"
+              @name="name"
+              @value={{@changeset.name}}
+              @placeholder="Kitties room"
+              class="form__input"
+            />
+
+            {{#if @changeset.error.name}}
+              <div class="form__error">
+                {{@changeset.error.name.validation}}
+              </div>
+            {{/if}}
+          </div>
+          <div class="form__group">
+            <label for="maximum-people" class="form__label">Maximum People</label>
+            <Input
+              @id="maximum-people"
+              @name="maximum-people"
+              @value={{@changeset.maximumPeople}}
+              @placeholder="0"
+              class="form__input form__input--width-small"
+            />
+
+            {{#if @changeset.error.maximumPeople}}
+              <div class="form__error">
+                {{@changeset.error.maximumPeople.validation}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+        <div class="grid__cell grid__cell--70">
+
+          <div class="form__group">
+
+            <label class="form__label">Working Days</label>
+            <input id="working-days-start" type="text" placeholder="Monday" class="form__input form__input--width-small" />
+            to
+            <input id="working-days-end" type="text" placeholder="Friday" class="form__input form__input--width-small" />
+          </div>
+          <div class="form__group">
+            <label class="form__label">Open Hours</label>
+            <input id="open-hours-start" type="text" placeholder="10:00" class="form__input form__input--width-small" />
+            to
+            <input id="open-hours-end" type="text" placeholder="18:00" class="form__input form__input--width-small" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-form__section">
+    <h3 class="space-form__subtitle">Styling</h3>
+    <p>Upload a picture of the room, office, or whatever you feel illustrate best its spirit.</p>
+
+    <div class="upload-picture">
+      <h4 class="upload-picture__title">Avatar</h4>
+      <div class="upload-picture__zone">
+        <div class="upload-picture__thumbnail">
+          <img class="upload-picture__thumbnail-picture" src="/cat.jpg" />
+        </div>
+        <div class="upload-picture__content">
+          {{inline-svg "icons/upload" class="svg"}}
+          <p class="upload-picture__description">Drag &amp; drop a picture or click to select one</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{#if @showLoading}}
+    <button class="button button--primary">Confirm <Loader></Loader></button>
+  {{else}}
+    <button class="button button--primary">Confirm</button>
+  {{/if}}
+</form>

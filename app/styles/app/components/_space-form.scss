@@ -1,10 +1,10 @@
 /*------------------------------------*\
-    #CREATE-SPACE
+    #SPACE-FORM
 \*------------------------------------*/
 
-.create-space {}
+.space-form {}
 
-    .create-space__section {
+    .space-form__section {
         padding-top: $spacing-unit * 3;
         border-bottom: 1px solid $gray-200;
 
@@ -13,14 +13,14 @@
         }
     }
 
-        .create-space__subtitle {
+        .space-form__subtitle {
             margin-bottom: $spacing-unit / 1.5;
             font-size: $font-size-large;
             font-weight: $font-weight-bold;
             letter-spacing: $letter-spacing-small;
         }
 
-        .create-space__description {
+        .space-form__description {
             display: block;
             margin-bottom: $spacing-unit * 2;
         }
