@@ -1,7 +1,7 @@
 query getSpace($id: ID!) {
   getSpace(id: $id) {
     id
-    avatarUrl
+    avatar
     maximumPeople
     name
     openHours {
