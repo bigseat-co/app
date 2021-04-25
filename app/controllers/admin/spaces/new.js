@@ -18,6 +18,8 @@ export default class AdminSpacesNewController extends Controller {
   workingDays = w("monday tuesday wednesday thursday friday saturday sunday")
 
   @service apollo
+  @service notifications
+  @service intl
 
   @tracked workingDaysForEnd =  w("monday tuesday wednesday thursday friday saturday sunday")
   @tracked workingDayStart = 'monday'
@@ -57,7 +59,7 @@ export default class AdminSpacesNewController extends Controller {
       mutation: CreateSpaceMutation,
       variables: {
         name: this.model.name,
-        maximumPeople: 10,
+        maximumPeople: parseInt(this.model.maximumPeople),
         dailyCheckin: false,
         openHours: []
       },
@@ -67,7 +69,10 @@ export default class AdminSpacesNewController extends Controller {
   }
 
   _onCreateError(error) {
-    debugger;
+    let message = this.intl.t('errors.generic');
+
+    this.notifications.clearAll().error(message);
+    this.isProcessing = false;
   }
 
   @action

@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 class Space {
   name
-  maximumPeople = 10
+  maximumPeople
 }
 
 export default class AdminSpacesNewRoute extends Route {

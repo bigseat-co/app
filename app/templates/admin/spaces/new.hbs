@@ -14,9 +14,9 @@
             <div class="grid__cell grid__cell--30">
               <div class="form__group">
                 <label for="name" class="form__label">Name*</label>
-                <input id="name" type="text" placeholder="Kitties room" class="form__input" />
-
                 <Input
+                  {{auto-focus}}
+                  @id="name"
                   @name="name"
                   @value={{ changeset.name }}
                   @placeholder="Kitties room"
@@ -30,8 +30,20 @@
                 {{/if}}
               </div>
               <div class="form__group">
-                <label for="max-people" class="form__label">Maximum People</label>
-                <input id="max-people" type="number" min="0" placeholder="0" class="form__input form__input--width-small" />
+                <label for="maximum-people" class="form__label">Maximum People</label>
+                <Input
+                  @id="maximum-people"
+                  @name="maximum-people"
+                  @value={{ changeset.maximumPeople }}
+                  @placeholder="0"
+                  class="form__input form__input--width-small"
+                />
+
+                {{#if changeset.error.maximumPeople}}
+                  <div class="form__error">
+                    {{changeset.error.maximumPeople.validation}}
+                  </div>
+                {{/if}}
               </div>
             </div>
             <div class="grid__cell grid__cell--70">
@@ -119,9 +131,6 @@
         </div>
       </div>
 
-      {{isProcessing}}
-      {{log changeset.changes}}
-
       {{#if isProcessing}}
         <button class="button button--primary">Confirm <Loader></Loader></button>
       {{else}}
@@ -130,3 +139,7 @@
     </form>
   {{/with}}
 </div>
+
+<NotificationContainer
+  @position="top-right"
+/>
