@@ -36,7 +36,7 @@ export default class AdminSpacesNewController extends Controller {
     await changeset.validate();
 
     if (changeset.isInvalid) {
-      this.isProcessing = false;
+      this._onChangesetInvalid();
       return;
     }
 
@@ -66,6 +66,13 @@ export default class AdminSpacesNewController extends Controller {
       refetchQueries: [{ query: listSpaces }],
       awaitRefetchQueries: true
     });
+  }
+
+  _onChangesetInvalid() {
+    let message = 'Some of the informations you entered are incorrect';
+
+    this.notifications.clearAll().error(message);
+    this.isProcessing = false;
   }
 
   _onCreateError(error) {
