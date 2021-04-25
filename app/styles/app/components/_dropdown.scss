@@ -6,8 +6,11 @@
     width: 100%;
     background-color: $white;
     border-radius: 5px;
+    border: 1px solid $gray-200;
     box-shadow: $box-shadow;
 }
+
+.dropdown--small {}
 
 .dropdown--navigation {}
 
@@ -23,6 +26,10 @@
             .dropdown__item-link {
                 display: block;
                 padding: $spacing-unit * 2;
+
+                .dropdown--small & {
+                    padding: $spacing-unit;
+                }
 
                 &:hover {
                     color: $indigo-500;

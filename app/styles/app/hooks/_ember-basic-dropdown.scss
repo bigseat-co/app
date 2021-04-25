@@ -5,5 +5,6 @@
 .ember-basic-dropdown-trigger {
     &:not(.ember-power-select-trigger) {
       display: inline-block;
+      outline: 0;
     }
 }
