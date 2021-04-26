@@ -11,7 +11,7 @@
 
     <Signup::Form
       @showLoading={{this.isProcessing}}
-      @changeset={{changeset @model this.SignupRequestValidation}}
+      @changeset={{changeset @model.signupForm this.SignupFormValidation}}
       @onSubmit={{this.signup}}
     />
   </div>

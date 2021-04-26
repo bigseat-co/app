@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
 import SignupMutation from '../gql/mutations/signup.graphql';
-import SignupRequestValidation from '../validations/signup-request';
+import SignupFormValidation from '../validations/signup-form';
 
 export default class SignupController extends Controller {
   @service apollo
@@ -13,7 +13,7 @@ export default class SignupController extends Controller {
   @service notifications
   @service session
 
-  SignupRequestValidation = SignupRequestValidation
+  SignupFormValidation = SignupFormValidation
 
   @tracked isProcessing = false
 
