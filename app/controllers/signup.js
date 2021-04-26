@@ -55,7 +55,7 @@ export default class SignupController extends Controller {
   _signup() {
     return this.apollo.mutate({
       mutation: SignupMutation,
-      variables: this._serialize(this.model)
+      variables: this._serialize(this.model.signupForm)
     });
   }
 
@@ -72,7 +72,7 @@ export default class SignupController extends Controller {
   }
 
   _authenticate() {
-    let { email, password } = this.model;
+    let { email, password } = this.model.signupForm;
 
     return this.session.authenticate('authenticator:bigseat', {
       email: email,
