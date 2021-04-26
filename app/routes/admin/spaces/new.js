@@ -1,12 +1,10 @@
 import Route from '@ember/routing/route';
-
-class Space {
-  name
-  maximumPeople
-}
+import SpaceForm from 'bigseat/models/space-form';
 
 export default class AdminSpacesNewRoute extends Route {
   model() {
-    return new Space();
+    return {
+      spaceForm: new SpaceForm()
+    };
   }
 }

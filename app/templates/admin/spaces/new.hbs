@@ -6,7 +6,7 @@
   </div>
 
   <SpaceForm
-    @changeset={{changeset @model SpaceValidation}}
+    @changeset={{changeset @model.spaceForm SpaceFormValidation}}
     @showLoading={{isProcessing}}
     @onSubmit={{create}}
   />

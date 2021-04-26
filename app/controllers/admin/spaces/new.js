@@ -3,12 +3,12 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
-import SpaceValidation from '../../../validations/space';
-import CreateSpaceMutation from '../../../gql/mutations/create-space.graphql';
-import listSpaces from '../../../gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
+import SpaceFormValidation from 'bigseat/validations/space-form';
+import CreateSpaceMutation from 'bigseat/gql/mutations/create-space.graphql';
+import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
 
 export default class AdminSpacesNewController extends Controller {
-  SpaceValidation = SpaceValidation
+  SpaceFormValidation = SpaceFormValidation
   isProcessing = false
 
   // TODO - Clean all that shit
@@ -58,8 +58,8 @@ export default class AdminSpacesNewController extends Controller {
     return this.apollo.mutate({
       mutation: CreateSpaceMutation,
       variables: {
-        name: this.model.name,
-        maximumPeople: parseInt(this.model.maximumPeople),
+        name: this.model.spaceForm.name,
+        maximumPeople: parseInt(this.model.spaceForm.maximumPeople),
         dailyCheckin: false,
         openHours: [
           { dayOfTheWeek: 'monday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },

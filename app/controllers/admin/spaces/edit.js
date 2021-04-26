@@ -26,7 +26,7 @@ export default class AdminSpacesEditController extends Controller {
     await changeset.validate();
 
     if (changeset.isInvalid) {
-      this._onChangesetInvalid();
+      this._onchangesetInvalid();
       return;
     }
 
