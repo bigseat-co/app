@@ -1,17 +1,7 @@
-export default class SpaceForm {
+import Form from 'bigseat/models/form';
+
+export default class SpaceForm extends Form {
   name
   maximumPeople
-
-  setProperties(properties) {
-    Object.entries(properties).forEach(entry => {
-      let [property, value] = entry;
-
-      if (this.hasOwnProperty(property)) {
-        this[property] = value;
-      }
-    });
-
-    return this;
-  }
 }
 
