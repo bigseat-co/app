@@ -5,12 +5,13 @@ import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
 import SpaceValidation from '../../../validations/space';
 import CreateSpaceMutation from '../../../gql/mutations/create-space.graphql';
-import listSpaces from "../../../gql/queries/list-spaces.graphql";
+import listSpaces from '../../../gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
 
 export default class AdminSpacesNewController extends Controller {
   SpaceValidation = SpaceValidation
   isProcessing = false
 
+  // TODO - Clean all that shit
   days = w("monday tuesday wednesday thursday friday saturday sunday")
   hours = w("00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 15 17 18 19 20 21 22 23")
   minutes = w("00 05 10 15 20 25 30 35 40 45 50 55")
@@ -50,7 +51,6 @@ export default class AdminSpacesNewController extends Controller {
     }
 
     this.isProcessing = false;
-
     this.transitionToRoute('admin.spaces');
   }
 
@@ -61,7 +61,15 @@ export default class AdminSpacesNewController extends Controller {
         name: this.model.name,
         maximumPeople: parseInt(this.model.maximumPeople),
         dailyCheckin: false,
-        openHours: []
+        openHours: [
+          { dayOfTheWeek: 'monday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'tuesday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'wednesday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'thursday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'friday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'saturday', openTime: '10:00:00Z', closeTime: '18:00:00Z' },
+          { dayOfTheWeek: 'sunday', openTime: '10:00:00Z', closeTime: '18:00:00Z' }
+        ]
       },
       refetchQueries: [{ query: listSpaces }],
       awaitRefetchQueries: true

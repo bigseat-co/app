@@ -28,7 +28,7 @@ Router.map(function() {
 
     this.route('spaces', function () {
       this.route('new');
-      this.route('edit');
+      this.route('edit', { path: '/edit/:space_id' });
     });
 
     this.route('plugins', function () {

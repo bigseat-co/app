@@ -1,21 +1,7 @@
-query getSpace($id: ID!) {
+query getSpace($id: UUID4!) {
   getSpace(id: $id) {
     id
-    avatar
     maximumPeople
     name
-    openHours {
-      id
-      spaceId
-      closeTime
-      dayOfTheWeek
-      openTime
-    }
-    organization {
-      id
-      name
-      slug
-    }
-    slug
   }
 }

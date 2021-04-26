@@ -1,0 +1,13 @@
+mutation EditSpace (
+    $id: UUID4!,
+    $spaceInput: SpaceInput!
+  ) {
+  editSpace(
+    id: $id,
+    spaceInput: $spaceInput
+  ) {
+    id
+    maximumPeople
+    name
+  }
+}

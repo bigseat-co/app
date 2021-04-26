@@ -24,6 +24,7 @@ admin:
       description: Once those pictures are uploaded, you can assign people to different desks.
       drop_files_here: Drop files here or click to upload
     new_space: Create my first space
+    edit_space: Edit space
     no-results:
       title: You don't have any space yet
       description: By creating a space, you'll be able to pin your desks and assign people to them according to your planning.

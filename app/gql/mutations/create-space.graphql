@@ -1,8 +1,9 @@
+
 mutation CreateSpace (
     $dailyCheckin: Boolean!,
     $maximumPeople: Int!,
     $name: String!,
-    $openHours: OpenHoursInput!
+    $openHours: [OpenHoursInput!]
   ) {
   createSpace(
     dailyCheckin: $dailyCheckin,

@@ -8,9 +8,9 @@
       <div class="signin__description">{{t "admin.signin.description" }}</div>
 
       <Signin::Form
-        @showLoading={{this.isProcessing}}
-        @changeset={{changeset @model this.validate}}
-        @onSubmit={{this.signin}}
+        @showLoading={{isProcessing}}
+        @changeset={{changeset @model SigninRequestValidation}}
+        @onSubmit={{signin}}
       />
     </div>
     <div class="signin__footer">
