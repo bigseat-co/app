@@ -79,7 +79,7 @@ export default class AdminSpacesNewController extends Controller {
   _onChangesetInvalid() {
     let message = 'Some of the informations you entered are incorrect';
 
-    this.notifications.clearAll().error(message);
+    this.notifications.clearAll().warning(message);
     this.isProcessing = false;
   }
 
