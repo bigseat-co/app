@@ -9,6 +9,7 @@
       </div>
     </div>
 
+    <!-- TODO - Should be named SignupForm, extract scss as well -->
     <Signup::Form
       @showLoading={{this.isProcessing}}
       @changeset={{changeset @model.signupForm this.SignupFormValidation}}

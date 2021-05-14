@@ -7,6 +7,7 @@
       <div class="signin__title">{{t "admin.signin.welcome_back"}}</div>
       <div class="signin__description">{{t "admin.signin.description" }}</div>
 
+      <!-- TODO - Should be called <SigninForm> (extract scss as well) -->
       <Signin::Form
         @showLoading={{isProcessing}}
         @changeset={{changeset @model.signinForm SigninFormValidation}}
