@@ -1,4 +1,4 @@
-export default class Form {
+export default class Model {
   setProperties(properties) {
     Object.entries(properties).forEach(entry => {
       let [property, value] = entry;

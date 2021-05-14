@@ -1,6 +1,6 @@
-import Form from 'bigseat/models/form';
+import Model from 'bigseat/models/model';
 
-export default class SignupForm extends Form {
+export default class SignupForm extends Model {
   email
   firstName
   lastName

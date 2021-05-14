@@ -24,3 +24,42 @@
             display: block;
             margin-bottom: $spacing-unit * 2;
         }
+
+        .space-form__hours {}
+
+        .space-form__days {
+        }
+
+            .space-form__day {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                background-color: $gray-300;
+                color: $gray-500;
+                border-radius: 50%;
+                margin-right: $spacing-unit / 2;
+
+                &.is-active {
+                    background-color: $indigo-500;
+                    color: $white;
+                }
+
+                > span {
+                    @include center;
+                }
+            }
+
+        .space-form__periods {}
+
+            .space-form__period {
+                display: flex;
+            }
+
+                .space-form__period-name {
+                    min-width: 150px;
+                }
+
+                .space-form__period-time {}
+
