@@ -8,7 +8,6 @@ import SignupFormValidation from '../validations/signup-form';
 
 export default class SignupController extends Controller {
   @service apollo
-  @service cookies
   @service intl
   @service notifications
   @service session
