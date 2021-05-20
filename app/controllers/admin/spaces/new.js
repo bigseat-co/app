@@ -52,14 +52,18 @@ export default class AdminSpacesNewController extends Controller {
         openHours: spaceForm.openHours.map(openHour => {
           return {
             dayOfTheWeek: openHour.dayOfTheWeek,
-            openTime: openHour.openTime + 'Z', // Mark as UTC
-            closeTime: openHour.closeTime + 'Z'
+            openTime: this._formatTime(openHour.openTime),
+            closeTime: this._formatTime(openHour.closeTime)
           }
         })
       },
       refetchQueries: [{ query: listSpaces }],
       awaitRefetchQueries: true
     });
+  }
+
+  _formatTime(time) {
+    return `${time}:00Z`;
   }
 
   _onChangesetInvalid() {

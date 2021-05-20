@@ -2,7 +2,6 @@ import Route from '@ember/routing/route';
 import { queryManager } from 'ember-apollo-client';
 import getSpace from 'bigseat/gql/queries/get-space.graphql'; // TODO - Should be called GetSpace
 import SpaceForm from 'bigseat/models/space-form';
-import OpenHour from 'bigseat/models/open-hour';
 
 export default class AdminSpacesEditRoute extends Route {
   @queryManager apollo
@@ -14,15 +13,21 @@ export default class AdminSpacesEditRoute extends Route {
       name: space.name,
       maximumPeople: space.maximumPeople,
       openHours: space.openHours.map(openHour => ({
+        id: openHour.id,
         dayOfTheWeek: openHour.dayOfTheWeek,
-        openTime: openHour.openTime,
-        closeTime: openHour.closeTime
+        openTime: this._formatTime(openHour.openTime),
+        closeTime: this._formatTime(openHour.closeTime)
       }))
     });
 
     debugger;
 
     return { space, spaceForm };
+  }
+
+  // 17:00:00 => 17:00
+  _formatTime(time) {
+    return time.split(':').slice(0, 2).join(':');
   }
 
   _findSpace(id) {

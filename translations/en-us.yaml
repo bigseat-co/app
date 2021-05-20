@@ -45,7 +45,7 @@ checkin:
     close_page: You can close this page
 
 errors:
-  generic: 'Something went wrong and we are not totally sure why. We are here to help: support@bigseat.co'
+  generic: 'Something went wrong. We are here to help: support@bigseat.co'
   invalid_email_or_password: Sorry, we couldn't find an account with that email and password.
 
 site_name: BigSeat.

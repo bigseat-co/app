@@ -51,10 +51,11 @@ export default class AdminSpacesEditController extends Controller {
           maximumPeople: parseInt(this.model.spaceForm.maximumPeople),
           dailyCheckin: false,
           openHours: this.model.spaceForm.openHours.map(openHour => {
+            console.log(openHour);
             return {
               dayOfTheWeek: openHour.dayOfTheWeek,
-              openTime: openHour.openTime + 'Z', // Mark as UTC
-              closeTime: openHour.closeTime + 'Z'
+              openTime: this._formatTime(openHour.openTime),
+              closeTime: this._formatTime(openHour.closeTime)
             }
           })
         }
@@ -62,6 +63,10 @@ export default class AdminSpacesEditController extends Controller {
       refetchQueries: [{ query: listSpaces }],
       awaitRefetchQueries: true
     });
+  }
+
+  _formatTime(time) {
+    return `${time}:00Z`;
   }
 
   _onChangesetInvalid() {
