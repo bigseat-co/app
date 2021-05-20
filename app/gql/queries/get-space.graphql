@@ -3,5 +3,12 @@ query getSpace($id: UUID4!) {
     id
     maximumPeople
     name
+    openHours {
+      id
+      spaceId
+      closeTime
+      dayOfTheWeek
+      openTime
+    }
   }
 }

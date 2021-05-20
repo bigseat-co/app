@@ -5,7 +5,7 @@
 .space-form {}
 
     .space-form__section {
-        padding-top: $spacing-unit * 3;
+        padding: ($spacing-unit * 2 0);
         border-bottom: 1px solid $gray-200;
 
         &:last-of-type {
@@ -40,6 +40,9 @@
                 color: $gray-500;
                 border-radius: 50%;
                 margin-right: $spacing-unit / 2;
+                cursor: pointer;
+                user-select: none;
+                text-transform: uppercase;
 
                 &.is-active {
                     background-color: $indigo-500;
@@ -55,11 +58,18 @@
 
             .space-form__period {
                 display: flex;
+                align-items: center;
+                margin: $spacing-unit 0;
             }
 
                 .space-form__period-name {
                     min-width: 150px;
+                    text-transform: capitalize;
                 }
 
                 .space-form__period-time {}
+
+        .space-form__info {
+            margin: $spacing-unit 0;
+        }
 

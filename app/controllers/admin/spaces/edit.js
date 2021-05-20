@@ -3,12 +3,10 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
-import SpaceFormValidation from '../../../validations/space-form';
 import EditSpaceMutation from '../../../gql/mutations/edit-space.graphql';
 import listSpaces from '../../../gql/queries/list-spaces.graphql'; // TODO - Should be named ListSpaces
 
 export default class AdminSpacesEditController extends Controller {
-  SpaceFormValidation = SpaceFormValidation
   isProcessing = false
 
   @service apollo
@@ -51,7 +49,14 @@ export default class AdminSpacesEditController extends Controller {
         spaceInput: {
           name: this.model.spaceForm.name,
           maximumPeople: parseInt(this.model.spaceForm.maximumPeople),
-          dailyCheckin: false
+          dailyCheckin: false,
+          openHours: this.model.spaceForm.openHours.map(openHour => {
+            return {
+              dayOfTheWeek: openHour.dayOfTheWeek,
+              openTime: openHour.openTime + 'Z', // Mark as UTC
+              closeTime: openHour.closeTime + 'Z'
+            }
+          })
         }
       },
       refetchQueries: [{ query: listSpaces }],

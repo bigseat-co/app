@@ -6,9 +6,9 @@
   </div>
 
   <SpaceForm
-    @changeset={{changeset @model.spaceForm SpaceFormValidation}}
-    @showLoading={{isProcessing}}
-    @onSubmit={{create}}
+    @model={{@model.spaceForm}}
+    @showLoading={{this.isProcessing}}
+    @onSubmit={{this.create}}
   />
 </div>
 

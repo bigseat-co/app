@@ -1,5 +1,5 @@
 export default class Model {
-  setProperties(properties) {
+  setProperties(properties = {}) {
     Object.entries(properties).forEach(entry => {
       let [property, value] = entry;
 
@@ -9,5 +9,12 @@ export default class Model {
     });
 
     return this;
+  }
+
+  getProperties(properties = []) {
+    return properties.reduce((result, property) => {
+      result[property] = this[property];
+      return result;
+    }, {});
   }
 }
