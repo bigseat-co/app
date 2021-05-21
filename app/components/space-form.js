@@ -8,8 +8,8 @@ import lookupValidator from 'ember-changeset-validations';
 import { isPresent } from '@ember/utils';
 
 const DAYS_OF_THE_WEEK = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-const DEFAULT_OPEN_TIME = '08:00:00';
-const DEFAULT_CLOSE_TIME = '17:00:00';
+const DEFAULT_OPEN_TIME = '08:00';
+const DEFAULT_CLOSE_TIME = '17:00';
 
 export default class SpaceForm extends Component {
   constructor() {
