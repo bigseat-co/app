@@ -11,6 +11,18 @@ export default class AdminPeopleIndexController extends Controller {
   }
 
   get people() {
-    return this.model.filter(person => !person.isAdmin);
+    return this.model.filter(person => !person.isAdmin).sort(this._byFirstName);
+  }
+
+  _byFirstName(a, b) {
+    if (a.firstName < b.firstName) {
+      return -1;
+    }
+
+    if (a.firstName > b.firstName) {
+      return 1;
+    }
+
+    return 0;
   }
 }
