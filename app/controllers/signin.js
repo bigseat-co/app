@@ -1,51 +1,27 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { later } from '@ember/runloop';
-import { tracked } from '@glimmer/tracking';
-import SigninMutation from 'bigseat/gql/mutations/signin.graphql';
-import SigninFormValidation from 'bigseat/validations/signin-form';
 
 export default class SigninController extends Controller {
-  SigninFormValidation = SigninFormValidation
-
   @service apollo
   @service intl
   @service notifications
   @service session
 
-  @tracked isProcessing = false
-
   @action
-  async signin(changeset) {
-    if (this.isProcessing) {
-      return;
-    }
-
-    this.isProcessing = true;
-
-    await changeset.validate();
-
-    if (changeset.isInvalid) {
-      this.isProcessing = false;
-      return;
-    }
-
-    await changeset.save();
-
+  async signin(request) {
     try {
-      await this._authenticate();
+      await this._authenticate(request);
     } catch(error) {
       this._onAuthenticateError(error);
       return;
     }
 
-    this.isProcessing = false;
     this.transitionToRoute('admin');
   }
 
-  _authenticate() {
-    let { email, password } = this.model;
+  _authenticate(request) {
+    let { email, password } = request;
 
     return this.session.authenticate('authenticator:bigseat', {
       email: email,

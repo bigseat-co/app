@@ -1,17 +1,17 @@
-<div class="signin__form">
-  <form class="form" {{on "submit" (prevent-default (fn @onSubmit @changeset))}}>
+<div class="signin-form">
+  <form class="form" {{on "submit" (prevent-default this.submit)}}>
     <div class="form__group">
       <label for="email" class="form__label">{{t "admin.labels.email"}}</label>
       <Input
         @name="email"
-        @value={{ @changeset.email }}
+        @value={{ this.changeset.email }}
         @placeholder="{{t "admin.signin.email_placeholder"}}"
         class="form__input"
       />
 
-      {{#if @changeset.error.email}}
+      {{#if this.changeset.error.email}}
         <div class="form__error">
-          {{@changeset.error.email.validation}}
+          {{this.changeset.error.email.validation}}
         </div>
       {{/if}}
     </div>
@@ -21,18 +21,18 @@
       <Input
         @type="password"
         @name="password"
-        @value={{ @changeset.password }}
+        @value={{ this.changeset.password }}
         class="form__input"
       />
 
-      {{#if @changeset.error.password}}
+      {{#if this.changeset.error.password}}
         <div class="form__error">
-          {{@changeset.error.password.validation}}
+          {{this.changeset.error.password.validation}}
         </div>
       {{/if}}
     </div>
     <div class="form__group">
-      {{#if @showLoading}}
+      {{#if this.isProcessing}}
         <button class="button button--primary button--full" disabled="disabled"><Loader /></button>
       {{else}}
         <button class="button button--primary button--full">{{t "admin.signin.submit" }}</button>
