@@ -45,20 +45,6 @@
                 margin-top: $spacing-unit * 5;
             }
 
-        .signup__form {
-            padding: $spacing-unit * 5;
-            padding-top: $spacing-unit * 2;
-            background-color: $white;
-            border-top-right-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
-        }
-
-            .signup__asset {
-                margin: 0 auto;
-                margin-bottom: $spacing-unit * 2;
-                max-width: 250px;
-            }
-
         .signup__footer {
             margin: ($spacing-unit * 4) 0;
             text-align: center;

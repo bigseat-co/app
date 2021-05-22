@@ -21,12 +21,6 @@
             }
         }
 
-        .form__label--terms {
-            margin: $spacing-unit 0;
-            font-size: $font-size-small;
-            line-height: $line-height-small;
-        }
-
         .form__input {
             display: inline-block;
             padding: $spacing-unit;
@@ -48,6 +42,11 @@
             &[type="checkbox"] {
                 width: auto;
                 box-shadow: none;
+
+                .signup-form & {
+                    width: 20px;
+                    height: 20px;
+                }
             }
 
             &.is-invalid {

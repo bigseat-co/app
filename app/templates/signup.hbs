@@ -10,9 +10,8 @@
     </div>
 
     <!-- TODO - Should be named SignupForm, extract scss as well -->
-    <Signup::Form
+    <SignupForm
       @showLoading={{this.isProcessing}}
-      @changeset={{changeset @model.signupForm this.SignupFormValidation}}
       @onSubmit={{this.signup}}
     />
   </div>
@@ -20,10 +19,6 @@
     <LinkTo @route="signin" class="button button--primary-outline">I already have an account</LinkTo>
   </div>
 </div>
-
-<NotificationContainer
-  @position="top-right"
-/>
 
 <!-- TODO: Fix, this does not exist and needs to be real route pages /terms, /privacy-policy (bigseat.co root domain!) -->
 {{#if isShowingTerms}}

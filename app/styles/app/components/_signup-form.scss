@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #SIGNUP-FORM
+\*------------------------------------*/
+
+.signup-form {
+    padding: $spacing-unit * 5;
+    padding-top: $spacing-unit * 2;
+    background-color: $white;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+    .signup-form__asset {
+        margin: 0 auto;
+        margin-bottom: $spacing-unit * 2;
+        max-width: 250px;
+    }
+
+    .signup-form__terms {}

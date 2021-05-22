@@ -2,9 +2,7 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { isEmpty } from '@ember/utils';
 import SignupMutation from '../gql/mutations/signup.graphql';
-import SignupFormValidation from '../validations/signup-form';
 
 export default class SignupController extends Controller {
   @service apollo
@@ -12,49 +10,29 @@ export default class SignupController extends Controller {
   @service notifications
   @service session
 
-  SignupFormValidation = SignupFormValidation
-
-  @tracked isProcessing = false
-
   @action
-  async signup(changeset) {
-    if (this.isProcessing) {
-      return;
-    }
-
-    this.isProcessing = true;
-
-    await changeset.validate()
-
-    if (changeset.isInvalid) {
-      this.isProcessing = false;
-      return;
-    }
-
-    await changeset.save();
-
+  async signup(request) {
     try {
-      await this._signup();
+      await this._signup(request);
     } catch(error) {
       this._onSignupError(error);
       return;
     }
 
     try {
-      await this._authenticate();
+      await this._authenticate(request);
     } catch(error) {
       this._onAuthenticateError(error);
       return;
     }
 
-    this.isProcessing = false;
     this.transitionToRoute('admin');
   }
 
-  _signup() {
+  _signup(request) {
     return this.apollo.mutate({
       mutation: SignupMutation,
-      variables: this._serialize(this.model.signupForm)
+      variables: this._serialize(request)
     });
   }
 
@@ -70,8 +48,8 @@ export default class SignupController extends Controller {
     };
   }
 
-  _authenticate() {
-    let { email, password } = this.model.signupForm;
+  _authenticate(request) {
+    let { email, password } = request;
 
     return this.session.authenticate('authenticator:bigseat', {
       email: email,
@@ -80,14 +58,12 @@ export default class SignupController extends Controller {
   }
 
   _onAuthenticateError(error) {
-    this.isProcessing = false;
     this.transitionToRoute('signin');
   }
 
   _onSignupError(error) {
     let message = error.errors?.firstObject?.message || this.intl.t('errors.generic');
 
-    this.isProcessing = false;
     this.notifications.clearAll().error(message);
   }
 }

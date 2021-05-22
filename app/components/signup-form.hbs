@@ -1,9 +1,10 @@
-<div class="signup__form">
-  <div class="signup__asset">
+{{log this.config}}
+<div class="signup-form">
+  <div class="signup-form__asset">
     {{inline-svg "illustrations/files" class="svg"}}
   </div>
 
-  <form class="form" {{on "submit" (prevent-default (fn @onSubmit @changeset))}}>
+  <form class="form" {{on "submit" (prevent-default this.submit)}}>
     <div class="grid grid--large">
       <div class="grid__cell grid__cell--50">
         <div class="form__group">
@@ -11,13 +12,13 @@
           <Input
           @id="email"
           @type="text"
-          @value={{@changeset.email}}
+          @value={{this.changeset.email}}
           class="form__input"
           />
 
-          {{#if @changeset.error.email}}
+          {{#if this.changeset.error.email}}
             <div class="form__error">
-              {{@changeset.error.email.validation}}
+              {{this.changeset.error.email.validation}}
             </div>
           {{/if}}
         </div>
@@ -29,13 +30,13 @@
           <Input
           @id="organization-name"
           @type="text"
-          @value={{@changeset.organizationName}}
+          @value={{this.changeset.organizationName}}
           class="form__input"
           />
 
-          {{#if @changeset.error.organizationName}}
+          {{#if this.changeset.error.organizationName}}
             <div class="form__error">
-              {{@changeset.error.organizationName.validation}}
+              {{this.changeset.error.organizationName.validation}}
             </div>
           {{/if}}
         </div>
@@ -47,13 +48,13 @@
           <Input
           @id="first-name"
           @type="text"
-          @value={{@changeset.firstName}}
+          @value={{this.changeset.firstName}}
           class="form__input"
           />
 
-          {{#if @changeset.error.firstName}}
+          {{#if this.changeset.error.firstName}}
             <div class="form__error">
-              {{@changeset.error.firstName.validation}}
+              {{this.changeset.error.firstName.validation}}
             </div>
           {{/if}}
         </div>
@@ -65,13 +66,13 @@
           <Input
           @id="last_name"
           @type="text"
-          @value={{@changeset.lastName}}
+          @value={{this.changeset.lastName}}
           class="form__input"
           />
 
-          {{#if @changeset.error.lastName}}
+          {{#if this.changeset.error.lastName}}
             <div class="form__error">
-              {{@changeset.error.lastName.validation}}
+              {{this.changeset.error.lastName.validation}}
             </div>
           {{/if}}
         </div>
@@ -83,13 +84,13 @@
           <Input
           @id="password"
           @type="password"
-          @value={{@changeset.password}}
+          @value={{this.changeset.password}}
           class="form__input"
           />
 
-          {{#if @changeset.error.password}}
+          {{#if this.changeset.error.password}}
             <div class="form__error">
-              {{@changeset.error.password.validation}}
+              {{this.changeset.error.password.validation}}
             </div>
           {{/if}}
         </div>
@@ -102,20 +103,20 @@
               <Input
                 @id="terms"
                 @type="checkbox"
-                @checked={{@changeset.termsAcceptance}}
+                @checked={{this.changeset.termsAcceptance}}
                 class="form__input"
                 />
             </div>
             <div class="grid__cell grid__cell--90">
-              <label for="terms" class="form__label form__label--terms">
-                I agree to BigSeat's <button type="button" class="text-button text-button--primary">Terms of Service</button> and the use of personal data as explained in BigSeat's <button type="button" class="text-button text-button--primary">Privacy Policy</button>.
-              </label>
+              <p lass="signup__form-terms">
+                I agree to BigSeat's <a target="blank" class="text-button text-button--primary" href="{{this.config.termsOfServiceUrl}}">Terms of Service</a> and the use of personal data as explained in BigSeat's <a target="blank" class="text-button text-button--primary" href="{{this.config.privacyPolicyUrl}}">Privacy Policy</a>.
+              </p>
             </div>
           </div>
 
-          {{#if @changeset.error.termsAcceptance}}
+          {{#if this.changeset.error.termsAcceptance}}
             <div class="form__error">
-              {{@changeset.error.termsAcceptance.validation}}
+              {{this.changeset.error.termsAcceptance.validation}}
             </div>
           {{/if}}
         </div>
@@ -123,7 +124,7 @@
 
       <div class="grid__cell">
         <div class="form__group">
-          {{#if @isProcessing}}
+          {{#if this.isProcessing}}
             <button class="button button--primary button--full" disabled="disabled">Sign up free <Loader /></button>
           {{else}}
             <button class="button button--primary button--full">Sign up free -></button>
