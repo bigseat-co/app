@@ -10,12 +10,12 @@ import { Changeset } from 'ember-changeset';
 
 export default class PeopleForm extends Component {
   @tracked isProcessing = false
-  @tracked people
+  @tracked _people
 
   constructor() {
     super(...arguments);
 
-    this.people = [this._buildPerson()];
+    this._people = [this._buildPerson()];
   }
 
   _buildPerson() {
@@ -24,13 +24,17 @@ export default class PeopleForm extends Component {
     return new Changeset(person, lookupValidator(PersonValidations), PersonValidations, { skipValidate: true });
   }
 
+  get people() {
+    return this._people.filter(person => !person.isPersisted);
+  }
+
   async validatePeople() {
     let validatePeople = this.people.map(async (person) => await person.validate());
 
     return Promise.all(validatePeople);
   }
 
-  async arePeopleValid() {
+  async everyPeopleValid() {
     await this.validatePeople();
 
     return this.people.every(person => person.get('isValid'));
@@ -45,20 +49,20 @@ export default class PeopleForm extends Component {
   addPerson() {
     let person = this._buildPerson();
 
-    this.people = [...this.people, person];
+    this._people = [...this._people, person];
   }
 
   @action
-  removePerson(index) {
-    this.people = this.people.filter((_person, personIndex) => personIndex !== index);
+  removePerson(key) {
+    this._people = this._people.filter((person) => person.key !== key);
   }
 
   @action
   async submit() {
     this.isProcessing = true;
-    let arePeopleValid = await this.arePeopleValid();
+    let everyPeopleValid = await this.everyPeopleValid();
 
-    if (!arePeopleValid) {
+    if (!everyPeopleValid) {
       this.isProcessing = false;
       return;
     }

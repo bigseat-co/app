@@ -21,6 +21,9 @@
                 @placeholder="hello@bigseat.co"
                 class="form__input {{if person.error.email 'is-invalid'}}"
               />
+              {{#if person.persistenceError}}
+                <div class="form__error">{{person.persistenceError}}</div>
+              {{/if}}
             </td>
             <td>
              <Input
@@ -44,7 +47,7 @@
             </td>
             <td class="people-form__remove-person"> <!-- TODO - Improve width style -->
               {{#if index}}
-                <a class="text-button" {{on 'click' (prevent-default (fn this.removePerson index))}}>remove</a>
+                <a class="text-button" {{on 'click' (prevent-default (fn this.removePerson person.key))}}>remove</a>
               {{/if}}
             </td>
           </tr>

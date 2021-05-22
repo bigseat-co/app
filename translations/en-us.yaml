@@ -49,6 +49,9 @@ errors:
   generic: 'Something went wrong. We are here to help: support@bigseat.co'
   invalid_email_or_password: Sorry, we couldn't find an account with that email and password.
   changeset_invalid: Some of the informations you entered are incorrect.
+  email_taken: Email has already been taken
+  unable_to_save_person: Unable to save this person
+  unable_to_save_all_people: Unable to save all people added
 
 site_name: BigSeat.
 

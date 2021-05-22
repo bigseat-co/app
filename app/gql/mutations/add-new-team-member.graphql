@@ -1,0 +1,23 @@
+mutation AddNewTeamMember (
+    $email: String!,
+    $firstName: String!,
+    $lastName: String!,
+    $group: String!,
+    $origin: String!
+  ) {
+  addNewTeamMember(
+    email: $email,
+    firstName: $firstName,
+    lastName: $lastName,
+    group: $group,
+    origin: $origin
+  ) {
+    id
+    email
+    firstName
+    lastName
+    organization {
+      id
+    }
+  }
+}

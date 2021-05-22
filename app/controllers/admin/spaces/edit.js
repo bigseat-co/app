@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
 import EditSpaceMutation from 'bigseat/gql/mutations/edit-space.graphql';
 import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be named ListSpaces ?
