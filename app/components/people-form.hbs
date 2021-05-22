@@ -1,0 +1,65 @@
+<form class="people-form" {{on 'submit' (prevent-default this.submit)}}>
+  <div class="people-form__content">
+    <table class="table table--full people-form__table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Group</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each this.people as |person index|}}
+          <tr>
+            <td>
+              <Input
+                {{auto-focus}}
+                @name="email"
+                @value={{person.email}}
+                @placeholder="hello@bigseat.co"
+                class="form__input {{if person.error.email 'is-invalid'}}"
+              />
+            </td>
+            <td>
+             <Input
+              @name="firstName"
+              @value={{person.firstName}}
+              class="form__input {{if person.error.firstName 'is-invalid'}}"
+             />
+            </td>
+            <td>
+              <Input
+                @name="lastName"
+                @value={{person.lastName}}
+                class="form__input {{if person.error.lastName 'is-invalid'}}"
+              />
+            </td>
+            <td>
+              <select name="group-{{index}}" class="form__select" {{on 'change' (fn this.setGroup person)}}>
+                <option value="office" selected="{{if (eq 'office' person.group) true}}">Regularly in office</option>
+                <option value="remote" selected="{{if (eq 'remote' person.group) true}}">Mostly remote</option>
+              </select>
+            </td>
+            <td class="people-form__remove-person"> <!-- TODO - Improve width style -->
+              {{#if index}}
+                <a class="text-button" {{on 'click' (prevent-default (fn this.removePerson index))}}>remove</a>
+              {{/if}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="people-form__add-person">
+      <button disabled={{this.isProcessing}} class="button button--small" {{on 'click' (prevent-default this.addPerson)}}>Add another person</button>
+    </div>
+  </div>
+
+  {{#if this.isProcessing}}
+    <button type="submit" disabled="true" class="button button--primary">Saving people added <Loader /></button>
+  {{else}}
+    <button type="submit" class="button button--primary">Save people added</button>
+  {{/if}}
+</form>

@@ -27,6 +27,12 @@
     }
 }
 
+.button + .button {
+    .page-header__cell & {
+        margin-left: $spacing-unit / 2;
+    }
+}
+
 /**
  * Colors
  */

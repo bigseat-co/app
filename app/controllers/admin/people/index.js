@@ -9,4 +9,8 @@ export default class AdminPeopleIndexController extends Controller {
   get showRecords() {
     return this.withRecords === 'true';
   }
+
+  get people() {
+    return this.model.filter(person => !person.isAdmin);
+  }
 }

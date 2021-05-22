@@ -14,6 +14,7 @@ admin:
     password: Password
 
   people:
+    new_people: Add people
     no-results:
       title: You don't have any team mates
       description: You need to add more people to your organization to have more information here.
@@ -23,7 +24,7 @@ admin:
       title: Please add pictures of your space
       description: Once those pictures are uploaded, you can assign people to different desks.
       drop_files_here: Drop files here or click to upload
-    new_space: Create my first space
+    new_space: Add my first space
     edit_space: Edit space
     no-results:
       title: You don't have any space yet

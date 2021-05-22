@@ -12,7 +12,7 @@
               @id="name"
               @name="name"
               @value={{this.changeset.name}}
-              @placeholder="Kitties room"
+              @placeholder="Office Paris, Room A1, Kitchen, ..."
               class="form__input"
             />
 
@@ -76,7 +76,7 @@
         {{/each}}
       </div>
     {{else}}
-      <div class="space-form__info">This place is always closed</div>
+      <div class="space-form__info">This space is always closed</div>
     {{/unless}}
   </div>
 
@@ -99,8 +99,8 @@
   </div>
 
   {{#if @showLoading}}
-    <button class="button button--primary">Confirm <Loader></Loader></button>
+    <button class="button button--primary">Saving space <Loader></Loader></button>
   {{else}}
-    <button class="button button--primary">Confirm</button>
+    <button class="button button--primary">Save space</button>
   {{/if}}
 </form>

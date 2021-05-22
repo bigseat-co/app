@@ -1,11 +1,12 @@
-<div class="people">
-  {{#if this.showRecords}}
+{{#if people}}
+  <div class="people">
     <div class="page-header">
       <div class="page-header__cell">
         <h4 class="page-header__title">People</h4>
       </div>
       <div class="page-header__cell">
-        <a href="#" class="button button--primary">Export as CSV</a>
+        <a href="#" class="button">Export as CSV</a>
+        <a href="#" class="button button--primary">Add person</a>
       </div>
     </div>
     <div class="people__wrapper">
@@ -14,89 +15,34 @@
           <thead>
             <tr>
               <th>Person</th>
-              <th>Group</th>
-              <th>Last booking</th>
-              <th>Last check-in</th>
+              <th>Role</th>
+              <!-- <th>Last booking</th> -->
+              <!-- <th>Last check-in</th> -->
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <div class="grid grid--auto grid--middle">
-                  <div class="grid__cell">
-                    <div class="thumbnail thumbnail--small thumbnail--circle">
-                      <img class="thumbnail__picture" src="/jeremie.jpg" />
-                    </div>
-                  </div>
-                  <div class="grid__cell">
-                    <p class="table__group">
-                      <span class="table__group-key"><strong>Jeremie Ges</strong></span>
-                      <span class="table__group-value">jeremie@syatt.io</span>
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <span class="badge badge--primary">In-office</span>
-              </td>
-              <td>
-                <p class="table__group">
-                  <span class="table__group-key">October 3, 2020</span>
-                  <span class="table__group-value">a week ago</span>
-                </p>
-              </td>
-              <td>
-                <p class="table__group">
-                  <span class="table__group-key">October 3, 2020</span>
-                  <span class="table__group-value">a week ago</span>
-                </p>
-              </td>
-              <td>
-                <div class="table__actions">
-                  <BasicDropdown as |dd|>
-                    <dd.Trigger>
-                      {{inline-svg "icons/dots" class="svg"}}
-                    </dd.Trigger>
-                    <dd.Content>
-                      <div class="dropdown">
-                        <ul class="dropdown__items">
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Log out</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Other action</a>
-                          </li>
-                          <li class="dropdown__item">
-                            <a class="dropdown__item-link" href="#">Yolo</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </dd.Content>
-                  </BasicDropdown>
-                </div>
-              </td>
-            </tr>
-            {{#each (array 1 2 3 4 5)}}
+            {{#each people as |person|}}
               <tr>
                 <td>
                   <div class="grid grid--auto grid--middle">
                     <div class="grid__cell">
                       <div class="thumbnail thumbnail--small thumbnail--circle">
-                        <img class="thumbnail__picture" src="/laurent.jpg" />
+                        <img class="thumbnail__picture" src="/jeremie.jpg" />
                       </div>
                     </div>
                     <div class="grid__cell">
                       <p class="table__group">
-                        <span class="table__group-key"><strong>Laurent Schaffner</strong></span>
-                        <span class="table__group-value">laurent@syatt.io</span>
+                        <span class="table__group-key"><strong>Jeremie Ges</strong></span>
+                        <span class="table__group-value">jeremie@syatt.io</span>
                       </p>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <span class="badge badge--warning">Remote</span>
+                  <span class="badge">Member</span>
                 </td>
+                <!--
                 <td>
                   <p class="table__group">
                     <span class="table__group-key">October 3, 2020</span>
@@ -109,6 +55,7 @@
                     <span class="table__group-value">a week ago</span>
                   </p>
                 </td>
+                -->
                 <td>
                   <div class="table__actions">
                     <BasicDropdown as |dd|>
@@ -119,13 +66,13 @@
                         <div class="dropdown">
                           <ul class="dropdown__items">
                             <li class="dropdown__item">
-                              <a class="dropdown__item-link" href="#">Log out</a>
+                              <a class="dropdown__item-link" href="#">Fake action</a>
                             </li>
                             <li class="dropdown__item">
-                              <a class="dropdown__item-link" href="#">Other action</a>
+                              <a class="dropdown__item-link" href="#">Fake action</a>
                             </li>
                             <li class="dropdown__item">
-                              <a class="dropdown__item-link" href="#">Yolo</a>
+                              <a class="dropdown__item-link" href="#">Fake action</a>
                             </li>
                           </ul>
                         </div>
@@ -139,14 +86,18 @@
         </table>
       </div>
     </div>
-  {{else}}
-    <div class="empty-state">
-      <div class="empty-state__asset empty-state__asset--people">
-        {{inline-svg "illustrations/work" class="svg"}}
-      </div>
+  </div>
+{{else}}
+  <div class="empty-state">
+    <div class="empty-state__asset empty-state__asset--people">
+      {{inline-svg "illustrations/work" class="svg"}}
+    </div>
 
-      <h1 class="empty-state__title">{{t "admin.people.no-results.title"}}</h1>
-      <p class="empty-state__description">{{t "admin.people.no-results.description"}}</p>
-   </div>
-  {{/if}}
-</div>
+    <h1 class="empty-state__title">{{t "admin.people.no-results.title"}}</h1>
+    <p class="empty-state__description">{{t "admin.people.no-results.description"}}</p>
+
+    <div class="empty-state__button">
+      <LinkTo @route="admin.people.new" class="button button--primary">{{t "admin.people.new_people"}}</LinkTo>
+    </div>
+  </div>
+{{/if}}

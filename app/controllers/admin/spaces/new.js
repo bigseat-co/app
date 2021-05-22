@@ -43,6 +43,8 @@ export default class AdminSpacesNewController extends Controller {
   _create() {
     let { spaceForm } = this.model;
 
+    debugger;
+
     return this.apollo.mutate({
       mutation: CreateSpaceMutation,
       variables: {

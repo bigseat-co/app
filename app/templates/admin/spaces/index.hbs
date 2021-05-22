@@ -5,7 +5,7 @@
         <h4 class="page-header__title">Spaces</h4>
       </div>
       <div class="page-header__cell">
-        <LinkTo @route="admin.spaces.new" class="button button--primary">Create space</LinkTo>
+        <LinkTo @route="admin.spaces.new" class="button button--primary">Add space</LinkTo>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
             <tr>
               <th>Name</th>
               <th class="align-center">Maximum People</th>
-              <th>Schedule</th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
@@ -39,10 +39,7 @@
                 </td>
                 <td>{{space.maximumPeople}} people</td>
                 <td>
-                  <p class="table__group">
-                    <span class="table__group-key"><strong>Monday - Friday</strong></span>
-                    <span class="table__group-value">08:00 - 18:00</span>
-                  </p>
+                  <span class="badge badge--success">Open</span>
                 </td>
                 <td>
                   <div class="table__actions">

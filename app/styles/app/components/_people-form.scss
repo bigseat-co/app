@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #PEOPLE-FORM
+\*------------------------------------*/
+
+.people-form {}
+
+    .people-form__content {
+        margin: ($spacing-unit * 2) 0;
+    }
+        .people-form__add-person {
+            margin-top: $spacing-unit * 2;
+            margin-bottom: $spacing-unit * 4;
+        }
+
+        .people-form__remove-person {
+            min-width: 100px;
+        }

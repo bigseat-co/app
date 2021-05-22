@@ -12,6 +12,7 @@
             <input type="text" class="form__input" />
           </div>
         </div>
+
         <div class="grid__cell grid__cell--50">
           <div class="form__group">
             <label class="form__label">First Name</label>
@@ -40,8 +41,18 @@
         <div class="grid__cell grid__cell--33">
           <div class="form__group">
             <div class="form__label">Zip</div>
-            <input type="text" class="form__input" placeholder="Seat">
+            <input type="text" class="form__input is-invalid" placeholder="Seat">
             <div class="form__error">This field is required</div>
+          </div>
+        </div>
+
+        <div class="grid__cell grid__cell--33">
+          <div class="form__group">
+            <div class="form__label">Select group</div>
+            <select class="form__select">
+              <option value="in-office">Regularly in office</option>
+              <option value="remote">Mostly remote</option>
+            </select>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ Router.map(function() {
     });
 
     this.route('people', function () {
-      // Implicit index route automatically defined
+      this.route('new');
     });
 
     this.route('settings', function () {

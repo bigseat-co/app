@@ -14,12 +14,11 @@ $table-border: 1px solid $gray-300 !default;
         background: $gray-100;
 
         th {
-            padding: ($spacing-unit * 1.5);
+            padding: $spacing-unit ($spacing-unit * 1.5);
             color: $gray-500;
             font-weight: $font-weight-semi-bold;
             text-align: left;
             border-bottom: $table-border;
-            font-size: $font-size-small;
         }
 
         th:first-child {
@@ -54,7 +53,7 @@ $table-border: 1px solid $gray-300 !default;
         }
 
         td {
-            padding: $spacing-unit * 1.5;
+            padding: $spacing-unit ($spacing-unit * 1.5);
             vertical-align: middle;
             border-bottom: $table-border;
 
