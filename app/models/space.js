@@ -1,6 +1,6 @@
 import Model from 'bigseat/models/model';
 
-export default class SpaceForm extends Model {
+export default class Space extends Model {
   name
   maximumPeople
   openHours = [

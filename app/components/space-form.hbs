@@ -1,4 +1,4 @@
-<form class="space-form form" {{on "submit" (prevent-default (fn @onSubmit changeset))}}>
+<form class="space-form form" {{on "submit" (prevent-default this.submit)}}>
   <div class="space-form__section">
     <h3 class="space-form__subtitle">Essential</h3>
     <p class="space-form__description">People will book those spaces by the name you define. You can also define the maximum number of people it can welcome at once.</p>
@@ -98,8 +98,8 @@
     </div>
   </div>
 
-  {{#if @showLoading}}
-    <button class="button button--primary">Saving space <Loader></Loader></button>
+  {{#if this.isProcessing}}
+    <button disabled="true" class="button button--primary">Saving space <Loader></Loader></button>
   {{else}}
     <button class="button button--primary">Save space</button>
   {{/if}}

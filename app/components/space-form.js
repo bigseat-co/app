@@ -12,6 +12,10 @@ const DEFAULT_OPEN_TIME = '08:00';
 const DEFAULT_CLOSE_TIME = '17:00';
 
 export default class SpaceForm extends Component {
+  @tracked isProcessing
+  @service intl
+  @service notifications
+
   constructor() {
     super(...arguments);
 
@@ -30,7 +34,7 @@ export default class SpaceForm extends Component {
     let openHours = this.changeset.get('openHours') || [];
 
     return openHours.sort((a, b) => {
-      return DAYS_OF_THE_WEEK.indexOf(a.dayOfTheWeek) - DAYS_OF_THE_WEEK.indexOf(b.dayOfTheWeek)
+      return DAYS_OF_THE_WEEK.indexOf(a.dayOfTheWeek) - DAYS_OF_THE_WEEK.indexOf(b.dayOfTheWeek);
     });
   }
 
@@ -42,6 +46,23 @@ export default class SpaceForm extends Component {
     let openHour = this.openHours.find(openHour => openHour.dayOfTheWeek === dayOfTheWeek);
 
     return isPresent(openHour);
+  }
+
+  @action
+  async submit() {
+    this.isProcessing = true;
+
+    await this.changeset.validate()
+
+    if (this.changeset.isInvalid) {
+      this._onChangesetInvalid();
+      return;
+    }
+
+    await this.changeset.save();
+    await this.args.onSubmit(this.changeset);
+
+    this.isProcessing = false;
   }
 
   @action
@@ -58,5 +79,12 @@ export default class SpaceForm extends Component {
     this.changeset.set('openHours', this.openHours.filter(openHour => {
       return openHour.dayOfTheWeek !== dayOfTheWeek
     }));
+  }
+
+  _onChangesetInvalid() {
+    let message = this.intl.t('errors.changeset_invalid');
+
+    this.notifications.clearAll().warning(message);
+    this.isProcessing = false;
   }
 }

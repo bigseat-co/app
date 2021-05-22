@@ -48,6 +48,7 @@ checkin:
 errors:
   generic: 'Something went wrong. We are here to help: support@bigseat.co'
   invalid_email_or_password: Sorry, we couldn't find an account with that email and password.
+  changeset_invalid: Some of the informations you entered are incorrect.
 
 site_name: BigSeat.
 

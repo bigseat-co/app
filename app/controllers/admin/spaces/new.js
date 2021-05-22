@@ -4,31 +4,21 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import CreateSpaceMutation from 'bigseat/gql/mutations/create-space.graphql';
 import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
+import Space from 'bigseat/models/space';
 
 export default class AdminSpacesNewController extends Controller {
-  @tracked isProcessing = false
-
   @service apollo
   @service notifications
   @service intl
 
+  constructor() {
+    super(...arguments);
+
+    this.space = new Space();
+  }
+
   @action
-  async create(changeset) {
-    if (this.isProcessing) {
-      return;
-    }
-
-    this.isProcessing = true;
-
-    await changeset.validate();
-
-    if (changeset.isInvalid) {
-      this._onChangesetInvalid();
-      return;
-    }
-
-    await changeset.save();
-
+  async create() {
     try {
       await this._create();
     } catch(error) {
@@ -36,22 +26,21 @@ export default class AdminSpacesNewController extends Controller {
       return;
     }
 
-    this.isProcessing = false;
+    this.space = new Space(); // Reset
+
     this.transitionToRoute('admin.spaces');
   }
 
   _create() {
-    let { spaceForm } = this.model;
-
-    debugger;
+    let space = this.space;
 
     return this.apollo.mutate({
       mutation: CreateSpaceMutation,
       variables: {
-        name: spaceForm.name,
-        maximumPeople: parseInt(spaceForm.maximumPeople),
+        name: space.name,
+        maximumPeople: parseInt(space.maximumPeople),
         dailyCheckin: false,
-        openHours: spaceForm.openHours.map(openHour => {
+        openHours: space.openHours.map(openHour => {
           return {
             dayOfTheWeek: openHour.dayOfTheWeek,
             openTime: this._formatTime(openHour.openTime),
@@ -66,13 +55,6 @@ export default class AdminSpacesNewController extends Controller {
 
   _formatTime(time) {
     return `${time}:00Z`;
-  }
-
-  _onChangesetInvalid() {
-    let message = 'Some of the informations you entered are incorrect';
-
-    this.notifications.clearAll().warning(message);
-    this.isProcessing = false;
   }
 
   _onCreateError(error) {
