@@ -3,33 +3,18 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { w } from '@ember/string';
 import { inject as service } from '@ember/service';
-import EditSpaceMutation from '../../../gql/mutations/edit-space.graphql';
-import listSpaces from '../../../gql/queries/list-spaces.graphql'; // TODO - Should be named ListSpaces
+import EditSpaceMutation from 'bigseat/gql/mutations/edit-space.graphql';
+import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be named ListSpaces ?
 
 export default class AdminSpacesEditController extends Controller {
-  isProcessing = false
+  space
 
   @service apollo
   @service notifications
   @service intl
 
   @action
-  async update(changeset) {
-    if (this.isProcessing) {
-      return;
-    }
-
-    this.isProcessing = true;
-
-    await changeset.validate();
-
-    if (changeset.isInvalid) {
-      this._onchangesetInvalid();
-      return;
-    }
-
-    await changeset.save();
-
+  async update() {
     try {
       await this._update();
     } catch(error) {
@@ -37,7 +22,6 @@ export default class AdminSpacesEditController extends Controller {
       return;
     }
 
-    this.isProcessing = false;
     this.transitionToRoute('admin.spaces');
   }
 
@@ -47,15 +31,14 @@ export default class AdminSpacesEditController extends Controller {
       variables: {
         id: this.model.space.id,
         spaceInput: {
-          name: this.model.spaceForm.name,
-          maximumPeople: parseInt(this.model.spaceForm.maximumPeople),
+          name: this.space.name,
+          maximumPeople: parseInt(this.space.maximumPeople),
           dailyCheckin: false,
-          openHours: this.model.spaceForm.openHours.map(openHour => {
-            console.log(openHour);
+          openHours: this.space.openHours.map(openHour => {
             return {
               dayOfTheWeek: openHour.dayOfTheWeek,
-              openTime: this._formatTime(openHour.openTime),
-              closeTime: this._formatTime(openHour.closeTime)
+              openTime: this._markTimeAsUTC(openHour.openTime),
+              closeTime: this._markTimeAsUTC(openHour.closeTime)
             }
           })
         }
@@ -63,10 +46,6 @@ export default class AdminSpacesEditController extends Controller {
       refetchQueries: [{ query: listSpaces }],
       awaitRefetchQueries: true
     });
-  }
-
-  _formatTime(time) {
-    return `${time}:00Z`;
   }
 
   _onChangesetInvalid() {
@@ -82,5 +61,10 @@ export default class AdminSpacesEditController extends Controller {
 
     this.notifications.clearAll().error(message);
     this.isProcessing = false;
+  }
+
+  // 17:00 => 17:00:00z
+  _markTimeAsUTC(time) {
+    return `${time}:00Z`;
   }
 }
