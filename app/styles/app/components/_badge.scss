@@ -30,3 +30,8 @@
     color: $amber-600;
     background-color: $amber-100;
 }
+
+.badge--outline {
+    border: 1px solid $gray-400;
+    background-color: transparent;
+}

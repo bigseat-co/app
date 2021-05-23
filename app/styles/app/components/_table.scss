@@ -9,6 +9,7 @@ $table-border: 1px solid $gray-300 !default;
     border-collapse: separate;
     border-radius: $border-radius;
     border: 1px solid $gray-300;
+    font-size: $font-size;
 
     thead {
         background: $gray-100;
@@ -82,10 +83,14 @@ $table-border: 1px solid $gray-300 !default;
             font-size: $font-size;
         }
 
+        .table__group-key--highlight {
+            font-weight: $font-weight-semi-bold;
+        }
+
         .table__group-value {
             display: block;
-            color: $gray-500;
             font-size: $font-size-small;
+            color: $gray-500;
         }
 
     .table__actions {
