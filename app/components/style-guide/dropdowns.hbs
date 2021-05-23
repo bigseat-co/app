@@ -6,13 +6,19 @@
     <div class="dropdown">
       <ul class="dropdown__items">
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Log out</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-label">Log out</span>
+          </a>
         </li>
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Other action</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-label">Other action</span>
+          </a>
         </li>
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Yolo</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-label">Yolo</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -20,18 +26,40 @@
 </div>
 
 <div class="style-guide__section-child">
-  <h4 class="style-guide__heading style-guide__heading--2">Example</h4>
+  <h4 class="style-guide__heading style-guide__heading--2">With icons</h4>
   <div class="style-guide__example">
-    <div class="dropdown dropdown--small">
+    <div class="dropdown">
       <ul class="dropdown__items">
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Log out</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-icon">{{inline-svg "icons/pencil" class="svg"}}</span>
+            <span class="dropdown__item-label">Edit profile</span>
+          </a>
         </li>
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Other action</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-icon">{{inline-svg "icons/trash-can" class="svg"}}</span>
+            <span class="dropdown__item-label">Delete profile</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="style-guide__section-child">
+  <h4 class="style-guide__heading style-guide__heading--2">With header</h4>
+  <div class="style-guide__example">
+    <div class="dropdown">
+      <ul class="dropdown__items">
+        <li class="dropdown__item">
+          <span class="dropdown__item-header">Actions</span>
         </li>
         <li class="dropdown__item">
-          <a class="dropdown__item-link" href="#">Yolo</a>
+          <a class="dropdown__item-link" href="#">
+            <span class="dropdown__item-icon">{{inline-svg "icons/trash-can" class="svg"}}</span>
+            <span class="dropdown__item-label">Delete profile</span>
+          </a>
         </li>
       </ul>
     </div>

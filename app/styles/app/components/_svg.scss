@@ -57,4 +57,10 @@
         fill: $gray-500;
         vertical-align: middle;
     }
+
+    .dropdown & {
+        margin-right: $spacing-unit / 2;
+        width: 16px;
+        vertical-align: middle;
+    }
 }

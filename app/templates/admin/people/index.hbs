@@ -18,7 +18,7 @@
               <th>Group</th>
               <!-- <th>Last booking</th> -->
               <!-- <th>Last check-in</th> -->
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -69,13 +69,22 @@
                         {{inline-svg "icons/dots" class="svg"}}
                       </dd.Trigger>
                       <dd.Content>
-                        <div class="dropdown">
+                        <div class="dropdown dropdown--small">
                           <ul class="dropdown__items">
                             <li class="dropdown__item">
-                              <a class="dropdown__item-link" href="#">Edit</a>
+                                <span class="dropdown__item-header">Actions</span>
                             </li>
                             <li class="dropdown__item">
-                              <a class="dropdown__item-link" href="#" {{on 'click' (fn this.delete person)}}>Delete</a>
+                              <a class="dropdown__item-link" href="#">
+                                <span class="dropdown__item-icon">{{inline-svg "icons/pencil" class="svg"}}</span>
+                                <span class="dropdown__item-label">Edit person</span>
+                              </a>
+                            </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#" {{on 'click' (fn this.delete person)}}>
+                                <span class="dropdown__item-icon">{{inline-svg "icons/trash-can" class="svg"}}</span>
+                                <span class="dropdown__item-label">Delete person</span>
+                              </a>
                             </li>
                           </ul>
                         </div>

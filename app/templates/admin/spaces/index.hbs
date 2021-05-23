@@ -51,8 +51,13 @@
                         <div class="dropdown">
                           <ul class="dropdown__items">
                             <li class="dropdown__item">
-                              {{log space.id}}
-                              <LinkTo @route="admin.spaces.edit" @model={{space.id}} class="dropdown__item-link">{{t "admin.spaces.edit_space"}}</LinkTo>
+                              <span class="dropdown__item-header">Actions</span>
+                            </li>
+                            <li class="dropdown__item">
+                              <LinkTo @route="admin.spaces.edit" @model={{space.id}} class="dropdown__item-link">
+                                <span class="dropdown__item-icon">{{inline-svg "icons/pencil" class="svg"}}</span>
+                                <span class="dropdown__item-label">{{t "admin.spaces.edit_space"}}</span>
+                              </LinkTo>
                             </li>
                           </ul>
                         </div>
