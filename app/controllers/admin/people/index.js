@@ -35,11 +35,11 @@ export default class AdminPeopleIndexController extends Controller {
 
   @action
   async delete(person) {
-    let message = `Delete ${this.getFullName(person)}?`;
+    let fullName = this.getFullName(person);
 
     this.isDeleting = true;
 
-    if (!window.confirm(message)) {
+    if (!window.confirm(`Delete ${fullName}?`)) {
       this.isDeleting = false;
       return;
     }
@@ -47,7 +47,6 @@ export default class AdminPeopleIndexController extends Controller {
     try {
       await this._delete(person);
     } catch(error) {
-      let yolo = error;
       this._onDeleteError(person, error);
       return;
     }
@@ -70,10 +69,9 @@ export default class AdminPeopleIndexController extends Controller {
   }
 
   _onDeleteError(person, error) {
-    debugger;
-    let message = `Unable to delete ${this.getFullName(person)}`;
+    let fullName = this.getFullName(person);
 
-    this.notifications.clearAll().error(message);
+    this.notifications.clearAll().error(`Unable to delete ${fullName}`);
     this.isDeleting = false;
   }
 }
