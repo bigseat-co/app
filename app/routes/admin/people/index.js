@@ -7,12 +7,6 @@ export default class AdminPeopleIndexRoute extends Route {
   @queryManager apollo
 
   async model() {
-    return this.apollo.query({ query: ListPeople }, 'listPeople').catch(error => alert(error));
-  }
-
-  resetController(controller, isExiting, transition) {
-    if (isExiting) {
-      controller.set('withRecords', null);
-    }
+    return this.apollo.watchQuery({ query: ListPeople }, 'listPeople').catch(error => alert(error));
   }
 }

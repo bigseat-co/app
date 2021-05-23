@@ -1,0 +1,9 @@
+mutation RemovePerson(
+    $id: UUID4!
+  ) {
+  removePerson(
+    id: $id
+  ) {
+    id
+  }
+}
