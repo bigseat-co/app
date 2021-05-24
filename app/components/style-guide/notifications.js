@@ -8,7 +8,7 @@ export default class NotificationsComponent extends Component {
 
   @action
   showExamples() {
-    this.notifications.error('Unable to connect');
+    this.notifications.error('Unable to connect', {autoClear: false});
     this.notifications.success('Welcome to BigSeat');
     this.notifications.info('A maintenance is scheduled in 10 minutes');
     this.notifications.warning('Your password is too weak');

@@ -2,7 +2,8 @@
     #EMBER-CLI-NOTIFICATIONS
 \*------------------------------------*/
 
-$ember-cli-notifications-icon-size: 24px !default;
+
+$ember-cli-notifications-icon-size: 30px !default;
 $ember-cli-notifications-close-icon-size: 16px !default;
 
 /**
@@ -25,36 +26,36 @@ $ember-cli-notifications-close-icon-size: 16px !default;
     right: $spacing-unit * 2;
 
     .c-notification {
-        box-shadow: rgb(0 0 0 / 8%) 0px 4px 13px;
-        background: $white;
-        border: 3px solid $gray-300;
+        align-items: center;
+        box-shadow: $box-shadow;
         border-radius: $border-radius * 2;
+        background: #747d8c;
     }
 
     .c-notification--success .c-notification__svg {
-        fill: var(--ecn-green);
+        fill: $white;
     }
 
     .c-notification--error .c-notification__svg {
-        fill: var(--ecn-red);
+        fill: $white;
     }
 
 
     .c-notification--info .c-notification__svg {
-        fill: var(--ecn-blue);
+        fill: $white;
     }
 
 
     .c-notification--warning  .c-notification__svg {
-        fill: var(--ecn-orange);
+        fill: $white;
     }
 
     .c-notification__content {
         padding: $spacing-unit * 2;
-        color: $gray-500;
-        font-size: $font-size;
+        padding-left: 0;
+        color: $white;
+        font-size: 1.6rem;
         font-weight: $font-weight-semi-bold;
-        box-shadow: rgb(0 0 0 / 8%) 0px 4px 13px;;
     }
 
     .c-notification__icon {
@@ -62,26 +63,27 @@ $ember-cli-notifications-close-icon-size: 16px !default;
         padding-left: $spacing-unit * 2;
         padding-right: $spacing-unit * 2;
         width: auto;
-        background: $white;
+        background: #747d8c;
     }
 
     .c-notification__svg {
         width: $ember-cli-notifications-icon-size;
         height: $ember-cli-notifications-icon-size;
-        fill: $indigo-500;
+        fill: $white;
         vertical-align: top;
     }
 
     .c-notification__close .c-notification__svg {
         display: block;
+        margin-left: $spacing-unit * 2;
         vertical-align: top;
         width: $ember-cli-notifications-close-icon-size;
         height: $ember-cli-notifications-close-icon-size;
         background: transparent;
-        fill: $gray-500;
+        fill: $white;
     }
 
-    .c-notification__content {
-        padding-left: 0;
+    .c-notification__countdown {
+        display: none;
     }
 }

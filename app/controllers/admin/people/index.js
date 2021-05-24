@@ -10,6 +10,7 @@ export default class AdminPeopleIndexController extends Controller {
   @tracked isDeleting = false
   @service apollo
   @service notifications
+  @service intl
 
   get people() {
     return this.model.filter(person => !person.isAdmin).sort(this._byFirstName);
@@ -52,7 +53,7 @@ export default class AdminPeopleIndexController extends Controller {
     }
 
     this.isDeleting = false;
-    this.notifications.clearAll().success(`${fullName} deleted!`);
+    this.notifications.clearAll().success(this.intl.t('admin.people.person_deleted'));
   }
 
   async _delete(person) {

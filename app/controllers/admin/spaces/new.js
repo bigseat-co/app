@@ -28,6 +28,7 @@ export default class AdminSpacesNewController extends Controller {
 
     this.space = new Space(); // Reset
 
+    this.notifications.success(this.intl.t('admin.spaces.space_created'));
     this.transitionToRoute('admin.spaces');
   }
 
