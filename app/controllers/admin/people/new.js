@@ -30,7 +30,7 @@ export default class AdminPeopleNewController extends Controller {
       return;
     }
 
-    this.notifications.clearAll().success(this.intl.t('admin.people.people_added', { count: people.length() }))
+    this.notifications.clearAll().success(this.intl.t('admin.people.people_added'));
     this.transitionToRoute('admin.people');
   }
 

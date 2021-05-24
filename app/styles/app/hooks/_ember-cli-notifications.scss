@@ -21,15 +21,53 @@ $ember-cli-notifications-close-icon-size: 16px !default;
     #{--ecn-spacing-2}: $spacing-unit;
 }
 
-.ember-cli-notifications-notification__container {
-    top: $spacing-unit * 2;
-    right: $spacing-unit * 2;
 
+/* Keyframes */
+@keyframes notification-show {
+  0% {
+    opacity: 0;
+    transform: translate(0, 200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes notification-shrink {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
+  }
+}
+
+@keyframes notification-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+}
+
+.ember-cli-notifications-notification__container {
     .c-notification {
         align-items: center;
         box-shadow: $box-shadow;
         border-radius: $border-radius * 2;
         background: #747d8c;
+    }
+
+    .c-notification--in {
+        animation: notification-show 180ms;
     }
 
     .c-notification--success .c-notification__svg {

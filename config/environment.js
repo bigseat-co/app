@@ -26,7 +26,7 @@ module.exports = function(environment) {
     },
     'ember-cli-notifications': {
       autoClear: true,
-      clearDuration: 10000 // ms
+      clearDuration: 8000 // ms
     },
     'ember-simple-auth': {
       routeAfterAuthentication: 'admin'

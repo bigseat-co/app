@@ -5,6 +5,7 @@ import { capitalize } from '@ember/string';
 import { inject as service } from '@ember/service';
 import RemovePersonMutation from 'bigseat/gql/mutations/remove-person.graphql';
 import ListPeople from 'bigseat/gql/queries/list-people.graphql';
+import { sortByProperty } from 'bigseat/helpers/sort-by-property';
 
 export default class AdminPeopleIndexController extends Controller {
   @tracked isDeleting = false
@@ -13,19 +14,9 @@ export default class AdminPeopleIndexController extends Controller {
   @service intl
 
   get people() {
-    return this.model.filter(person => !person.isAdmin).sort(this._byFirstName);
-  }
+    let members = this.model.filter(person => !person.isAdmin);
 
-  _byFirstName(a, b) {
-    if (a.firstName < b.firstName) {
-      return -1;
-    }
-
-    if (a.firstName > b.firstName) {
-      return 1;
-    }
-
-    return 0;
+    return sortByProperty(members, 'firstName');
   }
 
   getFullName(person) {
@@ -48,6 +39,7 @@ export default class AdminPeopleIndexController extends Controller {
     try {
       await this._delete(person);
     } catch(error) {
+      console.log(error);
       this._onDeleteError(person, error);
       return;
     }
@@ -64,8 +56,9 @@ export default class AdminPeopleIndexController extends Controller {
       variables: {
         id: id
       },
-      refetchQueries: [{ query: ListPeople }],
-      awaitRefetchQueries: true
+      update: (cache) => {
+        cache.evict({ id: `DashboardPerson:${id}`});
+      },
     });
   }
 

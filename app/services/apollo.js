@@ -6,6 +6,7 @@ import { Promise } from 'rsvp';
 export default class OverriddenApollo extends ApolloService {
   @service currentUser
 
+
   link() {
     let httpLink = super.link();
 

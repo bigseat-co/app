@@ -18,7 +18,7 @@ admin:
     no-results:
       title: You don't have any team mates
       description: You need to add more people to your organization to have more information here.
-    people_added: '{count, plural, =0 {no people} =1 {person} other {# people}} added'
+    people_added: 'People added'
     person_deleted: Person deleted
   spaces:
     add_pictures:
@@ -53,7 +53,7 @@ errors:
   changeset_invalid: Some of the informations you entered are incorrect.
   email_taken: Email has already been taken
   unable_to_save_person: Unable to save this person
-  unable_to_save_all_people: Unable to save all people added
+  unable_to_save_all_people: Unable to save all people
 
 site_name: BigSeat.
 
