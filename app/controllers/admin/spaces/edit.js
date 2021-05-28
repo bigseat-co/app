@@ -21,6 +21,7 @@ export default class AdminSpacesEditController extends Controller {
       return;
     }
 
+    this.notifications.success(this.intl.t('admin.spaces.space_updated'));
     this.transitionToRoute('admin.spaces');
   }
 

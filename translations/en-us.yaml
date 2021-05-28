@@ -31,6 +31,7 @@ admin:
       title: You don't have any space yet
       description: By creating a space, you'll be able to pin your desks and assign people to them according to your planning.
     space_created: Space created
+    space_updated: Space updated
 
   signin:
     welcome_back: Happy to see you again!
