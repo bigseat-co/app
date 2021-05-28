@@ -2,8 +2,8 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-import CreateSpaceMutation from 'bigseat/gql/mutations/create-space.graphql';
-import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
+import CreateSpace from 'bigseat/gql/mutations/create-space.graphql';
+import ListSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be called ListSpaces
 import Space from 'bigseat/models/space';
 
 export default class AdminSpacesNewController extends Controller {
@@ -36,7 +36,7 @@ export default class AdminSpacesNewController extends Controller {
     let space = this.space;
 
     return this.apollo.mutate({
-      mutation: CreateSpaceMutation,
+      mutation: CreateSpace,
       variables: {
         name: space.name,
         maximumPeople: parseInt(space.maximumPeople),
@@ -49,7 +49,7 @@ export default class AdminSpacesNewController extends Controller {
           }
         })
       },
-      refetchQueries: [{ query: listSpaces }],
+      refetchQueries: [{ query: ListSpaces }],
       awaitRefetchQueries: true
     });
   }

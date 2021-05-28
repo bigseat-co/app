@@ -1,4 +1,4 @@
-mutation Signup(
+mutation signup(
     $email: String!,
     $firstName: String!,
     $lastName: String!,

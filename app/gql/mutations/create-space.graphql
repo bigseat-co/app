@@ -1,4 +1,4 @@
-mutation CreateSpace (
+mutation createSpace (
     $dailyCheckin: Boolean!,
     $maximumPeople: Int!,
     $name: String!,
@@ -13,5 +13,19 @@ mutation CreateSpace (
     id
     maximumPeople
     name
+    name
+    openHours {
+      id
+      spaceId
+      closeTime
+      dayOfTheWeek
+      openTime
+    }
+    organization {
+      id
+      name
+      slug
+    }
+    slug
   }
 }

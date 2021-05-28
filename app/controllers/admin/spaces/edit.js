@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import EditSpaceMutation from 'bigseat/gql/mutations/edit-space.graphql';
-import listSpaces from 'bigseat/gql/queries/list-spaces.graphql'; // TODO - Should be named ListSpaces ?
+import ListSpaces from 'bigseat/gql/queries/list-spaces.graphql';
 
 export default class AdminSpacesEditController extends Controller {
   space
@@ -42,7 +42,7 @@ export default class AdminSpacesEditController extends Controller {
           })
         }
       },
-      refetchQueries: [{ query: listSpaces }],
+      refetchQueries: [{ query: ListSpaces }],
       awaitRefetchQueries: true
     });
   }

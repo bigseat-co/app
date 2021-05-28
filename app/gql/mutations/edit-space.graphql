@@ -1,4 +1,4 @@
-mutation EditSpace (
+mutation editSpace (
     $id: UUID4!,
     $spaceInput: SpaceInput!
   ) {
@@ -9,5 +9,13 @@ mutation EditSpace (
     id
     maximumPeople
     name
+    openHours {
+      id
+      spaceId
+      closeTime
+      dayOfTheWeek
+      openTime
+    }
+    slug
   }
 }

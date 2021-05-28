@@ -1,4 +1,4 @@
-mutation AddNewTeamMember (
+mutation addNewTeamMember (
     $email: String!,
     $firstName: String!,
     $lastName: String!,

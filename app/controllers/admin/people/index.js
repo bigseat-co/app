@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { capitalize } from '@ember/string';
 import { inject as service } from '@ember/service';
-import RemovePersonMutation from 'bigseat/gql/mutations/remove-person.graphql';
+import RemovePerson from 'bigseat/gql/mutations/remove-person.graphql';
 import ListPeople from 'bigseat/gql/queries/list-people.graphql';
 import { sortByProperty } from 'bigseat/helpers/sort-by-property';
 
@@ -52,7 +52,7 @@ export default class AdminPeopleIndexController extends Controller {
     let { id } = person;
 
     return this.apollo.mutate({
-      mutation: RemovePersonMutation,
+      mutation: RemovePerson,
       variables: {
         id: id
       },

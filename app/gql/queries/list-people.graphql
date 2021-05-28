@@ -1,4 +1,4 @@
-query ListPeople {
+query listPeople {
   listPeople {
     id
     email

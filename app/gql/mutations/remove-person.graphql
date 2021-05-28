@@ -1,4 +1,4 @@
-mutation RemovePerson(
+mutation removePerson(
     $id: UUID4!
   ) {
   removePerson(

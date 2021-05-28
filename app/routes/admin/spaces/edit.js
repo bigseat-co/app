@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import { queryManager } from 'ember-apollo-client';
-import getSpace from 'bigseat/gql/queries/get-space.graphql'; // TODO - Should be called GetSpace
+import GetSpace from 'bigseat/gql/queries/get-space.graphql'; // TODO - Should be called GetSpace
 import { hash } from 'rsvp';
 import Space from 'bigseat/models/space';
 
@@ -23,7 +23,7 @@ export default class AdminSpacesEditRoute extends Route {
 
   _findSpace(id) {
     let payload = {
-      query: getSpace,
+      query: GetSpace,
       variables: {
         id: id
       }
