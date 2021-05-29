@@ -4,8 +4,8 @@
       <h4 class="page-header__title">Activity</h4>
       <div class="navigation-pills">
         <ul class="navigation-pills__items">
-          <li class="navigation-pills__item"><LinkTo @route="admin.settings.index" class="navigation-pills__item-link is-active">Check-ins</LinkTo></li>
-          <li class="navigation-pills__item"><LinkTo @route="admin.settings.security" class="navigation-pills__item-link">Bookings</LinkTo></li>
+          <li class="navigation-pills__item"><LinkTo @route="admin.activity.checkins" class="navigation-pills__item-link">Check-ins</LinkTo></li>
+          <li class="navigation-pills__item"><LinkTo @route="admin.activity.bookings" class="navigation-pills__item-link">Bookings</LinkTo></li>
         </ul>
       </div>
     </div>
@@ -16,7 +16,6 @@
             <thead>
               <tr>
                 <th>Person</th>
-                <th>Event</th>
                 <th>Space</th>
                 <th>Details</th>
                 <th>Date</th>
@@ -40,9 +39,6 @@
                   </div>
                 </td>
                 <td>
-                  <span class="badge">Check-in</span>
-                </td>
-                <td>
                   <div class="grid grid--auto grid--middle">
                     <div class="grid__cell">
                       <div class="thumbnail thumbnail--small thumbnail--circle">
@@ -63,48 +59,6 @@
                 </td>
                 <td>
                   Jan. 29 at 1:42 a.m.
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="grid grid--auto grid--middle">
-                    <div class="grid__cell">
-                      <div class="thumbnail thumbnail--small thumbnail--circle">
-                        <img class="thumbnail__picture" src="/laurent.jpg" />
-                      </div>
-                    </div>
-                    <div class="grid__cell">
-                      <p class="table__group">
-                        <span class="table__group-key"><strong>Laurent Schaffner</strong></span>
-                        <span class="table__group-value">laurent@syatt.io</span>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span class="badge badge--primary">Booking</span>
-                </td>
-                <td>
-                  <div class="grid grid--auto grid--middle">
-                    <div class="grid__cell">
-                      <div class="thumbnail thumbnail--small thumbnail--circle">
-                        <img class="thumbnail__picture" src="/cat.jpg" />
-                      </div>
-                    </div>
-                    <div class="grid__cell">
-                      <p class="table__group">
-                        <span class="table__group-key"><strong>Kitty Room</strong></span>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <ul class="table__list">
-                    <li class="table__list-item">10 Feb. 2021 -> 12 Feb. 2021</li>
-                  </ul>
-                </td>
-                <td>
-                  Jan. 29 at 1:00 p.m.
                 </td>
               </tr>
             </tbody>
