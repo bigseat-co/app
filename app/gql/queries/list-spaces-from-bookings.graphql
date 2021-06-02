@@ -1,0 +1,27 @@
+query listSpacesFromBookings(
+  $organizationId: UUID4!,
+  $startAt: DateTime!,
+  $endAt: DateTime!
+  ) {
+  listSpacesFromBookings(
+    organizationId: $organizationId,
+    startAt: $startAt,
+    endAt: $endAt
+  ) {
+    id
+    avatar
+    bookings {
+      id
+    }
+    maximumPeople
+    name
+    openHours {
+      id
+      spaceId
+      openTime
+      closeTime
+      dayOfTheWeek
+    }
+    slug
+  }
+}

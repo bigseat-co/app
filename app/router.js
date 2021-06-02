@@ -53,7 +53,7 @@ Router.map(function() {
   /**
    * Booking
    */
-  this.route('booking', function () {
+  this.route('booking', { path: '/booking/:organization_id' }, function () {
     this.route('privacy');
     this.route('terms');
   });

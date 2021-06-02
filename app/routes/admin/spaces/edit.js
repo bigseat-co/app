@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import { queryManager } from 'ember-apollo-client';
-import GetSpace from 'bigseat/gql/queries/get-space.graphql'; // TODO - Should be called GetSpace
+import GetSpace from 'bigseat/gql/queries/get-space.graphql';
 import { hash } from 'rsvp';
 import Space from 'bigseat/models/space';
 
