@@ -18,7 +18,7 @@ admin:
     no-results:
       title: You don't have any team mates
       description: You need to add more people to your organization to have more information here.
-    people_added: 'People added'
+    people_added: People added
     person_deleted: Person deleted
   spaces:
     add_pictures:
@@ -27,11 +27,13 @@ admin:
       drop_files_here: Drop files here or click to upload
     new_space: Add my first space
     edit_space: Edit space
+    delete_space: Delete space
     no-results:
       title: You don't have any space yet
       description: By creating a space, you'll be able to pin your desks and assign people to them according to your planning.
     space_created: Space created
     space_updated: Space updated
+    space_deleted: Space deleted
 
   signin:
     welcome_back: Happy to see you again!

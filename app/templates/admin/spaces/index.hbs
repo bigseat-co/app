@@ -59,6 +59,12 @@
                                 <span class="dropdown__item-label">{{t "admin.spaces.edit_space"}}</span>
                               </LinkTo>
                             </li>
+                            <li class="dropdown__item">
+                              <a class="dropdown__item-link" href="#" {{on 'click' (prevent-default (fn this.delete space))}}>
+                                <span class="dropdown__item-icon">{{inline-svg "icons/trash-can" class="svg"}}</span>
+                                <span class="dropdown__item-label">{{t "admin.spaces.delete_space"}}</span>
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </dd.Content>

@@ -1,0 +1,9 @@
+mutation removeSpace(
+    $id: UUID4!
+  ) {
+  removeSpace(
+    id: $id
+  ) {
+    id
+  }
+}
